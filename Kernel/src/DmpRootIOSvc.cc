@@ -7,7 +7,6 @@
 #include <boost/algorithm/string.hpp>
 #include "TTree.h"
 #include "TFile.h"
-#include "TClonesArray.h"
 
 #include "DmpRootIOSvc.h"
 #include "DmpCore.h"

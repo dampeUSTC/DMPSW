@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpDataBuffer.h, 2014-07-24 15:11:17 DAMPE $
+ *  $Id: DmpDataBuffer.h, 2014-08-08 20:05:53 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 20/07/2014
 */
@@ -25,7 +25,7 @@ public:
     return &instance;
   }
   ~DmpDataBuffer();
-  template<typename T> bool RegisterObject(const std::string &path,T *&dataPtr,const std::string &className="TClonesArray");   // path = Folder/Tree/Branch
+  template<typename T> bool RegisterObject(const std::string &path,T *&dataPtr,const std::string &className);   // path = Folder/Tree/Branch
   TObject* ReadObject(const std::string &path);  // if path/dataPtr not in any data buffer, use dataPtr to read a branch from input rootfile;
 
 private:
@@ -66,12 +66,7 @@ template<typename T> bool DmpDataBuffer::RegisterObject(const std::string &path,
   }
   // input arguments into root IOSvc, to create a branch (IOSvc check whether need to create branch)
   if(gRootIOSvc->WriteValid(folderName,treeName,branchName)){
-    TTree *theTree = gRootIOSvc->GetOutputTree(folderName,treeName);
-    if("TClonesArray" == className){
-      theTree->Branch(branchName.c_str(),dataPtr,32000,2);
-    }else{
-      theTree->Branch(branchName.c_str(),className.c_str(),&dataPtr,32000,2);
-    }
+    gRootIOSvc->GetOutputTree(folderName,treeName)->Branch(branchName.c_str(),className.c_str(),&dataPtr,32000,2);
   }
   return true;
 }
