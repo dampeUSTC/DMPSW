@@ -182,6 +182,7 @@ TTree* DmpRootIOSvc::GetOutputTree(const std::string &folderName,const std::stri
   }
   if(0 == tree){
     tree = new TTree(treeName.c_str(),treeName.c_str());
+    tree->SetAutoSave(50000000);    //50MBytes
     fOutTreeSet[folderName].insert(std::make_pair(treeName,tree));
   }
   return tree;
