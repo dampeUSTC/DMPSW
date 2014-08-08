@@ -90,6 +90,9 @@ DMPSW
         * a shared library of DMPSW (libDmpKernel)
             begin with "libDmp"
 
+        * data members (DmpCore::fEventID)
+            begin with "f"
+
 4.  file name
 
     4.1  Readme.md
