@@ -1,0 +1,79 @@
+#! /bin/bash
+:<<EOF
+ *  $Id: dmpCreateDictionary, 2014-08-06 17:44:24 DAMPE $
+ *  Author(s):
+ *    Chi WANG (chiwang@mail.ustc.edu.cn) 11/12/2013
+ *-------------------------------------------------------
+ * 1.  How to use rootcint
+ *     http://www.scons.org/doc/HTML/scons-user.html#chap-builders-writing
+ *     http://kalmanalignment.hepforge.org/svn/trunk/event/SConscript
+ *-------------------------------------------------------
+EOF
+
+#+ functions
+#--------------------------------------------------------------------
+Usage(){
+echo "
+    Use rootcint to create a dictionary
+
+Requirement:
+    a.  must have $incDir and $srcDir
+    b.  only one *LinkDef.h file in $incDir
+
+Usage:
+  create a dictionary for all the header files in $incDir:
+    $0
+"
+exit 1
+}
+checkDir(){
+  for dir in $@;do
+    if [ -d $dir ];then
+      echo "Error:  NOT have directory: $dir..."
+      exit 1
+    fi
+  done
+}
+
+if [[ $1 == '--help' ]];then
+  Usage
+fi
+
+#+ main
+#--------------------------------------------------------------------
+srcDir="./src"
+incDir="./include"
+checkDir srcDir incDir
+
+nLinkDef=0
+for file in `ls $incDir`;do
+  if [[ -d $file ]];then
+    continue
+  elif [[ $file == *LinkDef.h ]];then
+    let nLinkDef=$nLinkDef+1
+    linkDef=$file
+  else
+    fileList="$fileList $file"
+  fi
+done
+if [[ $nLinkDef -ne 1 ]];then
+  echo "Error:    there're $nLinkDef *LinkDef.h files in $incDir"
+  exit 1
+fi
+
+diction=`echo $linkDef | sed s/LinkDef//`
+diction="Dictionary_${diction%.*}"
+
+if [ -f $incDir/$diction* ];then
+  read -p   " Dictionary ($diction) is exist, delete it? (y/n):        " Ans
+  if [ "XX$Ans" != "XXn" ];then
+    \rm ./*/$diction* >&/dev/null
+    echo  "     Please execute \"$0\", again"
+  fi
+  exit 0      # can't execute rootcint just after \rm ....
+fi
+
+echo "Generating dictionary ${diction}..."
+rootcint -f ${incDir}/${diction}.cc -c -p -I$incDir $fileList $linkDef
+mv $incDir/$diction.cc $srcDir/$diction.cc >&/dev/null
+

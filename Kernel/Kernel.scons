@@ -1,0 +1,41 @@
+'''
+ *  $Id: Kernel.scons, 2014-08-08 12:32:32 DAMPE $
+ *  Author(s):
+ *    Chi WANG (chiwang@mail.ustc.edu.cn) 24/07/2013
+'''
+
+import os
+Import("*")     # import all vars from SConstruct
+
+#-------------------------------------------------------------------
+target='DmpKernel'
+#-------------------------------------------------------------------
+print "\n==>Installing %s into:\t%s\n" %(target,prefix)
+
+#-------------------------------------------------------------------
+env = Environment(ENV = os.environ)
+env.ParseConfig("root-config --cflags --libs")
+#env.Append(LIBS=['RooFitCore','RooFit'])
+env.ParseConfig("python-config --include --libs")
+env.Append(LIBS=['boost_python','boost_filesystem'])
+includeDir='./include'
+env.Prepend(CPPPATH=[includeDir])
+
+# install share
+#--------------------------------------------------------------------
+Default(Command(prefix+'/lib/DMPSW.py','./script/DMPSW.py',Copy("$TARGET","$SOURCE")))
+for tmp in os.listdir(includeDir):
+    if "." not in tmp[0] and ".h" in tmp:
+        Default(Command(prefix+'/include/'+tmp,includeDir+'/'+tmp,Copy("$TARGET","$SOURCE")))
+for tmp in os.listdir('./script'):
+    if "." not in tmp[0] and "dmp" in tmp:
+        Default(Command(prefix+'/bin/'+tmp,'./script/'+tmp,Copy("$TARGET","$SOURCE")))
+
+# main build
+#--------------------------------------------------------------------
+goal=env.SharedLibrary(target,Glob('./src/*.cc'))
+Default(env.InstallAs(prefix+'/lib/lib'+target+".so",goal))
+
+if env['PLATFORM'] == 'darwin':         # MacOs
+    Default(env.InstallAs(prefix+'/lib/lib'+target+".dylib",goal))
+

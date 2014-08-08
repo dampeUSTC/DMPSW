@@ -1,0 +1,92 @@
+#! /bin/bash
+:<<EOF
+ *  $Id: dmpsw-config, 2014-08-08 12:35:20 DAMPE $
+ *  Author(s):
+ *    Chi WANG (chiwang@mail.ustc.edu.cn) 30/07/2013
+ *---------------------------------------------------
+ *  Description:
+ *      must in $DMPSWSYS/bin
+ *---------------------------------------------------
+EOF
+
+prefix=$DMPSWSYS
+
+#   list all libraries of DMPSW
+libs="-lDmpKernel -lDmpEvent"
+:<<EOF
+for file in `ls ${prefix}/lib`;do
+  if [[ ${file} = *libDmp* && ${file} = *.so* ]];then
+    file=${file/lib/-l}
+    file=${file/\.so/}
+    libs="$libs $file"
+  fi
+done
+EOF
+
+#-----------------------------------------------------------------------
+# function help
+#          print help on available command line arguments and enabled
+
+help(){
+cat<<EOF
+
+Usage: dmpsw-config [OPTION...]
+
+  --prefix                output installation prefix of DAMPE Software
+  --version               output version for DAMPE Software
+  --libs                  output all linker flags
+  --cflags                output all preprocessor and compiler flags
+  --include               output include flags
+  --help                  output help information
+
+EOF
+  exit 1
+}
+
+
+#-----------------------------------------------------------------------
+# output
+#       will be used while using DAMPE software.
+
+out=""
+
+while test $# -gt 0; do
+  case "$1" in
+    -*=*)
+      optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'`
+      ;;
+    *)
+      optarg=
+      ;;
+  esac
+
+  case $1 in
+    --prefix)
+      out="$out $prefix"
+      ;;
+   --libs)
+      out="$out -L$DMPSWWORK/lib -L$prefix/lib $libs"
+      ;;
+   --cflags)
+      out="$out -I$prefix/include"
+      ;;
+   --include)
+      out="$out -I$DMPSWWORK/include -I$prefix/include"
+      ;;
+   -?)
+      help
+      ;;
+   --help)
+      help
+      ;;
+   --version)
+      out="DMPSW verison VERSION"  # How to set this automatically while installation ??
+      ;;
+  esac
+  shift
+done
+
+### Output the stuff
+echo $out
+
+
