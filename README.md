@@ -75,6 +75,9 @@ DMPSW
         * struct name (_FeeDataBuf)
             begin with "_"
 
+        * namespace for enum type
+            begin with "DmpE"
+
         * typedef of a map (typedef std::map<short,_FeeDataBuf> M_FeeDataBuf)
             begin with "M_"
 
