@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE gdml[
+<!ENTITY materials SYSTEM "../Schema/materials.xml">
+]>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schema/gdml.xsd">
+
+<!--define-->
+  <define>
+  </define>
+
+<!--materials-->
+  &materials;
+
+<!--solids-->
+  <solids>
+   <box lunit="mm" name="World_Box" x="3000" y="3000" z="3000" />
+   <box lunit="mm" name="TriggerPS_Box" x="200" y="200" z="55" />   <!--plastic scintillator in front to geneerate trigger-->
+   <box lunit="mm" name="MM_PcbABox" x="140" y="140" z="2.5" />     <!--A type PCB of MecroMegas-->
+   <box lunit="mm" name="MM_PcbBBox" x="120" y="120" z="2.5" />     <!--B type PCB of MecroMegas-->
+   <box lunit="mm" name="MM_PlaneBox" x="140" y="140" z="47" />    <!--one plane of MecroMegas-->
+  </solids>
+
+<!--structure-->
+  <structure>
+
+   <!--MecroMegas-->
+   <volume name="MM_PcbALV" >
+     <materialref ref="FR4" />
+     <solidref ref="MM_PcbABox" />
+   </volume>
+
+   <volume name="MM_PcbBLV" >
+     <materialref ref="FR4" />
+     <solidref ref="MM_PcbBBox" />
+   </volume>
+
+   <volume name="MicroMegas" >
+     <materialref ref="Vacuum"/>
+     <solidref ref="MM_PlaneBox" />
+
+     <physvol name="MM_Pcb0PV" >
+      <volumeref ref="MM_PcbALV" />
+      <position name="MM_Pcb0Pos" unit="mm" x="0" y="0" z="-22.75" />
+     </physvol>
+
+     <physvol name="MM_Pcb1PV" >
+      <volumeref ref="MM_PcbBLV" />
+      <position name="MM_Pcb1Pos" unit="mm" x="0" y="0" z="-8.75" />
+     </physvol>
+
+     <physvol name="MM_Pcb2PV" >
+      <volumeref ref="MM_PcbBLV" />
+      <position name="MM_Pcb2Pos" unit="mm" x="0" y="0" z="8.75" />
+     </physvol>
+
+     <physvol name="MM_Pcb3PV" >
+      <volumeref ref="MM_PcbALV" />
+      <position name="MM_Pcb3Pos" unit="mm" x="0" y="0" z="22.75" />
+     </physvol>
+   </volume>
+
+   <!--TriggerPS-->
+   <volume name="TriggerPS_LV" >
+     <materialref ref="PSDmaterial_Sci0x9d1cb80"/>
+     <solidref ref="TriggerPS_Box" />
+   </volume>
+
+   <!--World-->
+   <volume name="World_LV" >
+    <materialref ref="Vacuum" />
+    <solidref ref="World_Box" />
+
+    <physvol name="TriggerPS_PV" >
+     <volumeref ref="TriggerPS_LV" />
+     <position name="TriggerPS_Pos" unit="mm" x="0" y="0" z="-1500." />
+    </physvol>
+
+    <physvol name="MicroMegas_Plane0" >
+     <volumeref ref="MicroMegas" />
+     <position name="MM_Plane0Pos" unit="mm" x="0" y="0" z="-300." />
+    </physvol>
+
+    <physvol name="MicroMegas_Plane1" >
+     <volumeref ref="MicroMegas" />
+     <position name="MM_Plane1Pos" unit="mm" x="0" y="0" z="-500." />
+    </physvol>
+
+    <physvol name="MicroMegas_Plane2" >
+     <volumeref ref="MicroMegas" />
+     <position name="MM_Plane2Pos" unit="mm" x="0" y="0" z="-700." />
+    </physvol>
+
+    <physvol name="Psd_Det">
+      <file name="Psd.gdml"/>
+      <position unit="mm" x="0" y="0" z="-33.4"/>
+    </physvol>
+
+    <physvol name="Bgo_Det">
+      <file name="Bgo.gdml"/>
+      <position unit="mm" x="0" y="0" z="200"/>
+    </physvol>
+
+    <physvol name="Nud_Det">
+    <!--NOTE-->
+    <!--This is not the Nud of BT 2012, just used prototype of 2014-->
+      <file name="Nud.gdml"/>
+      <position unit="mm" x="0" y="0" z="600"/>
+    </physvol>
+
+   </volume>
+  </structure>
+
+<!--setup-->
+  <setup name="Default" version="1.0" >
+    <world ref="World_LV" />
+  </setup>
+
+</gdml>
+

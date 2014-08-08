@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!DOCTYPE gdml[
+<!ENTITY materials SYSTEM "../Schema/materials.xml">
+]>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schema/gdml.xsd">
+
+  <define>
+    <position name="honeycomb_v0" unit="mm" x="-285.429992675781" y="-244.250015258789" z="-243"/>
+    <position name="honeycomb_v1" unit="mm" x="-312" y="-244.250015258789" z="-243"/>
+    <position name="honeycomb_v2" unit="mm" x="-285.429992675781" y="-211.25" z="-243"/>
+    <position name="honeycomb_v3" unit="mm" x="-312" y="-211.25" z="-243"/>
+    <position name="honeycomb_v4" unit="mm" x="-42.4300003051758" y="-244.250015258789" z="-3.42432489698966e-13"/>
+    <position name="honeycomb_v5" unit="mm" x="-42.4300003051758" y="-211.25" z="-3.36406710864726e-13"/>
+    <position name="honeycomb_v6" unit="mm" x="-285.429992675781" y="-244.250015258789" z="243"/>
+    <position name="honeycomb_v7" unit="mm" x="-285.429992675781" y="-211.25" z="243"/>
+    <position name="honeycomb_v8" unit="mm" x="-312" y="-244.250015258789" z="243"/>
+    <position name="honeycomb_v9" unit="mm" x="-312" y="-211.25" z="243"/>
+    <position name="honeycomb_v10" unit="mm" x="-243" y="-244.250015258789" z="285.429992675781"/>
+    <position name="honeycomb_v11" unit="mm" x="-243" y="-244.250015258789" z="312"/>
+    <position name="honeycomb_v12" unit="mm" x="-243" y="-211.25" z="285.429992675781"/>
+    <position name="honeycomb_v13" unit="mm" x="-243" y="-211.25" z="312"/>
+    <position name="honeycomb_v14" unit="mm" x="-1.94288988651821e-13" y="-244.250015258789" z="42.4300003051758"/>
+    <position name="honeycomb_v15" unit="mm" x="-1.88263101397364e-13" y="-211.25" z="42.4300003051758"/>
+    <position name="honeycomb_v16" unit="mm" x="243" y="-244.250015258789" z="285.429992675781"/>
+    <position name="honeycomb_v17" unit="mm" x="243" y="-211.25" z="285.429992675781"/>
+    <position name="honeycomb_v18" unit="mm" x="243" y="-244.250015258789" z="312"/>
+    <position name="honeycomb_v19" unit="mm" x="243" y="-211.25" z="312"/>
+    <position name="honeycomb_v20" unit="mm" x="285.429992675781" y="-244.250015258789" z="243"/>
+    <position name="honeycomb_v21" unit="mm" x="312" y="-244.250015258789" z="243"/>
+    <position name="honeycomb_v22" unit="mm" x="285.429992675781" y="-211.25" z="243"/>
+    <position name="honeycomb_v23" unit="mm" x="312" y="-211.25" z="243"/>
+    <position name="honeycomb_v24" unit="mm" x="42.4300003051758" y="-244.250015258789" z="6.38719708633689e-13"/>
+    <position name="honeycomb_v25" unit="mm" x="42.4300003051758" y="-211.25" z="6.32693821379232e-13"/>
+    <position name="honeycomb_v26" unit="mm" x="285.429992675781" y="-244.250015258789" z="-243"/>
+    <position name="honeycomb_v27" unit="mm" x="285.429992675781" y="-211.25" z="-243"/>
+    <position name="honeycomb_v28" unit="mm" x="312" y="-244.250015258789" z="-243"/>
+    <position name="honeycomb_v29" unit="mm" x="312" y="-211.25" z="-243"/>
+    <position name="honeycomb_v30" unit="mm" x="243" y="-244.250015258789" z="-285.429992675781"/>
+    <position name="honeycomb_v31" unit="mm" x="243" y="-244.250015258789" z="-312"/>
+    <position name="honeycomb_v32" unit="mm" x="243" y="-211.25" z="-285.429992675781"/>
+    <position name="honeycomb_v33" unit="mm" x="243" y="-211.25" z="-312"/>
+    <position name="honeycomb_v34" unit="mm" x="4.90576058508746e-13" y="-244.250015258789" z="-42.4300003051758"/>
+    <position name="honeycomb_v35" unit="mm" x="4.84550171254289e-13" y="-211.25" z="-42.4300003051758"/>
+    <position name="honeycomb_v36" unit="mm" x="-243" y="-244.250015258789" z="-285.429992675781"/>
+    <position name="honeycomb_v37" unit="mm" x="-243" y="-211.25" z="-285.429992675781"/>
+    <position name="honeycomb_v38" unit="mm" x="-243" y="-244.250015258789" z="-312"/>
+    <position name="honeycomb_v39" unit="mm" x="-243" y="-211.25" z="-312"/>
+  </define>
+
+  &materials;
+
+  <solids>
+    <tessellated aunit="deg" lunit="mm" name="honeycomb0x809300">
+      <triangular vertex1="honeycomb_v0" vertex2="honeycomb_v1" vertex3="honeycomb_v2"/>
+      <triangular vertex1="honeycomb_v2" vertex2="honeycomb_v1" vertex3="honeycomb_v3"/>
+      <triangular vertex1="honeycomb_v4" vertex2="honeycomb_v0" vertex3="honeycomb_v5"/>
+      <triangular vertex1="honeycomb_v5" vertex2="honeycomb_v0" vertex3="honeycomb_v2"/>
+      <triangular vertex1="honeycomb_v6" vertex2="honeycomb_v4" vertex3="honeycomb_v7"/>
+      <triangular vertex1="honeycomb_v7" vertex2="honeycomb_v4" vertex3="honeycomb_v5"/>
+      <triangular vertex1="honeycomb_v8" vertex2="honeycomb_v6" vertex3="honeycomb_v9"/>
+      <triangular vertex1="honeycomb_v9" vertex2="honeycomb_v6" vertex3="honeycomb_v7"/>
+      <triangular vertex1="honeycomb_v1" vertex2="honeycomb_v8" vertex3="honeycomb_v3"/>
+      <triangular vertex1="honeycomb_v3" vertex2="honeycomb_v8" vertex3="honeycomb_v9"/>
+      <triangular vertex1="honeycomb_v4" vertex2="honeycomb_v6" vertex3="honeycomb_v0"/>
+      <triangular vertex1="honeycomb_v0" vertex2="honeycomb_v6" vertex3="honeycomb_v8"/>
+      <triangular vertex1="honeycomb_v0" vertex2="honeycomb_v8" vertex3="honeycomb_v1"/>
+      <triangular vertex1="honeycomb_v7" vertex2="honeycomb_v5" vertex3="honeycomb_v9"/>
+      <triangular vertex1="honeycomb_v9" vertex2="honeycomb_v5" vertex3="honeycomb_v2"/>
+      <triangular vertex1="honeycomb_v9" vertex2="honeycomb_v2" vertex3="honeycomb_v3"/>
+      <triangular vertex1="honeycomb_v10" vertex2="honeycomb_v11" vertex3="honeycomb_v12"/>
+      <triangular vertex1="honeycomb_v12" vertex2="honeycomb_v11" vertex3="honeycomb_v13"/>
+      <triangular vertex1="honeycomb_v14" vertex2="honeycomb_v10" vertex3="honeycomb_v15"/>
+      <triangular vertex1="honeycomb_v15" vertex2="honeycomb_v10" vertex3="honeycomb_v12"/>
+      <triangular vertex1="honeycomb_v16" vertex2="honeycomb_v14" vertex3="honeycomb_v17"/>
+      <triangular vertex1="honeycomb_v17" vertex2="honeycomb_v14" vertex3="honeycomb_v15"/>
+      <triangular vertex1="honeycomb_v18" vertex2="honeycomb_v16" vertex3="honeycomb_v19"/>
+      <triangular vertex1="honeycomb_v19" vertex2="honeycomb_v16" vertex3="honeycomb_v17"/>
+      <triangular vertex1="honeycomb_v11" vertex2="honeycomb_v18" vertex3="honeycomb_v13"/>
+      <triangular vertex1="honeycomb_v13" vertex2="honeycomb_v18" vertex3="honeycomb_v19"/>
+      <triangular vertex1="honeycomb_v14" vertex2="honeycomb_v16" vertex3="honeycomb_v10"/>
+      <triangular vertex1="honeycomb_v10" vertex2="honeycomb_v16" vertex3="honeycomb_v18"/>
+      <triangular vertex1="honeycomb_v10" vertex2="honeycomb_v18" vertex3="honeycomb_v11"/>
+      <triangular vertex1="honeycomb_v17" vertex2="honeycomb_v15" vertex3="honeycomb_v19"/>
+      <triangular vertex1="honeycomb_v19" vertex2="honeycomb_v15" vertex3="honeycomb_v12"/>
+      <triangular vertex1="honeycomb_v19" vertex2="honeycomb_v12" vertex3="honeycomb_v13"/>
+      <triangular vertex1="honeycomb_v20" vertex2="honeycomb_v21" vertex3="honeycomb_v22"/>
+      <triangular vertex1="honeycomb_v22" vertex2="honeycomb_v21" vertex3="honeycomb_v23"/>
+      <triangular vertex1="honeycomb_v24" vertex2="honeycomb_v20" vertex3="honeycomb_v25"/>
+      <triangular vertex1="honeycomb_v25" vertex2="honeycomb_v20" vertex3="honeycomb_v22"/>
+      <triangular vertex1="honeycomb_v26" vertex2="honeycomb_v24" vertex3="honeycomb_v27"/>
+      <triangular vertex1="honeycomb_v27" vertex2="honeycomb_v24" vertex3="honeycomb_v25"/>
+      <triangular vertex1="honeycomb_v28" vertex2="honeycomb_v26" vertex3="honeycomb_v29"/>
+      <triangular vertex1="honeycomb_v29" vertex2="honeycomb_v26" vertex3="honeycomb_v27"/>
+      <triangular vertex1="honeycomb_v21" vertex2="honeycomb_v28" vertex3="honeycomb_v23"/>
+      <triangular vertex1="honeycomb_v23" vertex2="honeycomb_v28" vertex3="honeycomb_v29"/>
+      <triangular vertex1="honeycomb_v24" vertex2="honeycomb_v26" vertex3="honeycomb_v20"/>
+      <triangular vertex1="honeycomb_v20" vertex2="honeycomb_v26" vertex3="honeycomb_v28"/>
+      <triangular vertex1="honeycomb_v20" vertex2="honeycomb_v28" vertex3="honeycomb_v21"/>
+      <triangular vertex1="honeycomb_v27" vertex2="honeycomb_v25" vertex3="honeycomb_v29"/>
+      <triangular vertex1="honeycomb_v29" vertex2="honeycomb_v25" vertex3="honeycomb_v22"/>
+      <triangular vertex1="honeycomb_v29" vertex2="honeycomb_v22" vertex3="honeycomb_v23"/>
+      <triangular vertex1="honeycomb_v30" vertex2="honeycomb_v31" vertex3="honeycomb_v32"/>
+      <triangular vertex1="honeycomb_v32" vertex2="honeycomb_v31" vertex3="honeycomb_v33"/>
+      <triangular vertex1="honeycomb_v34" vertex2="honeycomb_v30" vertex3="honeycomb_v35"/>
+      <triangular vertex1="honeycomb_v35" vertex2="honeycomb_v30" vertex3="honeycomb_v32"/>
+      <triangular vertex1="honeycomb_v36" vertex2="honeycomb_v34" vertex3="honeycomb_v37"/>
+      <triangular vertex1="honeycomb_v37" vertex2="honeycomb_v34" vertex3="honeycomb_v35"/>
+      <triangular vertex1="honeycomb_v38" vertex2="honeycomb_v36" vertex3="honeycomb_v39"/>
+      <triangular vertex1="honeycomb_v39" vertex2="honeycomb_v36" vertex3="honeycomb_v37"/>
+      <triangular vertex1="honeycomb_v31" vertex2="honeycomb_v38" vertex3="honeycomb_v33"/>
+      <triangular vertex1="honeycomb_v33" vertex2="honeycomb_v38" vertex3="honeycomb_v39"/>
+      <triangular vertex1="honeycomb_v34" vertex2="honeycomb_v36" vertex3="honeycomb_v30"/>
+      <triangular vertex1="honeycomb_v30" vertex2="honeycomb_v36" vertex3="honeycomb_v38"/>
+      <triangular vertex1="honeycomb_v30" vertex2="honeycomb_v38" vertex3="honeycomb_v31"/>
+      <triangular vertex1="honeycomb_v37" vertex2="honeycomb_v35" vertex3="honeycomb_v39"/>
+      <triangular vertex1="honeycomb_v39" vertex2="honeycomb_v35" vertex3="honeycomb_v32"/>
+      <triangular vertex1="honeycomb_v39" vertex2="honeycomb_v32" vertex3="honeycomb_v33"/>
+    </tessellated>
+  </solids>
+
+  <structure>
+    <volume name="honeycomb_vol0x807fd0">
+      <materialref ref="Hcomb"/>
+      <solidref ref="honeycomb0x809300"/>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="honeycomb_vol0x807fd0"/>
+  </setup>
+
+</gdml>

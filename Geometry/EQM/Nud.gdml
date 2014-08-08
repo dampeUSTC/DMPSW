@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE gdml[
+<!ENTITY parameter SYSTEM "nud_parameter.xml">
+<!ENTITY materials SYSTEM "../Schema/materials.xml">
+]>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schema/gdml.xsd">
+
+<!--define-->
+  &parameter;
+
+<!--define-->
+  &materials;
+
+<!--solids-->
+ <solids>
+  <!-- <box lunit="mm" name="NUD_box" x="699" y="699" z="34" /> -->
+  <!-- <box lunit="mm" name="NUD_box" x="699" y="699" z="34" />-->
+  <box lunit="mm" name="NUD_box" x="825" y="825" z="188" />  
+ </solids>
+
+<!--structure-->
+<structure>    
+    <volume name="Nud_DetLV">
+      <materialref ref="Vacuum"/>
+      <solidref ref="NUD_box"/>
+      
+      <!-- Sensitive detector  -->
+      <physvol name="Nud_BlockPV_0">
+        <file name="nud_Block0.gdml"/> 
+        <position name="Block0_pos" x="nud_adjust_x_position" y="nud_adjust_y_position" z="nud_adjust_z_position" unit="mm"/>
+      </physvol>   
+      <physvol name="Nud_BlockPV_1">
+        <file name="nud_Block1.gdml"/>
+        <position name="Block1_pos" x="nud_adjust_x_position" y="nud_adjust_y_position" z="nud_adjust_z_position" unit="mm"/>  
+      </physvol>  
+      <physvol name="Nud_BlockPV_2">
+        <file name="nud_Block2.gdml"/>
+        <position name="Block2_pos" x="nud_adjust_x_position" y="nud_adjust_y_position" z="nud_adjust_z_position" unit="mm"/>              
+      </physvol>        
+      <physvol name="Nud_BlockPV_3">
+        <file name="nud_Block3.gdml"/>
+        <position name="Block3_pos" x="nud_adjust_x_position" y="nud_adjust_y_position" z="nud_adjust_z_position" unit="mm"/>             
+      </physvol> 
+
+      <!-- Nud support shell  -->
+      <physvol>       
+        <file name="nud_SHELL0.gdml"/>
+        <position name="NUD_SHELL0_pos" x="nud_adjust_x_position" y="nud_adjust_y_position" z="nud_adjust_z_position" unit="mm"/>              
+      </physvol>    
+      <physvol>       
+        <file name="nud_SHELL1.gdml"/>
+        <position name="NUD_SHELL1_pos" x="nud_adjust_x_position" y="nud_adjust_y_position" z="nud_adjust_z_position" unit="mm"/>             
+      </physvol>     
+      
+      <!-- Nud sattelite support skeleton  -->
+      <physvol>       
+        <file name="nud_kx-b2.gdml"/>
+        <position name="NUD_kx-b2_pos" x="nud_satsupport_adjust_x_position" y="nud_satsupport_adjust_y_position" z="nud_satsupport_adjust_z_position" unit="mm"/>             
+      </physvol>
+    </volume>
+ </structure>
+
+<!--setup-->
+ <setup name="Default" version="1.0" >
+  <world ref="Nud_DetLV" />
+ </setup>
+
+</gdml>
+

@@ -1,0 +1,15 @@
+<!--Beam Test 2012 parameters-->
+
+  <define>
+   <!--PSD parameter-->
+   <constant name="PSDdetectorX" value="646"/>
+   <constant name="PSDdetectorY" value="646"/>
+   <constant name="PSDdetectorZ" value="50"/>
+
+   <constant name="PSDbarX" value="20"/>
+
+   <position name="psdCAD_pos" unit="mm" x="0" y="0" z="-33.4" />
+   <rotation name="psdCAD_Rot" unit="deg" x="90" y="0" z="0"/>
+
+  </define>
+

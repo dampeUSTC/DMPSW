@@ -1,0 +1,26 @@
+'''
+ *  $Id: Geometry.scons, 2014-08-08 21:15:53 DAMPE $
+ *  Author(s):
+ *    Chi WANG (chiwang@mail.ustc.edu.cn) 23/01/2014
+'''
+
+import os
+Import("*")     # import all vars from SConstruct
+
+#-------------------------------------------------------------------
+target='DmpGeometry'
+#-------------------------------------------------------------------
+print "\n==>Installing %s into:\t%s\n" %(target,prefix)
+#--------------------------------------------------------------------
+
+## install Geometry
+    # (copy all files(include Readme.md, except ".*" and *.scons) into prefix/share/Geometry)
+##--------------------------------------------------------------------
+def ProcessThisDir(fromPath,toPath):
+    for tmp in os.listdir(fromPath):
+        if "." in tmp[0] or "scons" in tmp or "test" in tmp or "Readme" in tmp:   continue
+        if os.path.isdir(fromPath+tmp):  ProcessThisDir(fromPath+tmp,toPath+tmp)
+        else: Default(Command(toPath+'/'+tmp,fromPath+'/'+tmp,Copy("$TARGET","$SOURCE")))
+
+ProcessThisDir("./",prefix+"/share/Geometry/")
+

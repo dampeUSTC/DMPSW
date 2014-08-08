@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE gdml[
+<!ENTITY materials SYSTEM "../Schema/materials.xml">
+]>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schema/gdml.xsd">
+
+  <define>
+    <position name="psd_bar1_v0" unit="mm" x="-178" y="-26.0387802124023" z="4.25"/>
+    <position name="psd_bar1_v1" unit="mm" x="-178" y="-24.8999996185303" z="4.00048023136909e-13"/>
+    <position name="psd_bar1_v2" unit="mm" x="-178" y="-26.0387802124023" z="-4.25"/>
+    <position name="psd_bar1_v3" unit="mm" x="-178" y="-40.7612190246582" z="4.25"/>
+    <position name="psd_bar1_v4" unit="mm" x="-178" y="-29.1499996185303" z="-7.36121606826782"/>
+    <position name="psd_bar1_v5" unit="mm" x="-178" y="-41.9000015258789" z="4.11566776752775e-13"/>
+    <position name="psd_bar1_v6" unit="mm" x="-178" y="-40.7612190246582" z="-4.25"/>
+    <position name="psd_bar1_v7" unit="mm" x="-178" y="-37.6499977111816" z="-7.36121606826782"/>
+    <position name="psd_bar1_v8" unit="mm" x="-178" y="-33.3999977111816" z="-8.5"/>
+    <position name="psd_bar1_v9" unit="mm" x="-178" y="-29.1499996185303" z="7.36121606826782"/>
+    <position name="psd_bar1_v10" unit="mm" x="-178" y="-33.3999977111816" z="8.5"/>
+    <position name="psd_bar1_v11" unit="mm" x="-178" y="-37.6499977111816" z="7.36121606826782"/>
+    <position name="psd_bar1_v12" unit="mm" x="-168" y="-33.3999977111816" z="-8.5"/>
+    <position name="psd_bar1_v13" unit="mm" x="-168" y="-37.6499977111816" z="-7.36121606826782"/>
+    <position name="psd_bar1_v14" unit="mm" x="-168" y="-40.7612190246582" z="-4.25"/>
+    <position name="psd_bar1_v15" unit="mm" x="-168" y="-41.9000015258789" z="4.11566776752775e-13"/>
+    <position name="psd_bar1_v16" unit="mm" x="-168" y="-40.7612190246582" z="4.25"/>
+    <position name="psd_bar1_v17" unit="mm" x="-168" y="-37.6499977111816" z="7.36121606826782"/>
+    <position name="psd_bar1_v18" unit="mm" x="-168" y="-33.3999977111816" z="8.5"/>
+    <position name="psd_bar1_v19" unit="mm" x="-168" y="-29.1499996185303" z="7.36121606826782"/>
+    <position name="psd_bar1_v20" unit="mm" x="-168" y="-26.0387802124023" z="4.25"/>
+    <position name="psd_bar1_v21" unit="mm" x="-168" y="-24.8999996185303" z="4.00048023136909e-13"/>
+    <position name="psd_bar1_v22" unit="mm" x="-168" y="-26.0387802124023" z="-4.25"/>
+    <position name="psd_bar1_v23" unit="mm" x="-168" y="-29.1499996185303" z="-7.36121606826782"/>
+    <position name="psd_bar1_v24" unit="mm" x="-168" y="-43.4000015258789" z="10"/>
+    <position name="psd_bar1_v25" unit="mm" x="-168" y="-23.3999996185303" z="10"/>
+    <position name="psd_bar1_v26" unit="mm" x="-168" y="-43.4000015258789" z="-10"/>
+    <position name="psd_bar1_v27" unit="mm" x="-168" y="-23.3999996185303" z="-10"/>
+    <position name="psd_bar1_v28" unit="mm" x="-153" y="-33.3999977111816" z="-10"/>
+    <position name="psd_bar1_v29" unit="mm" x="172" y="-43.4000015258789" z="-10"/>
+    <position name="psd_bar1_v30" unit="mm" x="157" y="-33.3999977111816" z="-10"/>
+    <position name="psd_bar1_v31" unit="mm" x="172" y="-23.3999996185303" z="-10"/>
+    <position name="psd_bar1_v32" unit="mm" x="172" y="-43.4000015258789" z="10"/>
+    <position name="psd_bar1_v33" unit="mm" x="172" y="-37.6499977111816" z="-7.36121606826782"/>
+    <position name="psd_bar1_v34" unit="mm" x="172" y="-33.3999977111816" z="-8.5"/>
+    <position name="psd_bar1_v35" unit="mm" x="172" y="-29.1499996185303" z="-7.36121606826782"/>
+    <position name="psd_bar1_v36" unit="mm" x="172" y="-40.7612190246582" z="4.25"/>
+    <position name="psd_bar1_v37" unit="mm" x="172" y="-41.9000015258789" z="3.93782174836627e-13"/>
+    <position name="psd_bar1_v38" unit="mm" x="172" y="-40.7612190246582" z="-4.25"/>
+    <position name="psd_bar1_v39" unit="mm" x="172" y="-29.1499996185303" z="7.36121606826782"/>
+    <position name="psd_bar1_v40" unit="mm" x="172" y="-23.3999996185303" z="10"/>
+    <position name="psd_bar1_v41" unit="mm" x="172" y="-33.3999977111816" z="8.5"/>
+    <position name="psd_bar1_v42" unit="mm" x="172" y="-37.6499977111816" z="7.36121606826782"/>
+    <position name="psd_bar1_v43" unit="mm" x="172" y="-26.0387802124023" z="4.25"/>
+    <position name="psd_bar1_v44" unit="mm" x="172" y="-24.8999996185303" z="4.0419059700765e-13"/>
+    <position name="psd_bar1_v45" unit="mm" x="172" y="-26.0387802124023" z="-4.25"/>
+    <position name="psd_bar1_v46" unit="mm" x="157" y="-33.3999977111816" z="10"/>
+    <position name="psd_bar1_v47" unit="mm" x="-153" y="-33.3999977111816" z="10"/>
+    <position name="psd_bar1_v48" unit="mm" x="182" y="-29.1499996185303" z="7.36121606826782"/>
+    <position name="psd_bar1_v49" unit="mm" x="182" y="-33.3999977111816" z="8.5"/>
+    <position name="psd_bar1_v50" unit="mm" x="182" y="-37.6499977111816" z="7.36121606826782"/>
+    <position name="psd_bar1_v51" unit="mm" x="182" y="-40.7612190246582" z="4.25"/>
+    <position name="psd_bar1_v52" unit="mm" x="182" y="-41.9000015258789" z="3.93344916100463e-13"/>
+    <position name="psd_bar1_v53" unit="mm" x="182" y="-40.7612190246582" z="-4.25"/>
+    <position name="psd_bar1_v54" unit="mm" x="182" y="-37.6499977111816" z="-7.36121606826782"/>
+    <position name="psd_bar1_v55" unit="mm" x="182" y="-33.3999977111816" z="-8.5"/>
+    <position name="psd_bar1_v56" unit="mm" x="182" y="-29.1499996185303" z="-7.36121606826782"/>
+    <position name="psd_bar1_v57" unit="mm" x="182" y="-26.0387802124023" z="-4.25"/>
+    <position name="psd_bar1_v58" unit="mm" x="182" y="-24.8999996185303" z="4.04863696821384e-13"/>
+    <position name="psd_bar1_v59" unit="mm" x="182" y="-26.0387802124023" z="4.25"/>
+  </define>
+
+  &materials;
+
+  <solids>
+    <tessellated aunit="deg" lunit="mm" name="psd_bar10x1db27b0">
+      <triangular vertex1="psd_bar1_v0" vertex2="psd_bar1_v1" vertex3="psd_bar1_v2"/>
+      <triangular vertex1="psd_bar1_v3" vertex2="psd_bar1_v2" vertex3="psd_bar1_v4"/>
+      <triangular vertex1="psd_bar1_v5" vertex2="psd_bar1_v3" vertex3="psd_bar1_v6"/>
+      <triangular vertex1="psd_bar1_v6" vertex2="psd_bar1_v3" vertex3="psd_bar1_v4"/>
+      <triangular vertex1="psd_bar1_v6" vertex2="psd_bar1_v4" vertex3="psd_bar1_v7"/>
+      <triangular vertex1="psd_bar1_v7" vertex2="psd_bar1_v4" vertex3="psd_bar1_v8"/>
+      <triangular vertex1="psd_bar1_v9" vertex2="psd_bar1_v0" vertex3="psd_bar1_v10"/>
+      <triangular vertex1="psd_bar1_v10" vertex2="psd_bar1_v0" vertex3="psd_bar1_v2"/>
+      <triangular vertex1="psd_bar1_v10" vertex2="psd_bar1_v2" vertex3="psd_bar1_v11"/>
+      <triangular vertex1="psd_bar1_v11" vertex2="psd_bar1_v2" vertex3="psd_bar1_v3"/>
+      <triangular vertex1="psd_bar1_v4" vertex2="psd_bar1_v12" vertex3="psd_bar1_v8"/>
+      <triangular vertex1="psd_bar1_v8" vertex2="psd_bar1_v12" vertex3="psd_bar1_v13"/>
+      <triangular vertex1="psd_bar1_v8" vertex2="psd_bar1_v13" vertex3="psd_bar1_v7"/>
+      <triangular vertex1="psd_bar1_v7" vertex2="psd_bar1_v13" vertex3="psd_bar1_v14"/>
+      <triangular vertex1="psd_bar1_v7" vertex2="psd_bar1_v14" vertex3="psd_bar1_v6"/>
+      <triangular vertex1="psd_bar1_v6" vertex2="psd_bar1_v14" vertex3="psd_bar1_v15"/>
+      <triangular vertex1="psd_bar1_v6" vertex2="psd_bar1_v15" vertex3="psd_bar1_v5"/>
+      <triangular vertex1="psd_bar1_v5" vertex2="psd_bar1_v15" vertex3="psd_bar1_v16"/>
+      <triangular vertex1="psd_bar1_v5" vertex2="psd_bar1_v16" vertex3="psd_bar1_v3"/>
+      <triangular vertex1="psd_bar1_v3" vertex2="psd_bar1_v16" vertex3="psd_bar1_v17"/>
+      <triangular vertex1="psd_bar1_v3" vertex2="psd_bar1_v17" vertex3="psd_bar1_v11"/>
+      <triangular vertex1="psd_bar1_v11" vertex2="psd_bar1_v17" vertex3="psd_bar1_v18"/>
+      <triangular vertex1="psd_bar1_v11" vertex2="psd_bar1_v18" vertex3="psd_bar1_v10"/>
+      <triangular vertex1="psd_bar1_v10" vertex2="psd_bar1_v18" vertex3="psd_bar1_v19"/>
+      <triangular vertex1="psd_bar1_v10" vertex2="psd_bar1_v19" vertex3="psd_bar1_v9"/>
+      <triangular vertex1="psd_bar1_v9" vertex2="psd_bar1_v19" vertex3="psd_bar1_v20"/>
+      <triangular vertex1="psd_bar1_v9" vertex2="psd_bar1_v20" vertex3="psd_bar1_v0"/>
+      <triangular vertex1="psd_bar1_v0" vertex2="psd_bar1_v20" vertex3="psd_bar1_v21"/>
+      <triangular vertex1="psd_bar1_v0" vertex2="psd_bar1_v21" vertex3="psd_bar1_v1"/>
+      <triangular vertex1="psd_bar1_v1" vertex2="psd_bar1_v21" vertex3="psd_bar1_v22"/>
+      <triangular vertex1="psd_bar1_v1" vertex2="psd_bar1_v22" vertex3="psd_bar1_v2"/>
+      <triangular vertex1="psd_bar1_v2" vertex2="psd_bar1_v22" vertex3="psd_bar1_v23"/>
+      <triangular vertex1="psd_bar1_v2" vertex2="psd_bar1_v23" vertex3="psd_bar1_v4"/>
+      <triangular vertex1="psd_bar1_v4" vertex2="psd_bar1_v23" vertex3="psd_bar1_v12"/>
+      <triangular vertex1="psd_bar1_v17" vertex2="psd_bar1_v24" vertex3="psd_bar1_v18"/>
+      <triangular vertex1="psd_bar1_v18" vertex2="psd_bar1_v24" vertex3="psd_bar1_v25"/>
+      <triangular vertex1="psd_bar1_v18" vertex2="psd_bar1_v25" vertex3="psd_bar1_v19"/>
+      <triangular vertex1="psd_bar1_v14" vertex2="psd_bar1_v26" vertex3="psd_bar1_v15"/>
+      <triangular vertex1="psd_bar1_v15" vertex2="psd_bar1_v26" vertex3="psd_bar1_v24"/>
+      <triangular vertex1="psd_bar1_v15" vertex2="psd_bar1_v24" vertex3="psd_bar1_v16"/>
+      <triangular vertex1="psd_bar1_v16" vertex2="psd_bar1_v24" vertex3="psd_bar1_v17"/>
+      <triangular vertex1="psd_bar1_v23" vertex2="psd_bar1_v27" vertex3="psd_bar1_v12"/>
+      <triangular vertex1="psd_bar1_v12" vertex2="psd_bar1_v27" vertex3="psd_bar1_v26"/>
+      <triangular vertex1="psd_bar1_v12" vertex2="psd_bar1_v26" vertex3="psd_bar1_v13"/>
+      <triangular vertex1="psd_bar1_v13" vertex2="psd_bar1_v26" vertex3="psd_bar1_v14"/>
+      <triangular vertex1="psd_bar1_v23" vertex2="psd_bar1_v22" vertex3="psd_bar1_v27"/>
+      <triangular vertex1="psd_bar1_v27" vertex2="psd_bar1_v22" vertex3="psd_bar1_v21"/>
+      <triangular vertex1="psd_bar1_v27" vertex2="psd_bar1_v21" vertex3="psd_bar1_v25"/>
+      <triangular vertex1="psd_bar1_v25" vertex2="psd_bar1_v21" vertex3="psd_bar1_v20"/>
+      <triangular vertex1="psd_bar1_v25" vertex2="psd_bar1_v20" vertex3="psd_bar1_v19"/>
+      <triangular vertex1="psd_bar1_v26" vertex2="psd_bar1_v27" vertex3="psd_bar1_v28"/>
+      <triangular vertex1="psd_bar1_v26" vertex2="psd_bar1_v28" vertex3="psd_bar1_v29"/>
+      <triangular vertex1="psd_bar1_v29" vertex2="psd_bar1_v28" vertex3="psd_bar1_v30"/>
+      <triangular vertex1="psd_bar1_v29" vertex2="psd_bar1_v30" vertex3="psd_bar1_v31"/>
+      <triangular vertex1="psd_bar1_v32" vertex2="psd_bar1_v24" vertex3="psd_bar1_v29"/>
+      <triangular vertex1="psd_bar1_v29" vertex2="psd_bar1_v24" vertex3="psd_bar1_v26"/>
+      <triangular vertex1="psd_bar1_v33" vertex2="psd_bar1_v29" vertex3="psd_bar1_v34"/>
+      <triangular vertex1="psd_bar1_v34" vertex2="psd_bar1_v29" vertex3="psd_bar1_v31"/>
+      <triangular vertex1="psd_bar1_v34" vertex2="psd_bar1_v31" vertex3="psd_bar1_v35"/>
+      <triangular vertex1="psd_bar1_v36" vertex2="psd_bar1_v32" vertex3="psd_bar1_v37"/>
+      <triangular vertex1="psd_bar1_v37" vertex2="psd_bar1_v32" vertex3="psd_bar1_v29"/>
+      <triangular vertex1="psd_bar1_v37" vertex2="psd_bar1_v29" vertex3="psd_bar1_v38"/>
+      <triangular vertex1="psd_bar1_v38" vertex2="psd_bar1_v29" vertex3="psd_bar1_v33"/>
+      <triangular vertex1="psd_bar1_v39" vertex2="psd_bar1_v40" vertex3="psd_bar1_v41"/>
+      <triangular vertex1="psd_bar1_v41" vertex2="psd_bar1_v40" vertex3="psd_bar1_v32"/>
+      <triangular vertex1="psd_bar1_v41" vertex2="psd_bar1_v32" vertex3="psd_bar1_v42"/>
+      <triangular vertex1="psd_bar1_v42" vertex2="psd_bar1_v32" vertex3="psd_bar1_v36"/>
+      <triangular vertex1="psd_bar1_v39" vertex2="psd_bar1_v43" vertex3="psd_bar1_v40"/>
+      <triangular vertex1="psd_bar1_v40" vertex2="psd_bar1_v43" vertex3="psd_bar1_v44"/>
+      <triangular vertex1="psd_bar1_v40" vertex2="psd_bar1_v44" vertex3="psd_bar1_v31"/>
+      <triangular vertex1="psd_bar1_v31" vertex2="psd_bar1_v44" vertex3="psd_bar1_v45"/>
+      <triangular vertex1="psd_bar1_v31" vertex2="psd_bar1_v45" vertex3="psd_bar1_v35"/>
+      <triangular vertex1="psd_bar1_v46" vertex2="psd_bar1_v40" vertex3="psd_bar1_v30"/>
+      <triangular vertex1="psd_bar1_v30" vertex2="psd_bar1_v40" vertex3="psd_bar1_v31"/>
+      <triangular vertex1="psd_bar1_v47" vertex2="psd_bar1_v46" vertex3="psd_bar1_v28"/>
+      <triangular vertex1="psd_bar1_v28" vertex2="psd_bar1_v46" vertex3="psd_bar1_v30"/>
+      <triangular vertex1="psd_bar1_v25" vertex2="psd_bar1_v47" vertex3="psd_bar1_v27"/>
+      <triangular vertex1="psd_bar1_v27" vertex2="psd_bar1_v47" vertex3="psd_bar1_v28"/>
+      <triangular vertex1="psd_bar1_v47" vertex2="psd_bar1_v25" vertex3="psd_bar1_v24"/>
+      <triangular vertex1="psd_bar1_v47" vertex2="psd_bar1_v24" vertex3="psd_bar1_v46"/>
+      <triangular vertex1="psd_bar1_v46" vertex2="psd_bar1_v24" vertex3="psd_bar1_v32"/>
+      <triangular vertex1="psd_bar1_v46" vertex2="psd_bar1_v32" vertex3="psd_bar1_v40"/>
+      <triangular vertex1="psd_bar1_v48" vertex2="psd_bar1_v41" vertex3="psd_bar1_v49"/>
+      <triangular vertex1="psd_bar1_v49" vertex2="psd_bar1_v41" vertex3="psd_bar1_v42"/>
+      <triangular vertex1="psd_bar1_v49" vertex2="psd_bar1_v42" vertex3="psd_bar1_v50"/>
+      <triangular vertex1="psd_bar1_v50" vertex2="psd_bar1_v42" vertex3="psd_bar1_v36"/>
+      <triangular vertex1="psd_bar1_v50" vertex2="psd_bar1_v36" vertex3="psd_bar1_v51"/>
+      <triangular vertex1="psd_bar1_v51" vertex2="psd_bar1_v36" vertex3="psd_bar1_v37"/>
+      <triangular vertex1="psd_bar1_v51" vertex2="psd_bar1_v37" vertex3="psd_bar1_v52"/>
+      <triangular vertex1="psd_bar1_v52" vertex2="psd_bar1_v37" vertex3="psd_bar1_v38"/>
+      <triangular vertex1="psd_bar1_v52" vertex2="psd_bar1_v38" vertex3="psd_bar1_v53"/>
+      <triangular vertex1="psd_bar1_v53" vertex2="psd_bar1_v38" vertex3="psd_bar1_v33"/>
+      <triangular vertex1="psd_bar1_v53" vertex2="psd_bar1_v33" vertex3="psd_bar1_v54"/>
+      <triangular vertex1="psd_bar1_v54" vertex2="psd_bar1_v33" vertex3="psd_bar1_v34"/>
+      <triangular vertex1="psd_bar1_v54" vertex2="psd_bar1_v34" vertex3="psd_bar1_v55"/>
+      <triangular vertex1="psd_bar1_v55" vertex2="psd_bar1_v34" vertex3="psd_bar1_v35"/>
+      <triangular vertex1="psd_bar1_v55" vertex2="psd_bar1_v35" vertex3="psd_bar1_v56"/>
+      <triangular vertex1="psd_bar1_v56" vertex2="psd_bar1_v35" vertex3="psd_bar1_v45"/>
+      <triangular vertex1="psd_bar1_v56" vertex2="psd_bar1_v45" vertex3="psd_bar1_v57"/>
+      <triangular vertex1="psd_bar1_v57" vertex2="psd_bar1_v45" vertex3="psd_bar1_v44"/>
+      <triangular vertex1="psd_bar1_v57" vertex2="psd_bar1_v44" vertex3="psd_bar1_v58"/>
+      <triangular vertex1="psd_bar1_v58" vertex2="psd_bar1_v44" vertex3="psd_bar1_v43"/>
+      <triangular vertex1="psd_bar1_v58" vertex2="psd_bar1_v43" vertex3="psd_bar1_v59"/>
+      <triangular vertex1="psd_bar1_v59" vertex2="psd_bar1_v43" vertex3="psd_bar1_v39"/>
+      <triangular vertex1="psd_bar1_v59" vertex2="psd_bar1_v39" vertex3="psd_bar1_v48"/>
+      <triangular vertex1="psd_bar1_v48" vertex2="psd_bar1_v39" vertex3="psd_bar1_v41"/>
+      <triangular vertex1="psd_bar1_v57" vertex2="psd_bar1_v58" vertex3="psd_bar1_v59"/>
+      <triangular vertex1="psd_bar1_v53" vertex2="psd_bar1_v59" vertex3="psd_bar1_v48"/>
+      <triangular vertex1="psd_bar1_v52" vertex2="psd_bar1_v53" vertex3="psd_bar1_v51"/>
+      <triangular vertex1="psd_bar1_v51" vertex2="psd_bar1_v53" vertex3="psd_bar1_v48"/>
+      <triangular vertex1="psd_bar1_v51" vertex2="psd_bar1_v48" vertex3="psd_bar1_v50"/>
+      <triangular vertex1="psd_bar1_v50" vertex2="psd_bar1_v48" vertex3="psd_bar1_v49"/>
+      <triangular vertex1="psd_bar1_v56" vertex2="psd_bar1_v57" vertex3="psd_bar1_v55"/>
+      <triangular vertex1="psd_bar1_v55" vertex2="psd_bar1_v57" vertex3="psd_bar1_v59"/>
+      <triangular vertex1="psd_bar1_v55" vertex2="psd_bar1_v59" vertex3="psd_bar1_v54"/>
+      <triangular vertex1="psd_bar1_v54" vertex2="psd_bar1_v59" vertex3="psd_bar1_v53"/>
+    </tessellated>
+  </solids>
+
+  <structure>
+    <volume name="Psd_Strip0LV">
+      <materialref ref="PSDmaterial_Sci0x9d1cb80"/>
+      <solidref ref="psd_bar10x1db27b0"/>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="Psd_Strip0LV"/>
+  </setup>
+
+</gdml>

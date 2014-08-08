@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE gdml[
+<!ENTITY define SYSTEM "stk_converter_coordinates.xml">
+]>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schema/gdml.xsd">
+
+  &define;
+  
+  <setup name="Default" version="1.0">
+    <world ref="stk_tungsten"/>
+  </setup>
+
+</gdml>
+

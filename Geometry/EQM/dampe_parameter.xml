@@ -1,0 +1,9 @@
+<!--Prototype parameters-->
+
+<define>
+   <!-- offests -->   
+   <constant name="sat_adjust_x_position" value="300"/>  <!-- mm -->   
+   <constant name="sat_adjust_y_position" value="0"/>    <!-- mm -->
+   <constant name="sat_adjust_z_position" value="0"/>    <!-- mm -->
+</define>
+

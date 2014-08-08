@@ -1,0 +1,10 @@
+/*
+ *  $Id: ReleaseNote.Geometry, 2014-08-08 21:19:26 DAMPE $
+ *  Author(s):
+ *    =========    DMPSW group    ============
+*/
+
+--->    2014-08-08  21:18:29
+    1.  setup Geometry for DMPSW
+    2.  include EM and EQM
+

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schema/gdml.xsd">
+
+  <define>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v0" unit="mm" x="80" y="-380" z="19.3886394500732"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v1" unit="mm" x="80" y="380" z="19.3886394500732"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v2" unit="mm" x="80" y="-380" z="44.3886375427246"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v3" unit="mm" x="80" y="380" z="44.3886375427246"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v4" unit="mm" x="-680" y="-380" z="44.3886375427246"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v5" unit="mm" x="-680" y="380" z="44.3886375427246"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v6" unit="mm" x="-680" y="-380" z="19.3886394500732"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v7" unit="mm" x="-680" y="380" z="19.3886394500732"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v8" unit="mm" x="80" y="-380" z="49.8886413574219"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v9" unit="mm" x="80" y="380" z="49.8886413574219"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v10" unit="mm" x="80" y="-380" z="75.8886413574219"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v11" unit="mm" x="80" y="380" z="75.8886413574219"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v12" unit="mm" x="-680" y="-380" z="75.8886413574219"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v13" unit="mm" x="-680" y="380" z="75.8886413574219"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v14" unit="mm" x="-680" y="-380" z="49.8886413574219"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v15" unit="mm" x="-680" y="380" z="49.8886413574219"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v16" unit="mm" x="80" y="-380" z="-137.110404418945"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v17" unit="mm" x="80" y="380" z="-137.110404418945"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v18" unit="mm" x="80" y="-380" z="-113.111404418945"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v19" unit="mm" x="80" y="380" z="-113.111404418945"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v20" unit="mm" x="-680" y="-380" z="-113.111404418945"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v21" unit="mm" x="-680" y="380" z="-113.111404418945"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v22" unit="mm" x="-680" y="-380" z="-137.110404418945"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v23" unit="mm" x="-680" y="380" z="-137.110404418945"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v24" unit="mm" x="80" y="-380" z="-76.1113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v25" unit="mm" x="80" y="380" z="-76.1113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v26" unit="mm" x="80" y="-380" z="-50.1113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v27" unit="mm" x="80" y="380" z="-50.1113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v28" unit="mm" x="-680" y="-380" z="-50.1113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v29" unit="mm" x="-680" y="380" z="-50.1113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v30" unit="mm" x="-680" y="-380" z="-76.1113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v31" unit="mm" x="-680" y="380" z="-76.1113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v32" unit="mm" x="80" y="-380" z="-107.611396789551"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v33" unit="mm" x="80" y="380" z="-107.611396789551"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v34" unit="mm" x="80" y="-380" z="-81.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v35" unit="mm" x="80" y="380" z="-81.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v36" unit="mm" x="-680" y="-380" z="-81.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v37" unit="mm" x="-680" y="380" z="-81.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v38" unit="mm" x="-680" y="-380" z="-107.611396789551"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v39" unit="mm" x="-680" y="380" z="-107.611396789551"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v40" unit="mm" x="80" y="-380" z="-12.1113595962524"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v41" unit="mm" x="80" y="380" z="-12.1113595962524"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v42" unit="mm" x="80" y="-380" z="12.8886404037476"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v43" unit="mm" x="80" y="380" z="12.8886404037476"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v44" unit="mm" x="-680" y="-380" z="12.8886404037476"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v45" unit="mm" x="-680" y="380" z="12.8886404037476"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v46" unit="mm" x="-680" y="-380" z="-12.1113595962524"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v47" unit="mm" x="-680" y="380" z="-12.1113595962524"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v48" unit="mm" x="80" y="-380" z="-43.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v49" unit="mm" x="80" y="380" z="-43.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v50" unit="mm" x="80" y="-380" z="-18.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v51" unit="mm" x="80" y="380" z="-18.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v52" unit="mm" x="-680" y="-380" z="-18.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v53" unit="mm" x="-680" y="380" z="-18.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v54" unit="mm" x="-680" y="-380" z="-43.6113586425781"/>
+    <position name="DAM_ALLTRAY_Ass_Hcomb-stl_v55" unit="mm" x="-680" y="380" z="-43.6113586425781"/>
+  </define>
+
+  <materials>
+    <element name="aluminum" formula="Al" Z="13"> 
+       <atom value="26.98"/>   
+    </element>
+    <material name="Honeycomb" state="solid">
+       <D value="0.030" unit="g/cm3"/>
+       <fraction n="1." ref="aluminum"/>
+    </material>
+  </materials>
+
+  <solids>
+    <tessellated aunit="deg" lunit="mm" name="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-1">
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v0" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v1" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v2"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v1" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v3"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v4" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v5"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v5" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v3"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v0" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v6"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v6" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v4"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v6" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v7" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v0"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v0" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v7" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v1"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v7" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v5" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v1"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v1" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v5" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v3"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v7" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v6" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v5"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v5" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v6" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v4"/>
+    </tessellated>
+    <tessellated aunit="deg" lunit="mm" name="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-2">
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v8" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v9" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v10"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v9" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v11"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v12" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v13"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v13" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v11"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v8" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v14"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v14" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v12"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v14" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v15" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v8"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v8" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v15" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v9"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v15" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v13" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v9"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v9" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v13" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v11"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v15" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v14" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v13"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v13" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v14" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v12"/>
+    </tessellated>
+    <tessellated aunit="deg" lunit="mm" name="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-3">
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v16" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v17" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v18"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v17" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v19"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v20" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v21"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v21" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v19"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v16" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v22"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v22" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v20"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v22" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v23" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v16"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v16" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v23" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v17"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v23" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v21" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v17"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v17" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v21" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v19"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v23" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v22" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v21"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v21" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v22" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v20"/>
+    </tessellated>
+    <tessellated aunit="deg" lunit="mm" name="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-4">
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v24" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v25" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v26"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v25" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v27"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v28" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v29"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v29" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v27"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v24" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v30"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v30" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v28"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v30" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v31" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v24"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v24" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v31" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v25"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v31" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v29" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v25"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v25" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v29" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v27"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v31" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v30" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v29"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v29" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v30" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v28"/>
+    </tessellated>
+    <tessellated aunit="deg" lunit="mm" name="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-5">
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v32" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v33" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v34"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v33" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v35"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v36" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v37"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v37" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v35"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v32" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v38"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v38" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v36"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v38" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v39" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v32"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v32" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v39" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v33"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v39" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v37" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v33"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v33" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v37" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v35"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v39" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v38" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v37"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v37" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v38" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v36"/>
+    </tessellated>
+    <tessellated aunit="deg" lunit="mm" name="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-6">
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v40" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v41" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v42"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v41" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v43"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v44" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v45"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v45" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v43"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v40" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v46"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v46" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v44"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v46" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v47" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v40"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v40" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v47" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v41"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v47" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v45" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v41"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v41" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v45" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v43"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v47" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v46" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v45"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v45" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v46" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v44"/>
+    </tessellated>
+    <tessellated aunit="deg" lunit="mm" name="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-7">
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v48" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v49" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v50"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v49" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v51"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v52" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v53"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v53" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v51"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v48" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v54"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v54" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v52"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v54" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v55" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v48"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v48" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v55" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v49"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v55" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v53" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v49"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v49" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v53" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v51"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v55" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v54" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v53"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v53" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v54" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v52"/>
+    </tessellated>
+    <tessellated aunit="deg" lunit="mm" name="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0">
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v0" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v1" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v2"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v1" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v3"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v4" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v5"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v5" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v3"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v0" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v6"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v6" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v2" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v4"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v6" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v7" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v0"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v0" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v7" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v1"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v7" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v5" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v1"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v1" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v5" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v3"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v7" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v6" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v5"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v5" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v6" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v4"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v8" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v9" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v10"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v9" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v11"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v12" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v13"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v13" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v11"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v8" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v14"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v14" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v10" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v12"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v14" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v15" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v8"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v8" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v15" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v9"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v15" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v13" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v9"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v9" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v13" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v11"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v15" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v14" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v13"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v13" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v14" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v12"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v16" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v17" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v18"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v17" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v19"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v20" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v21"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v21" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v19"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v16" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v22"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v22" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v18" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v20"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v22" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v23" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v16"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v16" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v23" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v17"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v23" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v21" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v17"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v17" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v21" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v19"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v23" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v22" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v21"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v21" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v22" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v20"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v24" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v25" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v26"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v25" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v27"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v28" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v29"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v29" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v27"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v24" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v30"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v30" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v26" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v28"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v30" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v31" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v24"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v24" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v31" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v25"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v31" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v29" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v25"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v25" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v29" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v27"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v31" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v30" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v29"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v29" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v30" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v28"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v32" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v33" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v34"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v33" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v35"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v36" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v37"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v37" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v35"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v32" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v38"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v38" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v34" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v36"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v38" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v39" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v32"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v32" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v39" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v33"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v39" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v37" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v33"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v33" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v37" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v35"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v39" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v38" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v37"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v37" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v38" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v36"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v40" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v41" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v42"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v41" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v43"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v44" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v45"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v45" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v43"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v40" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v46"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v46" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v42" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v44"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v46" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v47" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v40"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v40" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v47" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v41"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v47" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v45" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v41"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v41" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v45" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v43"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v47" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v46" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v45"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v45" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v46" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v44"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v48" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v49" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v50"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v49" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v51"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v52" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v53"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v53" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v51"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v48" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v54"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v54" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v50" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v52"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v54" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v55" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v48"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v48" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v55" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v49"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v55" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v53" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v49"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v49" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v53" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v51"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v55" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v54" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v53"/>
+      <triangular vertex1="DAM_ALLTRAY_Ass_Hcomb-stl_v53" vertex2="DAM_ALLTRAY_Ass_Hcomb-stl_v54" vertex3="DAM_ALLTRAY_Ass_Hcomb-stl_v52"/>
+    </tessellated>    
+  </solids>
+
+  <structure>
+    <volume name="STK_hcomb-5">
+      <materialref ref="Honeycomb"/>
+      <solidref ref="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-1"/>
+    </volume>
+    <volume name="STK_hcomb-6">
+      <materialref ref="Honeycomb"/>
+      <solidref ref="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-2"/>
+    </volume>
+    <volume name="STK_hcomb-0">
+      <materialref ref="Honeycomb"/>
+      <solidref ref="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-3"/>
+    </volume>
+    <volume name="STK_hcomb-2">
+      <materialref ref="Honeycomb"/>
+      <solidref ref="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-4"/>
+    </volume>
+    <volume name="STK_hcomb-1">
+      <materialref ref="Honeycomb"/>
+      <solidref ref="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-5"/>
+    </volume>
+    <volume name="STK_hcomb-4">
+      <materialref ref="Honeycomb"/>
+      <solidref ref="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-6"/>
+    </volume>
+    <volume name="STK_hcomb-3">
+      <materialref ref="Honeycomb"/>
+      <solidref ref="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0-7"/>
+    </volume>
+    <volume name="stk_hcomb">
+      <materialref ref="Honeycomb"/>
+      <solidref ref="DAM_ALLTRAY_Ass_Hcomb-stl0x89bfb0"/>
+      <physvol>
+        <volumeref ref="STK_hcomb-5"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="STK_hcomb-6"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="STK_hcomb-0"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="STK_hcomb-2"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="STK_hcomb-1"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="STK_hcomb-4"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="STK_hcomb-3"/>
+      </physvol>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="stk_hcomb"/>
+  </setup>
+
+</gdml>

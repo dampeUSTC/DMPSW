@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE gdml[
+<!ENTITY define SYSTEM "stk_parameter.xml">
+]>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schema/gdml.xsd">
+
+<!--
+     File name: STK.gdml
+     version:0.1
+     Author:weiyf(weiyf@mail.ustc.edu.cn)
+     Time:2013.10.25
+     Description:This GDML file is STK subdetector geometry description 
+-->
+  
+ &define; 
+    
+ <materials>
+
+  <!--Vacuum-->
+  <element name="videRef" formula="VACUUM" Z="1">
+   <atom value="1."/>
+  </element>
+  <material formula=" " name="Vacuum">
+   <D value="1.e-25" unit="g/cm3" />
+   <fraction n="1.0" ref="videRef" />
+  </material>
+
+ </materials>
+
+
+ <solids>
+  <!--STK detector:760.56*760.56*192mm-->
+  <box lunit="mm" name="STK_detector_box" x="1104" y="1104" z="231.5" />
+ </solids>
+
+
+ <structure>
+
+  <volume name="Stk_DetLV" >
+   <materialref ref="Vacuum" />
+   <solidref ref="STK_detector_box" />      
+      
+      <!-- Supporting structures -->
+      <physvol>
+        <file name="stk_corners.gdml"/> 
+        <position name="stk_corners_pos" x="stk_adjust_x_position" y="stk_adjust_y_position" z="stk_adjust_z_position" unit="mm"/>
+        <rotationref ref="old_to_new_coordinatesystem_rotation" />
+      </physvol>   
+      <physvol>       
+        <file name="stk_frames.gdml"/>  
+        <position name="stk_frames_pos" x="stk_adjust_x_position" y="stk_adjust_y_position" z="stk_adjust_z_position+stk_foils_z_shift" unit="mm"/>
+        <rotationref ref="old_to_new_coordinatesystem_rotation" /> 
+      </physvol>  
+      <physvol>       
+        <file name="stk_ladders_advanced.gdml"/>              
+        <position name="stk_ladders_pos" x="stk_adjust_x_position" y="stk_adjust_y_position" z="stk_adjust_z_position" unit="mm"/>
+        <rotationref ref="old_to_new_coordinatesystem_rotation" />
+      </physvol>
+      <physvol>       
+        <file name="stk_corner-bolts.gdml"/>
+        <position name="stk_corner_bolts_pos" x="stk_adjust_x_position" y="stk_adjust_y_position" z="stk_adjust_z_position+stk_foils_z_shift" unit="mm"/>
+        <rotationref ref="old_to_new_coordinatesystem_rotation" />
+      </physvol>
+      <physvol>       
+        <file name="stk_foils_advanced.gdml"/>
+        <position name="stk_foils_pos" x="stk_adjust_x_position" y="stk_adjust_y_position" z="stk_adjust_z_position+stk_foils_z_shift" unit="mm"/>
+        <rotationref ref="old_to_new_coordinatesystem_rotation" />
+      </physvol>            
+      <physvol>       
+        <file name="stk_hcomb_advanced.gdml"/>
+        <position name="stk_hcomb_pos" x="stk_adjust_x_position" y="stk_adjust_y_position" z="stk_adjust_z_position" unit="mm"/>
+        <rotationref ref="old_to_new_coordinatesystem_rotation" />
+      </physvol>                  
+      
+      <!-- Silicon detectors and tungsten converters -->
+      
+      <physvol>       
+        <file name="stk_si_advanced.gdml"/>                      
+        <position name="stk_si_pos" x="stk_adjust_x_position" y="stk_adjust_y_position" z="stk_adjust_z_position" unit="mm"/>
+        <rotationref ref="old_to_new_coordinatesystem_rotation" />
+      </physvol>
+      <physvol>       
+        <file name="stk_tungsten_advanced.gdml"/>        
+        <position name="stk_tungsten_converters_pos" x="stk_adjust_x_position" y="stk_adjust_y_position" z="stk_adjust_z_position" unit="mm"/>
+        <rotationref ref="old_to_new_coordinatesystem_rotation" />
+      </physvol>
+                 
+  </volume>
+
+ </structure>
+
+
+ <setup name="Default" version="1.0" >
+  <world ref="Stk_DetLV" />
+ </setup>
+
+
+</gdml>

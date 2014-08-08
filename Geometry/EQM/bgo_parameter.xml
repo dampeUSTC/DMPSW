@@ -1,0 +1,26 @@
+<!-- BGO parameters -->
+
+<define>
+
+  <constant name="BGOdetectorX" value="900"/>
+  <constant name="BGOdetectorY" value="900"/>
+  <constant name="BGOdetectorZ" value="493.5"/>
+  <constant name="BGObarX" value="25"/>
+  <constant name="BGObarY" value="600"/>
+  <constant name="BGObarZ" value="25"/>
+  <constant name="BGOwithrubberX" value="26"/>
+  <constant name="BGOwithrubberY" value="600"/>
+  <constant name="BGOwithrubberZ" value="26"/>
+
+  <constant name="BGO_NbOfCALLayers" value="14"/>
+  <constant name="BGO_NbOfCALLayerBars" value="22"/>
+  <constant name="BGO_NbOfCALBars" value="308"/>
+  <constant name="BGO_CALBarsSeparation" value="2.5"/>
+  <constant name="BGO_CALLayerSeparation" value="4"/>
+  <constant name="BGO_CALTopLayerZ" value="-196.25" />
+
+  <rotation name="BGObar_Rot" unit="deg" x="0" y="0" z="90"/>
+  <!-- ss=supporting structure -->
+  <rotation name="BGOss_Rot" unit="deg" x="90" y="0" z="0"/>
+  
+</define>

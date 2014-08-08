@@ -1,0 +1,73 @@
+<!--   #############################################################################   -->
+<!--   STK geometry parameters (to be read by DAMPE Geometry manager)                  -->
+<!--   #############################################################################   -->
+
+
+<define>
+ 
+     <!-- STK internal offsets / rotations -->
+     <!-- IMPORTANT: [stk_adjust_x(y)(z)_position] and [old_to_new_coordinatesystem_rotation] -->
+     <!--             are read by DAMPE geometry manager. Do not introduce any additional     --> 
+     <!--             shift parameters for silicon detectors and tungsten converters          -->
+     <!--             (this can be safely done for supporting materrials,                     --> 
+     <!--             e.g. [stk_foils_z_shift] parameter)                                     -->
+     
+     <constant name="stk_adjust_x_position" value="300"/>          
+     <constant name="stk_adjust_y_position" value="0"/>
+     <constant name="stk_adjust_z_position" value="-32.5"/>
+     <constant name="stk_foils_z_shift" value="-0.690"/>            
+     <rotation name="old_to_new_coordinatesystem_rotation" unit="deg" x="180" y="0" z="0" />
+ 
+      
+
+      <!--                                                                     -->
+      <!-- The following parameters are be read by the DAMPE geometry manager  -->
+      <!--                                                                     -->      
+      
+      <!-- REPLACE THE FOLLOWING WITH THE EXACT RADIATION LENGTH MAP -->
+      <!-- Converter / supporting matreerilas thickness -->                  
+      <constant name="ConverterX0"                value="3.504"/>                 <!-- radiation length in mm,  see: http://pdg.lbl.gov/2011/AtomicNuclearProperties/HTML_PAGES/074.html                             -->      
+      <!-- Supporting materials -->
+      <constant name="TraySupportAllThicknessX0"       value="0.0170"/>                <!-- amount of radioation lengths in supporting materials, inclluding silicons, excluding tungsten, see http://dpnc.unige.ch/dampe/dokuwiki/doku.php?id=dampesoftware:reconstruction#stk -->
+      <constant name="TraySupportHCombThicknessX0"     value="0.0035"/>                <!-- amount of radioation lengths in supporting materials, inclluding silicons, excluding tungsten, see http://dpnc.unige.ch/dampe/dokuwiki/doku.php?id=dampesoftware:reconstruction#stk -->
+      <constant name="STKHobeyCombWidth"               value="25.0"/>                  <!-- mm see http://dpnc.unige.ch/dampe/dokuwiki/doku.php?id=dampesoftware:reconstruction#stk -->                          
+      <!-- REPLACE THE FOLLOWING WITH THE EXACT RADIATION LENGTH MAP -->
+     
+      
+      <!-- SSD geometry -->
+      <constant name="TKRSiliconThickness"  value="320."/>       <!-- micrometer -->
+                
+      <!-- -->      
+      <constant name="TKRSiliconPitch"      value="121."/>       <!-- micrometer  (physical pitch)-->
+      <constant name="TKRSiliconROPitch"    value="242."/>       <!-- micrometer -->      
+      <constant name="SiliconGuardRing"     value="1.036"/>      <!-- mm  (guard ring thickness)  -->
+      <constant name="NbOfTKRStrips"        value="768"/>
+      <constant name="NbOfTKRROStrips"      value="384"/>
+
+      <!-- ladder geometry -->
+      <constant name="NbOfTKRTiles"         value="4"/>          <!-- number of tiles per ladder --> 
+      <constant name="NbOfWTKRTiles"        value="2"/>
+      <constant name="TKRWRecess"           value="1."/>         <!-- mm -->
+      
+      
+      <!-- tracker geometry -->
+      <!-- these parameters are used in the simulation package to set up the position of primary generated particle -->
+      <!-- please consider removing these parameters in the future                                                  -->
+      <constant name="TilesSeparation"           value="80."/>      <!-- OBSOLETE / DEPRECATED  -->  <!-- micrometer -->
+      <constant name="TKRLayerDistance"          value="3.15"/>     <!-- OBSOLETE / DEPRECATED  -->  <!-- cm    original value 3.2   check with Xin -->   
+      <constant name="TKRViewsDistance"          value="2.16"/>     <!-- OBSOLETE / DEPRECATED  -->  <!-- mm    original value 2.0  check with Xin  -->
+      <constant name="TKRCenterGap"              value="80."/>      <!-- OBSOLETE / DEPRECATED  -->  <!-- micrometer -->
+      <constant name="TKRSiliconTileXY"          value="9.5"/>      <!-- OBSOLETE / DEPRECATED  -->  <!-- cm -->
+               
+      <!-- -->
+      <constant name="NbOfTKRLayers"             value="6"/>
+      <constant name="NbOfTKRBlocks"             value="4"/>
+      <constant name="STKnTRB"                   value="8"/>
+      <constant name="NConverterLayers"          value="4"/>
+           
+      <!-- others --> 
+      <constant name="STKnladdersXdirection"     value="8"/>
+      <constant name="STKnladdersYdirection"     value="8"/>
+      <constant name="STKnconvertersXYdirection" value="4"/>
+</define>
+      

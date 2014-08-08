@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE gdml[
+<!ENTITY parameter SYSTEM "psd_parameter.xml">
+<!ENTITY materials SYSTEM "../Schema/materials.xml">
+]>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schema/gdml.xsd">
+
+<!--define-->
+  &parameter;
+
+<!--materials-->
+  &materials;
+
+<!--solids-->
+  <solids>
+   <box lunit="mm" name="Psd_detector_box" x="PSDdetectorX" y="PSDdetectorY" z="PSDdetectorZ" />
+  </solids>
+
+  <structure>
+   <volume name="Psd_DetLV" >
+    <materialref ref="Vacuum" />
+    <solidref ref="Psd_detector_box" />
+
+     <physvol name="psd_cfrp">
+      <file name="psd_cfrp.gdml" />
+      <positionref ref="psdCAD_pos" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+   
+     <physvol name="psd_pmt">
+      <file name="psd_pmt.gdml" />
+      <positionref ref="psdCAD_pos" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_Al">
+      <file name="psd_Al.gdml" />
+      <positionref ref="psdCAD_pos" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <!--psd bar array-->
+     <!--layer 0-->
+     <physvol name="psd_bar000">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar000_pos" x="0" y="-7*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar001">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar001_pos" x="0" y="-6*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar002">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar002_pos" x="0" y="-5*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar003">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar003_pos" x="0" y="-4*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar004">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar004_pos" x="0" y="-3*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar005">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar005_pos" x="0" y="-2*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar006">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar006_pos" x="0" y="-1*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar007">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar007_pos" x="0" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar008">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar008_pos" x="0" y="1*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar009">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar009_pos" x="0" y="2*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar010">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar010_pos" x="0" y="3*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar011">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar011_pos" x="0" y="4*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar012">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar012_pos" x="0" y="5*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar013">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar013_pos" x="0" y="6*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar014">
+      <file name="psd_bar1.gdml" />
+      <position name="psdbar014_pos" x="0" y="7*PSDbarX" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <!--layer 1-->
+     <physvol name="psd_bar100">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar100_pos" x="-7*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar101">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar101_pos" x="-6*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar102">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar102_pos" x="-5*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar103">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar103_pos" x="-4*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar104">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar104_pos" x="-3*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar105">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar105_pos" x="-2*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar106">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar106_pos" x="-1*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar107">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar107_pos" x="0" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar108">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar108_pos" x="1*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar109">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar109_pos" x="2*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar110">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar110_pos" x="3*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar111">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar111_pos" x="4*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar112">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar112_pos" x="5*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar113">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar113_pos" x="6*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+     <physvol name="psd_bar114">
+      <file name="psd_bar2.gdml" />
+      <position name="psdbar114_pos" x="7*PSDbarX" y="0" z="-33.4" />
+      <rotationref ref="psdCAD_Rot" />
+     </physvol>
+
+   </volume>
+
+  </structure>
+
+  <setup name="Default" version="1.0" >
+   <world ref="Psd_DetLV" />
+  </setup>
+
+</gdml>

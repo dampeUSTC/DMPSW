@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!DOCTYPE gdml[
+<!ENTITY materials SYSTEM "../Schema/materials.xml">
+]>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schema/gdml.xsd">
+
+  <define>
+    <position name="EJ25402v0" unit="mm" x="36.178409576416" y="-223.575302124023" z="2.5"/>
+    <position name="EJ25402v1" unit="mm" x="36.178409576416" y="-135.40739440918" z="2.5"/>
+    <position name="EJ25402v2" unit="mm" x="36.178409576416" y="-223.575302124023" z="12.5"/>
+    <position name="EJ25402v3" unit="mm" x="36.178409576416" y="-135.40739440918" z="12.5"/>
+    <position name="EJ25402v4" unit="mm" x="36.178409576416" y="-123.575302124023" z="2.5"/>
+    <position name="EJ25402v5" unit="mm" x="36.178409576416" y="-35.4913482666016" z="2.5"/>
+    <position name="EJ25402v6" unit="mm" x="36.178409576416" y="-123.575302124023" z="12.5"/>
+    <position name="EJ25402v7" unit="mm" x="36.178409576416" y="-35.4913482666016" z="12.5"/>
+    <position name="EJ25402v8" unit="mm" x="-168.737701416016" y="-30.491340637207" z="2.5"/>
+    <position name="EJ25402v9" unit="mm" x="-263.821594238281" y="-30.491340637207" z="2.5"/>
+    <position name="EJ25402v10" unit="mm" x="-168.737701416016" y="-30.491340637207" z="12.5"/>
+    <position name="EJ25402v11" unit="mm" x="-263.821594238281" y="-30.491340637207" z="12.5"/>
+    <position name="EJ25402v12" unit="mm" x="-156.905502319336" y="-30.491340637207" z="12.5"/>
+    <position name="EJ25402v13" unit="mm" x="-68.737678527832" y="-30.491340637207" z="12.5"/>
+    <position name="EJ25402v14" unit="mm" x="-156.905502319336" y="-30.491340637207" z="2.5"/>
+    <position name="EJ25402v15" unit="mm" x="-68.737678527832" y="-30.491340637207" z="2.5"/>
+    <position name="EJ25402v16" unit="mm" x="-178.821594238281" y="-330.491302490234" z="2.5"/>
+    <position name="EJ25402v17" unit="mm" x="36.178409576416" y="-330.491302490234" z="2.5"/>
+    <position name="EJ25402v18" unit="mm" x="-178.821594238281" y="-330.491302490234" z="12.5"/>
+    <position name="EJ25402v19" unit="mm" x="36.178409576416" y="-330.491302490234" z="12.5"/>
+    <position name="EJ25402v20" unit="mm" x="36.178409576416" y="-235.40739440918" z="12.5"/>
+    <position name="EJ25402v21" unit="mm" x="36.178409576416" y="-235.40739440918" z="2.5"/>
+    <position name="EJ25402v22" unit="mm" x="31.1783905029297" y="-30.491340637207" z="12.5"/>
+    <position name="EJ25402v23" unit="mm" x="31.1783905029297" y="-30.491340637207" z="2.5"/>
+    <position name="EJ25402v24" unit="mm" x="-56.905517578125" y="-30.491340637207" z="12.5"/>
+    <position name="EJ25402v25" unit="mm" x="-56.905517578125" y="-30.491340637207" z="2.5"/>
+    <position name="EJ25402v26" unit="mm" x="-263.821594238281" y="-245.491287231445" z="12.5"/>
+    <position name="EJ25402v27" unit="mm" x="-263.821594238281" y="-245.491287231445" z="2.5"/>
+    <position name="EJ25402v28" unit="mm" x="31.1783905029297" y="-229.491302490234" z="12.5"/>
+    <position name="EJ25402v29" unit="mm" x="31.8229789733887" y="-226.785903930664" z="12.5"/>
+    <position name="EJ25402v30" unit="mm" x="-65.5270462036133" y="-34.8467712402344" z="12.5"/>
+    <position name="EJ25402v31" unit="mm" x="-167.65119934082" y="-33.0515213012695" z="12.5"/>
+    <position name="EJ25402v32" unit="mm" x="33.618221282959" y="-234.320999145508" z="12.5"/>
+    <position name="EJ25402v33" unit="mm" x="31.8229789733887" y="-232.196807861328" z="12.5"/>
+    <position name="EJ25402v34" unit="mm" x="-67.6512069702148" y="-33.0515213012695" z="12.5"/>
+    <position name="EJ25402v35" unit="mm" x="-157.992004394531" y="-33.0515213012695" z="12.5"/>
+    <position name="EJ25402v36" unit="mm" x="-57.9919891357422" y="-33.0515213012695" z="12.5"/>
+    <position name="EJ25402v37" unit="mm" x="31.8229789733887" y="-126.78589630127" z="12.5"/>
+    <position name="EJ25402v38" unit="mm" x="-62.8216094970703" y="-35.4913482666016" z="12.5"/>
+    <position name="EJ25402v39" unit="mm" x="-60.1161499023438" y="-34.8467712402344" z="12.5"/>
+    <position name="EJ25402v40" unit="mm" x="-160.116104125977" y="-34.8467712402344" z="12.5"/>
+    <position name="EJ25402v41" unit="mm" x="-162.82160949707" y="-35.4913482666016" z="12.5"/>
+    <position name="EJ25402v42" unit="mm" x="-165.526992797852" y="-34.8467712402344" z="12.5"/>
+    <position name="EJ25402v43" unit="mm" x="33.618221282959" y="-224.661712646484" z="12.5"/>
+    <position name="EJ25402v44" unit="mm" x="33.618221282959" y="-134.320907592773" z="12.5"/>
+    <position name="EJ25402v45" unit="mm" x="31.8229789733887" y="-132.196792602539" z="12.5"/>
+    <position name="EJ25402v46" unit="mm" x="31.1783905029297" y="-129.491302490234" z="12.5"/>
+    <position name="EJ25402v47" unit="mm" x="33.618221282959" y="-124.661697387695" z="12.5"/>
+    <position name="EJ25402v48" unit="mm" x="-160.116104125977" y="-34.8467712402344" z="2.5"/>
+    <position name="EJ25402v49" unit="mm" x="-157.992004394531" y="-33.0515213012695" z="2.5"/>
+    <position name="EJ25402v50" unit="mm" x="-65.5270462036133" y="-34.8467712402344" z="2.5"/>
+    <position name="EJ25402v51" unit="mm" x="-57.9919891357422" y="-33.0515213012695" z="2.5"/>
+    <position name="EJ25402v52" unit="mm" x="-67.6512069702148" y="-33.0515213012695" z="2.5"/>
+    <position name="EJ25402v53" unit="mm" x="-167.65119934082" y="-33.0515213012695" z="2.5"/>
+    <position name="EJ25402v54" unit="mm" x="-165.526992797852" y="-34.8467712402344" z="2.5"/>
+    <position name="EJ25402v55" unit="mm" x="-162.82160949707" y="-35.4913482666016" z="2.5"/>
+    <position name="EJ25402v56" unit="mm" x="-62.8216094970703" y="-35.4913482666016" z="2.5"/>
+    <position name="EJ25402v57" unit="mm" x="31.8229789733887" y="-126.78589630127" z="2.5"/>
+    <position name="EJ25402v58" unit="mm" x="-60.1161499023438" y="-34.8467712402344" z="2.5"/>
+    <position name="EJ25402v59" unit="mm" x="33.618221282959" y="-124.661697387695" z="2.5"/>
+    <position name="EJ25402v60" unit="mm" x="33.618221282959" y="-134.320907592773" z="2.5"/>
+    <position name="EJ25402v61" unit="mm" x="31.8229789733887" y="-226.785903930664" z="2.5"/>
+    <position name="EJ25402v62" unit="mm" x="31.1783905029297" y="-229.491302490234" z="2.5"/>
+    <position name="EJ25402v63" unit="mm" x="33.618221282959" y="-234.320999145508" z="2.5"/>
+    <position name="EJ25402v64" unit="mm" x="31.8229789733887" y="-232.196807861328" z="2.5"/>
+    <position name="EJ25402v65" unit="mm" x="31.1783905029297" y="-129.491302490234" z="2.5"/>
+    <position name="EJ25402v66" unit="mm" x="31.8229789733887" y="-132.196792602539" z="2.5"/>
+    <position name="EJ25402v67" unit="mm" x="33.618221282959" y="-224.661712646484" z="2.5"/>
+  </define>
+
+  &materials;
+
+  <solids>
+    <tessellated aunit="deg" lunit="mm" name="EJ25402_solid">
+      <triangular vertex1="EJ25402v0" vertex2="EJ25402v1" vertex3="EJ25402v2"/>
+      <triangular vertex1="EJ25402v2" vertex2="EJ25402v1" vertex3="EJ25402v3"/>
+      <triangular vertex1="EJ25402v4" vertex2="EJ25402v5" vertex3="EJ25402v6"/>
+      <triangular vertex1="EJ25402v6" vertex2="EJ25402v5" vertex3="EJ25402v7"/>
+      <triangular vertex1="EJ25402v8" vertex2="EJ25402v9" vertex3="EJ25402v10"/>
+      <triangular vertex1="EJ25402v10" vertex2="EJ25402v9" vertex3="EJ25402v11"/>
+      <triangular vertex1="EJ25402v12" vertex2="EJ25402v13" vertex3="EJ25402v14"/>
+      <triangular vertex1="EJ25402v14" vertex2="EJ25402v13" vertex3="EJ25402v15"/>
+      <triangular vertex1="EJ25402v16" vertex2="EJ25402v17" vertex3="EJ25402v18"/>
+      <triangular vertex1="EJ25402v18" vertex2="EJ25402v17" vertex3="EJ25402v19"/>
+      <triangular vertex1="EJ25402v20" vertex2="EJ25402v19" vertex3="EJ25402v21"/>
+      <triangular vertex1="EJ25402v21" vertex2="EJ25402v19" vertex3="EJ25402v17"/>
+      <triangular vertex1="EJ25402v22" vertex2="EJ25402v7" vertex3="EJ25402v23"/>
+      <triangular vertex1="EJ25402v23" vertex2="EJ25402v7" vertex3="EJ25402v5"/>
+      <triangular vertex1="EJ25402v24" vertex2="EJ25402v22" vertex3="EJ25402v25"/>
+      <triangular vertex1="EJ25402v25" vertex2="EJ25402v22" vertex3="EJ25402v23"/>
+      <triangular vertex1="EJ25402v26" vertex2="EJ25402v11" vertex3="EJ25402v27"/>
+      <triangular vertex1="EJ25402v27" vertex2="EJ25402v11" vertex3="EJ25402v9"/>
+      <triangular vertex1="EJ25402v28" vertex2="EJ25402v29" vertex3="EJ25402v30"/>
+      <triangular vertex1="EJ25402v10" vertex2="EJ25402v11" vertex3="EJ25402v31"/>
+      <triangular vertex1="EJ25402v31" vertex2="EJ25402v11" vertex3="EJ25402v26"/>
+      <triangular vertex1="EJ25402v19" vertex2="EJ25402v20" vertex3="EJ25402v18"/>
+      <triangular vertex1="EJ25402v18" vertex2="EJ25402v20" vertex3="EJ25402v32"/>
+      <triangular vertex1="EJ25402v18" vertex2="EJ25402v32" vertex3="EJ25402v33"/>
+      <triangular vertex1="EJ25402v13" vertex2="EJ25402v12" vertex3="EJ25402v34"/>
+      <triangular vertex1="EJ25402v34" vertex2="EJ25402v12" vertex3="EJ25402v35"/>
+      <triangular vertex1="EJ25402v34" vertex2="EJ25402v35" vertex3="EJ25402v30"/>
+      <triangular vertex1="EJ25402v30" vertex2="EJ25402v35" vertex3="EJ25402v18"/>
+      <triangular vertex1="EJ25402v30" vertex2="EJ25402v18" vertex3="EJ25402v28"/>
+      <triangular vertex1="EJ25402v28" vertex2="EJ25402v18" vertex3="EJ25402v33"/>
+      <triangular vertex1="EJ25402v22" vertex2="EJ25402v24" vertex3="EJ25402v7"/>
+      <triangular vertex1="EJ25402v7" vertex2="EJ25402v24" vertex3="EJ25402v36"/>
+      <triangular vertex1="EJ25402v7" vertex2="EJ25402v36" vertex3="EJ25402v6"/>
+      <triangular vertex1="EJ25402v30" vertex2="EJ25402v37" vertex3="EJ25402v38"/>
+      <triangular vertex1="EJ25402v38" vertex2="EJ25402v37" vertex3="EJ25402v39"/>
+      <triangular vertex1="EJ25402v35" vertex2="EJ25402v40" vertex3="EJ25402v18"/>
+      <triangular vertex1="EJ25402v18" vertex2="EJ25402v40" vertex3="EJ25402v41"/>
+      <triangular vertex1="EJ25402v18" vertex2="EJ25402v41" vertex3="EJ25402v26"/>
+      <triangular vertex1="EJ25402v26" vertex2="EJ25402v41" vertex3="EJ25402v42"/>
+      <triangular vertex1="EJ25402v26" vertex2="EJ25402v42" vertex3="EJ25402v31"/>
+      <triangular vertex1="EJ25402v2" vertex2="EJ25402v3" vertex3="EJ25402v43"/>
+      <triangular vertex1="EJ25402v43" vertex2="EJ25402v3" vertex3="EJ25402v44"/>
+      <triangular vertex1="EJ25402v43" vertex2="EJ25402v44" vertex3="EJ25402v29"/>
+      <triangular vertex1="EJ25402v29" vertex2="EJ25402v44" vertex3="EJ25402v45"/>
+      <triangular vertex1="EJ25402v29" vertex2="EJ25402v45" vertex3="EJ25402v30"/>
+      <triangular vertex1="EJ25402v30" vertex2="EJ25402v45" vertex3="EJ25402v46"/>
+      <triangular vertex1="EJ25402v30" vertex2="EJ25402v46" vertex3="EJ25402v37"/>
+      <triangular vertex1="EJ25402v39" vertex2="EJ25402v37" vertex3="EJ25402v36"/>
+      <triangular vertex1="EJ25402v36" vertex2="EJ25402v37" vertex3="EJ25402v47"/>
+      <triangular vertex1="EJ25402v36" vertex2="EJ25402v47" vertex3="EJ25402v6"/>
+      <triangular vertex1="EJ25402v27" vertex2="EJ25402v9" vertex3="EJ25402v8"/>
+      <triangular vertex1="EJ25402v48" vertex2="EJ25402v49" vertex3="EJ25402v50"/>
+      <triangular vertex1="EJ25402v23" vertex2="EJ25402v5" vertex3="EJ25402v25"/>
+      <triangular vertex1="EJ25402v25" vertex2="EJ25402v5" vertex3="EJ25402v51"/>
+      <triangular vertex1="EJ25402v14" vertex2="EJ25402v15" vertex3="EJ25402v49"/>
+      <triangular vertex1="EJ25402v49" vertex2="EJ25402v15" vertex3="EJ25402v52"/>
+      <triangular vertex1="EJ25402v49" vertex2="EJ25402v52" vertex3="EJ25402v50"/>
+      <triangular vertex1="EJ25402v8" vertex2="EJ25402v53" vertex3="EJ25402v27"/>
+      <triangular vertex1="EJ25402v27" vertex2="EJ25402v53" vertex3="EJ25402v54"/>
+      <triangular vertex1="EJ25402v27" vertex2="EJ25402v54" vertex3="EJ25402v16"/>
+      <triangular vertex1="EJ25402v16" vertex2="EJ25402v54" vertex3="EJ25402v55"/>
+      <triangular vertex1="EJ25402v16" vertex2="EJ25402v55" vertex3="EJ25402v48"/>
+      <triangular vertex1="EJ25402v50" vertex2="EJ25402v56" vertex3="EJ25402v57"/>
+      <triangular vertex1="EJ25402v57" vertex2="EJ25402v56" vertex3="EJ25402v58"/>
+      <triangular vertex1="EJ25402v57" vertex2="EJ25402v58" vertex3="EJ25402v59"/>
+      <triangular vertex1="EJ25402v59" vertex2="EJ25402v58" vertex3="EJ25402v51"/>
+      <triangular vertex1="EJ25402v59" vertex2="EJ25402v51" vertex3="EJ25402v4"/>
+      <triangular vertex1="EJ25402v4" vertex2="EJ25402v51" vertex3="EJ25402v5"/>
+      <triangular vertex1="EJ25402v60" vertex2="EJ25402v1" vertex3="EJ25402v0"/>
+      <triangular vertex1="EJ25402v48" vertex2="EJ25402v50" vertex3="EJ25402v16"/>
+      <triangular vertex1="EJ25402v16" vertex2="EJ25402v50" vertex3="EJ25402v61"/>
+      <triangular vertex1="EJ25402v16" vertex2="EJ25402v61" vertex3="EJ25402v62"/>
+      <triangular vertex1="EJ25402v21" vertex2="EJ25402v17" vertex3="EJ25402v63"/>
+      <triangular vertex1="EJ25402v63" vertex2="EJ25402v17" vertex3="EJ25402v16"/>
+      <triangular vertex1="EJ25402v63" vertex2="EJ25402v16" vertex3="EJ25402v64"/>
+      <triangular vertex1="EJ25402v64" vertex2="EJ25402v16" vertex3="EJ25402v62"/>
+      <triangular vertex1="EJ25402v57" vertex2="EJ25402v65" vertex3="EJ25402v50"/>
+      <triangular vertex1="EJ25402v50" vertex2="EJ25402v65" vertex3="EJ25402v66"/>
+      <triangular vertex1="EJ25402v50" vertex2="EJ25402v66" vertex3="EJ25402v61"/>
+      <triangular vertex1="EJ25402v61" vertex2="EJ25402v66" vertex3="EJ25402v60"/>
+      <triangular vertex1="EJ25402v61" vertex2="EJ25402v60" vertex3="EJ25402v67"/>
+      <triangular vertex1="EJ25402v67" vertex2="EJ25402v60" vertex3="EJ25402v0"/>
+      <triangular vertex1="EJ25402v27" vertex2="EJ25402v16" vertex3="EJ25402v26"/>
+      <triangular vertex1="EJ25402v26" vertex2="EJ25402v16" vertex3="EJ25402v18"/>
+      <triangular vertex1="EJ25402v24" vertex2="EJ25402v25" vertex3="EJ25402v51"/>
+      <triangular vertex1="EJ25402v24" vertex2="EJ25402v51" vertex3="EJ25402v36"/>
+      <triangular vertex1="EJ25402v36" vertex2="EJ25402v51" vertex3="EJ25402v58"/>
+      <triangular vertex1="EJ25402v36" vertex2="EJ25402v58" vertex3="EJ25402v39"/>
+      <triangular vertex1="EJ25402v39" vertex2="EJ25402v58" vertex3="EJ25402v56"/>
+      <triangular vertex1="EJ25402v39" vertex2="EJ25402v56" vertex3="EJ25402v38"/>
+      <triangular vertex1="EJ25402v38" vertex2="EJ25402v56" vertex3="EJ25402v50"/>
+      <triangular vertex1="EJ25402v38" vertex2="EJ25402v50" vertex3="EJ25402v30"/>
+      <triangular vertex1="EJ25402v30" vertex2="EJ25402v50" vertex3="EJ25402v52"/>
+      <triangular vertex1="EJ25402v30" vertex2="EJ25402v52" vertex3="EJ25402v34"/>
+      <triangular vertex1="EJ25402v34" vertex2="EJ25402v52" vertex3="EJ25402v15"/>
+      <triangular vertex1="EJ25402v34" vertex2="EJ25402v15" vertex3="EJ25402v13"/>
+      <triangular vertex1="EJ25402v12" vertex2="EJ25402v14" vertex3="EJ25402v49"/>
+      <triangular vertex1="EJ25402v12" vertex2="EJ25402v49" vertex3="EJ25402v35"/>
+      <triangular vertex1="EJ25402v35" vertex2="EJ25402v49" vertex3="EJ25402v48"/>
+      <triangular vertex1="EJ25402v35" vertex2="EJ25402v48" vertex3="EJ25402v40"/>
+      <triangular vertex1="EJ25402v40" vertex2="EJ25402v48" vertex3="EJ25402v55"/>
+      <triangular vertex1="EJ25402v40" vertex2="EJ25402v55" vertex3="EJ25402v41"/>
+      <triangular vertex1="EJ25402v41" vertex2="EJ25402v55" vertex3="EJ25402v54"/>
+      <triangular vertex1="EJ25402v41" vertex2="EJ25402v54" vertex3="EJ25402v42"/>
+      <triangular vertex1="EJ25402v42" vertex2="EJ25402v54" vertex3="EJ25402v53"/>
+      <triangular vertex1="EJ25402v42" vertex2="EJ25402v53" vertex3="EJ25402v31"/>
+      <triangular vertex1="EJ25402v31" vertex2="EJ25402v53" vertex3="EJ25402v8"/>
+      <triangular vertex1="EJ25402v31" vertex2="EJ25402v8" vertex3="EJ25402v10"/>
+      <triangular vertex1="EJ25402v3" vertex2="EJ25402v1" vertex3="EJ25402v60"/>
+      <triangular vertex1="EJ25402v3" vertex2="EJ25402v60" vertex3="EJ25402v44"/>
+      <triangular vertex1="EJ25402v44" vertex2="EJ25402v60" vertex3="EJ25402v66"/>
+      <triangular vertex1="EJ25402v44" vertex2="EJ25402v66" vertex3="EJ25402v45"/>
+      <triangular vertex1="EJ25402v45" vertex2="EJ25402v66" vertex3="EJ25402v65"/>
+      <triangular vertex1="EJ25402v45" vertex2="EJ25402v65" vertex3="EJ25402v46"/>
+      <triangular vertex1="EJ25402v46" vertex2="EJ25402v65" vertex3="EJ25402v57"/>
+      <triangular vertex1="EJ25402v46" vertex2="EJ25402v57" vertex3="EJ25402v37"/>
+      <triangular vertex1="EJ25402v37" vertex2="EJ25402v57" vertex3="EJ25402v59"/>
+      <triangular vertex1="EJ25402v37" vertex2="EJ25402v59" vertex3="EJ25402v47"/>
+      <triangular vertex1="EJ25402v47" vertex2="EJ25402v59" vertex3="EJ25402v4"/>
+      <triangular vertex1="EJ25402v47" vertex2="EJ25402v4" vertex3="EJ25402v6"/>
+      <triangular vertex1="EJ25402v20" vertex2="EJ25402v21" vertex3="EJ25402v63"/>
+      <triangular vertex1="EJ25402v20" vertex2="EJ25402v63" vertex3="EJ25402v32"/>
+      <triangular vertex1="EJ25402v32" vertex2="EJ25402v63" vertex3="EJ25402v64"/>
+      <triangular vertex1="EJ25402v32" vertex2="EJ25402v64" vertex3="EJ25402v33"/>
+      <triangular vertex1="EJ25402v33" vertex2="EJ25402v64" vertex3="EJ25402v62"/>
+      <triangular vertex1="EJ25402v33" vertex2="EJ25402v62" vertex3="EJ25402v28"/>
+      <triangular vertex1="EJ25402v28" vertex2="EJ25402v62" vertex3="EJ25402v61"/>
+      <triangular vertex1="EJ25402v28" vertex2="EJ25402v61" vertex3="EJ25402v29"/>
+      <triangular vertex1="EJ25402v29" vertex2="EJ25402v61" vertex3="EJ25402v67"/>
+      <triangular vertex1="EJ25402v29" vertex2="EJ25402v67" vertex3="EJ25402v43"/>
+      <triangular vertex1="EJ25402v43" vertex2="EJ25402v67" vertex3="EJ25402v0"/>
+      <triangular vertex1="EJ25402v43" vertex2="EJ25402v0" vertex3="EJ25402v2"/>
+    </tessellated>
+
+  </solids>
+
+  <structure>
+    <volume name="Nud_Block1LV">
+      <materialref ref="BC254"/>
+      <solidref ref="EJ25402_solid"/>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="Nud_Block1LV"/>
+  </setup>
+
+</gdml>

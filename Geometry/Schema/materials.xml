@@ -1,0 +1,240 @@
+  <materials>
+    <!--define element-->
+    <element name="videRef" formula="VACUUM" Z="1">
+     <atom value="1."/>
+    </element>
+
+    <element Z="1" formula="H" name="H" >
+     <atom value="1.0079" />
+    </element>
+
+    <isotope Z="1" N="1" name="H1">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+
+    <isotope Z="1" N="2" name="H2">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+
+    <element name="H1H2Mix">
+      <fraction n="0.999885" ref="H1"/>
+      <fraction n="0.000115" ref="H2"/>
+    </element>
+
+    <isotope Z="5" N="5" name="B10">
+      <atom unit="g/mole" value="10.0129369"/>
+    </isotope>
+
+    <isotope Z="5" N="6" name="B11">
+      <atom unit="g/mole" value="11.0093054"/>
+    </isotope>
+
+    <element name="B">
+      <fraction n="0.199" ref="B10"/>
+      <fraction n="0.801" ref="B11"/>
+    </element>
+
+    <isotope Z="6" N="6" name="C12">
+      <atom unit="g/mole" value="12.00000000000"/>
+    </isotope>
+
+    <isotope Z="6" N="7" name="C13">
+      <atom unit="g/mole" value="13.00335483507"/>
+    </isotope>
+
+    <element name="C">
+      <fraction n="0.9893" ref="C12"/>
+      <fraction n="0.0107" ref="C13"/>
+    </element>
+
+    <element Z="8" formula="O" name="O" >
+     <atom value="15.999" />
+    </element>
+
+    <element Z="11" formula="Na" name="Na" >
+     <atom value="22.99" />
+    </element>
+
+    <element Z="12" formula="Mg" name="Mg" >
+     <atom value="24.305" />
+    </element>
+
+    <element Z="13" name="Al" formula="Al" >
+     <atom value="26.98153853"/>
+    </element>
+
+    <element Z="14" formula="Si" name="Si" >
+     <atom value="28.085" />
+    </element>
+
+    <element Z="20" formula="Ca" name="Ca" >
+     <atom value="40.078" />
+    </element>
+
+    <element Z="22" formula="Ti" name="Ti" >
+     <atom value="47.867" />
+    </element>
+
+    <element Z="26" formula="Fe" name="Fe">
+     <atom value="55.8450"/>
+    </element>
+
+    <element Z="32" formula="Ge" name="Ge" >
+     <atom value="72.63" />
+    </element>
+
+    <element Z="35" formula="Br" name="Br" >
+     <atom value="79.904" />
+    </element>
+
+    <element Z="83" formula="Bi" name="Bi" >
+     <atom value="208.980" />
+    </element>
+
+    <!--define molecular-->
+    <!--SiO2-->
+    <material name="SiO2" formula="SiO2" >
+     <D value="2.5" unit="g/cm3" />
+     <!--<D value="2.2" unit="g/cm3"/>-->
+     <composite n="1" ref="Si" />
+     <composite n="2" ref="O" />
+    </material>
+
+    <material name="Al2O3" formula="Al2O3">
+     <D value="3.97" unit="g/cm3"/>
+     <composite n="2" ref="Al"/>
+     <composite n="3" ref="O"/>
+    </material>
+
+    <material name="Fe2O3" formula="Fe2O3">
+     <D value="5.24" unit="g/cm3"/>
+     <composite n="2" ref="Fe"/>
+     <composite n="3" ref="O"/>
+    </material>
+
+    <material name="CaO" formula="CaO">
+     <D value="3.35" unit="g/cm3"/>
+     <composite n="1" ref="Ca"/>
+     <composite n="1" ref="O"/>
+    </material>
+
+    <material name="MgO" formula="MgO">
+     <D value="3.58" unit="g/cm3"/>
+     <composite n="1" ref="Mg"/>
+     <composite n="1" ref="O"/>
+    </material>
+
+    <material name="Na2O" formula="Na2O">
+     <D value="2.27" unit="g/cm3"/>
+     <composite n="2" ref="Na"/>
+     <composite n="1" ref="O"/>
+    </material>
+
+    <material name="TiO2" formula="TiO2">
+     <D value="4.23" unit="g/cm3"/>
+     <composite n="1" ref="Ti"/>
+     <composite n="2" ref="O"/>
+    </material>
+
+    <!--define material-->
+    <!--Vacuum-->
+    <material formula=" " name="Vacuum">
+     <D value="1.e-25" unit="g/cm3" />
+     <fraction n="1.0" ref="videRef" />
+    </material>
+
+    <!--BGO-->
+    <material name="BGO" formula="Bi4Ge3O12" >
+     <D value="7.13" unit="g/cm3" />
+     <composite n="4" ref="Bi" />
+     <composite n="3" ref="Ge" />
+     <composite n="12" ref="O" />
+    </material>
+
+    <!-- Plastic Scintillator -->
+    <material name="PSDmaterial_Sci0x9d1cb80" state="solid">
+      <MEE unit="eV" value="64.7"/>
+      <D unit="g/cm3" value="1.032"/>
+      <fraction n="0.085" ref="H1H2Mix"/>
+      <fraction n="0.915" ref="C"/>
+    </material>
+
+    <!-- Plastic of NUD -->
+    <material name="BC254" state="solid">
+      <MEE unit="eV" value="173"/>
+      <D unit="g/cm3" value="1.026"/>
+      <fraction n="0.2492" ref="C"/>
+      <fraction n="0.7475" ref="H1H2Mix"/>
+      <fraction n="0.0033" ref="B"/>
+    </material>
+
+    <!--sylgard 170, detail components not found, use silicone rubber polydimethylsiloxane(PDMS)-->
+    <material name="sylgard170" formula="SiOC2H6" >
+     <D value="1.34" unit="g/cm3" />
+     <composite n="1" ref="Si" />
+     <composite n="1" ref="O" />
+     <composite n="2" ref="C" />
+     <composite n="6" ref="H" />
+    </material>
+
+    <!--Aluminum-->
+    <material name="Aluminum" state="solid">
+       <MEE unit="eV" value="173"/>
+       <D unit="g/cm3" value="2.70"/>
+       <fraction n="1" ref="Al"/>
+    </material>
+
+    <!--Carbon Fiber-->
+    <material name="CarbonFiber" formula="CH2" >
+     <D value="1.62" unit="g/cm3" />
+     <composite n="1" ref="C" />
+     <composite n="2" ref="H" />
+    </material>
+
+    <!--PMT-->
+    <material name="pmt-mix" state="solid">
+     <D value="2.524" unit="g/cm3"/>
+     <fraction n="0.7" ref="Aluminum"/>
+     <fraction n="0.2" ref="SiO2"/>
+     <fraction n="0.1" ref="sylgard170"/>
+    </material>
+
+    <!--PCB material from Andrii's code-->
+      <!--<element name="nitrogen" formula="N" Z="7">  <atom value="14.0067"/> </element>-->
+      <!--<element name="potassium" formula="K" Z="19"> <atom value="39.0983"/>  </element>-->
+      <!--<element name="chromium" formula="Cr" Z="24"> <atom value="51.9961"/>  </element>-->
+      <!--<element name="nickel" formula="Ni" Z="28"> <atom value="58.6934"/>  </element>-->
+      <!--<element name="argon" formula="Ar" Z="18"> <atom value="39.9480"/>  </element>-->
+      <!--<element name="sulphur" formula="S" Z="16"> <atom value="32.065"/>  </element>-->
+      <!--<element name="phosphorus" formula="P" Z="16"> <atom value="30.973"/>  </element>-->
+    <material name="epoxy_resin" formula="C38H40O6Br4">
+     <D value="1.1250" unit="g/cm3"/>
+     <composite n="38" ref="C"/>
+     <composite n="40" ref="H"/>
+     <composite n="6" ref="O"/>
+     <composite n="4" ref="Br"/>
+    </material>
+
+    <material name="fibrous_glass">
+     <D value="2.74351" unit="g/cm3"/>
+     <fraction n="0.600" ref="SiO2"/>
+     <fraction n="0.118" ref="Al2O3"/>
+     <fraction n="0.001" ref="Fe2O3"/>
+     <fraction n="0.224" ref="CaO"/>
+     <fraction n="0.034" ref="MgO"/>
+     <fraction n="0.010" ref="Na2O"/>
+     <fraction n="0.013" ref="TiO2"/>
+    </material>
+
+    <material name="FR4">
+     <D value="1.98281" unit="g/cm3"/>
+     <fraction n="0.47" ref="epoxy_resin"/>
+     <fraction n="0.53" ref="fibrous_glass"/>
+    </material>
+
+    <material name="Hcomb" state="solid">
+     <D value="0.0374" unit="g/cm3"/>
+     <fraction n="1." ref="Al"/>
+    </material>
+
+  </materials>

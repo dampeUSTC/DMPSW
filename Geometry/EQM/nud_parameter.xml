@@ -1,0 +1,12 @@
+<!--Nud parameters-->
+
+<define>   
+  <constant name="nud_adjust_x_position" value="-38.17839000000001"/>  <!-- mm -->
+  <constant name="nud_adjust_y_position" value="28.49135000000001"/>   <!-- mm -->
+  <constant name="nud_adjust_z_position" value="-0.5"/>                <!-- mm -->
+  
+  <constant name="nud_satsupport_adjust_x_position" value="300"/>                 <!-- mm -->
+  <constant name="nud_satsupport_adjust_y_position" value="0"/>                   <!-- mm -->
+  <constant name="nud_satsupport_adjust_z_position" value="-595.5"/>              <!-- mm -->  
+</define>
+
