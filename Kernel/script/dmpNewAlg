@@ -62,7 +62,7 @@ env.ParseConfig("root-config --cflags --libs")
 
 #-------------------------------------------------------------------
 # include dir. and external libs
-env.Prepend(CPPPATH=['./include'])
+env.Prepend(CPPPATH=['./include','./event/include'])
 # Add boost filesyetem
 #env.Append(LIBS=['boost_filesystem'])
 
