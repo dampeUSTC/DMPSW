@@ -41,6 +41,12 @@ public:
   bool PrepareEvent(const long &evtID); //only read fInTreeSet["Event"]
   void FillEvent(); // invoke in DmpCore::Run(), if fAlgMgr->ProcessThisEvent() return true
 
+public:
+  std::string GetInputFileName()const{return fInFileName.filename().string();}
+  std::string GetOutputFileName()const{return fOutFileName.filename().string();}
+  std::string GetInputPath()const{return fInFileName.stem().string();}
+  std::string GetOutputPath()const{return fOutFileName.stem().string();}
+
 private:
   DmpRootIOSvc();
 
