@@ -54,8 +54,7 @@ print "---> compiling: %s\n" % target
 env = Environment(ENV = os.environ)
 env.ParseConfig("dmpsw-config --cflags --libs")
 env.ParseConfig("python-config --include --libs")  # 2 lines for binding
-env.Append(LIBS=['boost_python'])
-env.ParseConfig("root-config --cflags --libs")
+#env.ParseConfig("root-config --cflags --libs")
 #env.ParseConfig("clhep-config --include --libs")
 #env.PrependENVPath('PATH', os.environ['G4INSTALL']+'/../../../bin')    # 2 lines for G4
 #env.ParseConfig("geant4-config --cflags --libs")
@@ -64,8 +63,6 @@ env.ParseConfig("root-config --cflags --libs")
 #-------------------------------------------------------------------
 # include dir. and external libs
 env.Prepend(CPPPATH=['./include'])
-# Add boost filesyetem
-#env.Append(LIBS=['boost_filesystem'])
 
 #-------------------------------------------------------------------
 # main build

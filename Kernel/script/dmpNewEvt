@@ -77,8 +77,6 @@ print "---> compiling: %s\n" % target
 # environment
 env = Environment(ENV = os.environ)
 #env.ParseConfig("dmpsw-config --include")
-env.ParseConfig("python-config --include --libs")  # 2 lines for binding
-env.Append(LIBS=['boost_python'])
 env.ParseConfig("root-config --cflags --libs")
 
 #-------------------------------------------------------------------
