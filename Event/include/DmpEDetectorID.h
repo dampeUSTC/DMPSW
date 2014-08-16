@@ -11,9 +11,9 @@ namespace DmpEDetectorID{
   const short gSubDetNo=4;
   enum Type{
     kWhole = -1,
-    kPsd = 0,
-    kStk = 1,
-    kBgo = 2,
+    kStk = 0,
+    kBgo = 1,
+    kPsd = 2,
     kNud = 3
   };
 }
