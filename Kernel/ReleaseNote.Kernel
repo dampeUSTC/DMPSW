@@ -1,8 +1,11 @@
 /*
- *  $Id: ReleaseNote.Kernel, 2014-08-08 12:57:32 DAMPE $
+ *  $Id: ReleaseNote.Kernel, 2014-08-17 17:22:19 DAMPE $
  *  Author(s):
  *    =========    DMPSW group    ============
 */
+
+--->    2014-08-17  17:21:37
+    1.  create dmpsw-expand, so delete dmpNew{Alg|Svc|Evt}
 
 --->    2014-08-15  11:04:41
     1.  update dmpNewAlg, link $DMPSWWORK/include and $DMPSWWORK/lib
