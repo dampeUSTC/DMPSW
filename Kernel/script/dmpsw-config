@@ -1,6 +1,6 @@
 #! /bin/bash
 :<<EOF
- *  $Id: dmpsw-config, 2014-08-08 12:35:20 DAMPE $
+ *  $Id: dmpsw-config, 2014-08-16 21:47:33 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 30/07/2013
  *---------------------------------------------------
@@ -9,25 +9,11 @@
  *---------------------------------------------------
 EOF
 
-prefix=$DMPSWSYS
-
-#   list all libraries of DMPSW
-libs="-lDmpKernel -lDmpEvent"
-:<<EOF
-for file in `ls ${prefix}/lib`;do
-  if [[ ${file} = *libDmp* && ${file} = *.so* ]];then
-    file=${file/lib/-l}
-    file=${file/\.so/}
-    libs="$libs $file"
-  fi
-done
-EOF
-
 #-----------------------------------------------------------------------
 # function help
 #          print help on available command line arguments and enabled
 
-help(){
+Help(){
 cat<<EOF
 
 Usage: dmpsw-config [OPTION...]
@@ -43,6 +29,20 @@ EOF
   exit 1
 }
 
+#-------------------------------------------------------------------
+prefix=$DMPSWSYS
+
+#   list all libraries of DMPSW
+libs="-lDmpKernel -lDmpEvent"
+:<<EOF
+for file in `ls ${prefix}/lib`;do
+  if [[ ${file} = *libDmp* && ${file} = *.so* ]];then
+    file=${file/lib/-l}
+    file=${file/\.so/}
+    libs="$libs $file"
+  fi
+done
+EOF
 
 #-----------------------------------------------------------------------
 # output
@@ -51,14 +51,14 @@ EOF
 out=""
 
 while test $# -gt 0; do
-  case "$1" in
-    -*=*)
-      optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'`
-      ;;
-    *)
-      optarg=
-      ;;
-  esac
+  #case "$1" in
+  #  -*=*)
+  #    optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'`
+  #    ;;
+  #  *)
+  #    optarg=
+  #    ;;
+  #esac
 
   case $1 in
     --prefix)
@@ -74,10 +74,10 @@ while test $# -gt 0; do
       out="$out -I$DMPSWWORK/include -I$prefix/include"
       ;;
    -?)
-      help
+      Help
       ;;
    --help)
-      help
+      Help
       ;;
    --version)
       out="DMPSW verison VERSION"  # How to set this automatically while installation ??
