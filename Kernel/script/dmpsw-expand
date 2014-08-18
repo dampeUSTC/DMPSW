@@ -1,6 +1,6 @@
 #! /bin/bash
 :<<EOF
- *  $Id: dmpsw-expand, 2014-08-17 15:40:18 DAMPE $
+ *  $Id: dmpsw-expand, 2014-08-18 17:31:51 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 26/04/2014
  *-----------------------------------------------------
@@ -15,7 +15,7 @@ date=`date --rfc-3339=seconds`
 Help(){
 cat<<EOF
 
-Usage: dmpsw-expand [OPTION...]
+Usage: dmpsw-expand [OPTION] NewModuleName
 
   --help                    output help information
   --event       or  --evt   create a template of event
@@ -272,6 +272,13 @@ EOF
  
 }
 
+if [ $# != 2 ];then
+  echo "Must give a name for the new module:"
+  echo ""
+  echo "    dmpsw-expand $1 aName"
+  exit 1
+fi
+
 #-------------------------------------------------------------------
 case $1 in
   --event)
@@ -293,7 +300,7 @@ case $1 in
     NewModule Svc $2
     ;;
   -?)
-    Help
+    echo "dmpsw-expand \'$2\' is not a dmpsw-expand command. See \'dmpsw-expand --help\'"
     ;;
   --help)
     Help
