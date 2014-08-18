@@ -9,7 +9,14 @@
 EOF
 
 #-------------------------------------------------------------------
+if [ $# != 2 ];then
+  echo "Must give a name for the new module:"
+  echo ""
+  echo "    dmpsw-expand $1 aName"
+  exit 1
+fi
 
+#-------------------------------------------------------------------
 date=`date --rfc-3339=seconds`
 
 Help(){
@@ -272,13 +279,6 @@ EOF
  
 }
 
-if [ $# != 2 ];then
-  echo "Must give a name for the new module:"
-  echo ""
-  echo "    dmpsw-expand $1 aName"
-  exit 1
-fi
-
 #-------------------------------------------------------------------
 case $1 in
   --event)
@@ -299,11 +299,13 @@ case $1 in
   --svc)
     NewModule Svc $2
     ;;
-  -?)
-    echo "dmpsw-expand \'$2\' is not a dmpsw-expand command. See \'dmpsw-expand --help\'"
-    ;;
   --help)
     Help
+    ;;
+  *)
+    echo "dmpsw-expand: '$1' is not a dmpsw-expand command"
+    echo ""
+    echo "    See 'dmpsw-expand --help'"
     ;;
 esac
 
