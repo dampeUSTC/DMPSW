@@ -13,6 +13,7 @@ namespace DmpParameterBgo{
   const short kRefBarNo= 2;
   const short kSideNo  = 2;
   const short kDyNo    = 3;
+  const short kFeeNo   = 6;
 }
 
 #endif

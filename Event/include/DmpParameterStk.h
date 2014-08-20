@@ -12,6 +12,7 @@ namespace DmpParameterStk{
   const short kBlockNo = 4;
   const short kLadderNo= 4;
   const short kStripNo = 768;
+  const short kTrbNo   = 8;
 }
 
 #endif

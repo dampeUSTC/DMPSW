@@ -12,6 +12,7 @@ namespace DmpParameterNud{
   const short kBlockNo = 4;
   const short kSideNo  = 1;
   const short kDyNo    = 1;
+  const short kFeeNo   = 1;
 }
 
 #endif
