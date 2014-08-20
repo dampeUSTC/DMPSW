@@ -1,0 +1,9 @@
+/*
+ *  $Id: ReleaseNote.PsdBase, 2014-08-20 21:05:05 DAMPE $
+ *  Author(s):
+ *    =========    DMPSW group    ============
+*/
+
+--->    2014-08-20  20:54:20
+    1.  setup PsdBaseLib package
+    2.  set function for id

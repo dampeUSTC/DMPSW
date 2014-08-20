@@ -1,44 +1,44 @@
 /*
- *  $Id: DmpBgoBase.cc, 2014-08-20 19:39:25 DAMPE $
+ *  $Id: DmpPsdBase.cc, 2014-08-20 20:58:43 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 20/08/2014
 */
 
-#include "DmpBgoBase.h"
+#include "DmpPsdBase.h"
 
 //-------------------------------------------------------------------
-short DmpBgoBase::ConstructGlobalBarID(const short &l,const short &b){
+short DmpPsdBase::ConstructGlobalStripID(const short &l,const short &s){
   short i = 0;
-  i = l<<11 + b<<6;
+  i = l<<12 + s<<6;
   return i;
 }
 
 //-------------------------------------------------------------------
-short DmpBgoBase::ConstructGlobalPMTID(const short &l,const short &b,const short &s){
+short DmpPsdBase::ConstructGlobalPMTID(const short &l,const short &b,const short &s){
   short i = 0;
-  i = l<<11 + b<<6 + s<<4;
+  i = l<<12 + b<<6 + s<<4;
   return i;
 }
 
 //-------------------------------------------------------------------
-short DmpBgoBase::ConstructGlobalDynodeID(const short &l,const short &b,const short &s,const short &d){
+short DmpPsdBase::ConstructGlobalDynodeID(const short &l,const short &b,const short &s,const short &d){
   short i = 0;
-  i = l<<11 + b<<6 + s<<4 + d;
+  i = l<<12 + b<<6 + s<<4 + d;
   return i;
 }
 
 //-------------------------------------------------------------------
-short DmpBgoBase::GetLayerID(const short &gid){
-  return ((gid>>11) &0x000f);
+short DmpPsdBase::GetLayerID(const short &gid){
+  return ((gid>>12) &0x0007);
 }
 
 //-------------------------------------------------------------------
-short DmpBgoBase::GetBarID(const short &gid){
-  return ((gid>>6) &0x001f);
+short DmpPsdBase::GetBarID(const short &gid){
+  return ((gid>>6) &0x003f);
 }
 
 //-------------------------------------------------------------------
-short DmpBgoBase::GetSideID(const short &gid){
+short DmpPsdBase::GetSideID(const short &gid){
   return ((gid>>4) &0x0001);
 }
 
