@@ -11,7 +11,7 @@ namespace DmpPsdBase{
    *
    *    layer(0~1):     bits 14,13,12
    *        = (fGlobalID >> 12) & 0x0007
-   *    bar(0~41):      bits 11,10,9,8,7,6
+   *    strip(0~41):    bits 11,10,9,8,7,6
    *         = (fGlobalID >> 6) & 0x003f
    *    side(0,1):      bits 4
    *        = (fGlobal >> 4) & 0x0001

@@ -33,7 +33,7 @@ short DmpPsdBase::GetLayerID(const short &gid){
 }
 
 //-------------------------------------------------------------------
-short DmpPsdBase::GetBarID(const short &gid){
+short DmpPsdBase::GetStripID(const short &gid){
   return ((gid>>6) &0x003f);
 }
 
