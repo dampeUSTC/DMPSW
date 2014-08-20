@@ -1,8 +1,11 @@
 /*
- *  $Id: ReleaseNote.Kernel, 2014-08-17 17:22:19 DAMPE $
+ *  $Id: ReleaseNote.Kernel, 2014-08-20 18:30:12 DAMPE $
  *  Author(s):
  *    =========    DMPSW group    ============
 */
+
+--->    2014-08-20  18:30:03
+    1.  add Fee number for all subDetector, in DmpParameterxxx.h
 
 --->    2014-08-17  17:21:37
     1.  create dmpsw-expand, so delete dmpNew{Alg|Svc|Evt}
