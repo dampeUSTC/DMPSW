@@ -9,16 +9,6 @@
 EOF
 
 #-------------------------------------------------------------------
-if [ $# != 2 ];then
-  echo "Must give a name for the new module:"
-  echo ""
-  echo "    dmpsw-expand $1 aName"
-  exit 1
-fi
-
-#-------------------------------------------------------------------
-date=`date --rfc-3339=seconds`
-
 Help(){
 cat<<EOF
 
@@ -278,6 +268,20 @@ bool Dmp${1}${2}::Finalize(){
 EOF
  
 }
+
+#-------------------------------------------------------------------
+if [ '--help' == $1 ];then
+  Help
+fi
+if [ $# != 2 ];then
+  echo "Must give a name for the new module:"
+  echo ""
+  echo "    dmpsw-expand $1 aName"
+  exit 1
+fi
+
+#-------------------------------------------------------------------
+date=`date --rfc-3339=seconds`
 
 #-------------------------------------------------------------------
 case $1 in
