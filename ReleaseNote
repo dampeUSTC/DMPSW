@@ -5,6 +5,9 @@
  *
 */
 
+--->    (next release)2014-08-15  20:08:19
+    1.  setup BgoBaseLib
+
 --->    2014-08-15  20:08:19
     1.  update dmpNewAlg, dmpNewEvt, dmpsw-config
     1.  Kernel.  IO Svc and Data buffer. delete functions about TClonesArray
