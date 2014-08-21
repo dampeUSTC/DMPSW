@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpParameterBgo.h, 2014-08-07 23:24:10 DAMPE $
+ *  $Id: DmpParameterBgo.h, 2014-08-21 16:33:13 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 06/08/2013
 */
@@ -13,7 +13,7 @@ namespace DmpParameterBgo{
   const short kRefBarNo= 2;
   const short kSideNo  = 2;
   const short kDyNo    = 3;
-  const short kFeeNo   = 6;
+  const short kFeeNo   = 16;
 }
 
 #endif

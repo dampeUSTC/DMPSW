@@ -11,7 +11,7 @@ namespace DmpParameterPsd{
   const short kPlaneNo = 1;
   const short kStripNo = 24;
   const short kSideNo  = 2;
-  const short kFeeNo   = 1;
+  const short kFeeNo   = 4;
 }
 
 #endif
