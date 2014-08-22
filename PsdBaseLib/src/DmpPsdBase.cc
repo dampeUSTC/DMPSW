@@ -9,21 +9,21 @@
 //-------------------------------------------------------------------
 short DmpPsdBase::ConstructGlobalStripID(const short &l,const short &s){
   short i = 0;
-  i = l<<12 + s<<6;
+  i = (l<<12) + (s<<6);
   return i;
 }
 
 //-------------------------------------------------------------------
 short DmpPsdBase::ConstructGlobalPMTID(const short &l,const short &b,const short &s){
   short i = 0;
-  i = l<<12 + b<<6 + s<<4;
+  i = (l<<12) + (b<<6) + (s<<4);
   return i;
 }
 
 //-------------------------------------------------------------------
 short DmpPsdBase::ConstructGlobalDynodeID(const short &l,const short &b,const short &s,const short &d){
   short i = 0;
-  i = l<<12 + b<<6 + s<<4 + d;
+  i = (l<<12) + (b<<6) + (s<<4) + d;
   return i;
 }
 
