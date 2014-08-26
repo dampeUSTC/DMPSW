@@ -1,5 +1,5 @@
 '''
- *  $Id: PsdBaseLib.scons, 2014-08-20 20:57:11 DAMPE $
+ *  $Id: BaseLib.scons, 2014-08-26 10:03:15 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 24/07/2013
 '''
@@ -8,7 +8,7 @@ import os
 Import("*")     # import all vars from SConstruct
 
 #--------------------------------------------------------------------
-target='DmpPsdBase'
+target='DmpBase'
 #-------------------------------------------------------------------
 print "\n==>Installing %s into:\t%s\n" %(target,prefix)
 
