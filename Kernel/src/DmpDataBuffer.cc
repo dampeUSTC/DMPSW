@@ -69,6 +69,9 @@ TObject* DmpDataBuffer::ReadObject(const std::string &path){
       }
     }
   }
+  if(0 == dataPtr){
+    DmpLogError<<"[DmpDataBuffer::ReadObject] didn't find data: "<<path<<DmpLogEndl;
+  }
   return dataPtr;
 }
 
