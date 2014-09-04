@@ -26,7 +26,7 @@ public:
   }
   ~DmpDataBuffer();
   template<typename T> bool RegisterObject(const std::string &path,T *&dataPtr,const std::string &className);   // path = Folder/Tree/Branch
-  TObject* ReadObject(const std::string &path);  // if path/dataPtr not in any data buffer, use dataPtr to read a branch from input rootfile;
+  template<typename T> bool ReadObject(const std::string &path,T *&dataPtr);  // if path/dataPtr not in any data buffer, use dataPtr to read a branch from input rootfile;
 
 private:
   DmpDataBuffer();
@@ -69,6 +69,52 @@ template<typename T> bool DmpDataBuffer::RegisterObject(const std::string &path,
     gRootIOSvc->GetOutputTree(folderName,treeName)->Branch(branchName.c_str(),className.c_str(),&dataPtr,32000,2);
   }
   return true;
+}
+
+//-------------------------------------------------------------------
+template<typename T> bool DmpDataBuffer::ReadObject(const std::string &path,T *&dataPtr){
+  // check path
+  std::string folderName, treeName, branchName;
+  if(not PathCheck(path,folderName,treeName,branchName)){
+    return false;
+  }
+  // find it in fDataBufPool
+  if(fDataBufPool.find(folderName) != fDataBufPool.end()){
+    if(fDataBufPool[folderName].find(treeName) != fDataBufPool[folderName].end()){
+      if(fDataBufPool[folderName][treeName].find(branchName) != fDataBufPool[folderName][treeName].end()){
+        delete dataPtr;
+        dataPtr = dynamic_cast<T*>(fDataBufPool[folderName][treeName][branchName]);
+        return true;
+      }
+    }
+  }// create buffer map in input data buffer pool, not here
+  // find it in fInputDataBufPool
+  if(fInputDataBufPool.find(folderName) != fInputDataBufPool.end()){
+    if(fInputDataBufPool[folderName].find(treeName) != fInputDataBufPool[folderName].end()){
+      if(fInputDataBufPool[folderName][treeName].find(branchName) != fInputDataBufPool[folderName][treeName].end()){
+        delete dataPtr;
+        dataPtr = dynamic_cast<T*>(fInputDataBufPool[folderName][treeName][branchName]);
+        return true;
+      }
+    }else{
+      DmpDataBufBranchMap aNewBranchMap;
+      fInputDataBufPool[folderName].insert(std::make_pair(treeName,aNewBranchMap));
+    }
+  }else{
+    DmpDataBufTreeMap aNewTreeMap;
+    fInputDataBufPool.insert(std::make_pair(folderName,aNewTreeMap));
+    DmpDataBufBranchMap aNewBranchMap;
+    fInputDataBufPool[folderName].insert(std::make_pair(treeName,aNewBranchMap));
+  }
+  // find it in input root file
+  TTree *findTree = gRootIOSvc->GetInputTree(folderName,treeName);
+  if(findTree){
+    findTree->SetBranchAddress(branchName.c_str(),&dataPtr);
+    fInputDataBufPool[folderName][treeName].insert(std::make_pair(branchName,dataPtr));
+    return true;
+  }
+  DmpLogError<<"[DmpDataBuffer::ReadObject] didn't find data: "<<path<<DmpLogEndl;
+  return false;
 }
 
 //-------------------------------------------------------------------
