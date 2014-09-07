@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpCore.cc, 2014-07-24 17:27:30 DAMPE $
+ *  $Id: DmpCore.cc, 2014-09-06 11:04:24 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 22/04/2014
 */
@@ -17,7 +17,7 @@ DmpCore::DmpCore()
   fMaxEventNo(-1),
   fStartTime(0),
   fStopTime(0),
-  fInitializeDone(false),
+  fInitializeDone(true),
   fTerminateRun(false),
   fCurrentEventID(0)    // must == 0
 {
@@ -50,7 +50,6 @@ bool DmpCore::Initialize(){
   if(0 == fStopTime){
     fStopTime = DeltaTime("21130101-0000");
   }
-  fInitializeDone = true;
   std::cout<<"  [DmpCore::Initialize] ... initialized successfully"<<std::endl;
   return true;
 }
@@ -128,10 +127,6 @@ bool DmpCore::Finalize(){
 //-------------------------------------------------------------------
 #include <boost/lexical_cast.hpp>
 void DmpCore::Set(const std::string &type,const std::string &value){
-  if(OptMap.find(type) == OptMap.end()){
-    DmpLogError<<"\t[DmpCore::Set] No argument type: "<<type<<DmpLogEndl;
-    throw;
-  }
   switch(OptMap[type]){
     case 0: // LogLevel
     {
@@ -152,6 +147,11 @@ void DmpCore::Set(const std::string &type,const std::string &value){
     {
       fStopTime = DeltaTime(value);
       break;
+    }
+    default:
+    {
+      DmpLogError<<"No argument type: "<<type<<DmpLogEndl;
+      fInitializeDone = false;
     }
   }
 }
