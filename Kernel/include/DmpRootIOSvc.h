@@ -39,7 +39,13 @@ public:
   TTree* GetInputTree(const std::string &folderName,const std::string &treeName);
   void PrepareMetaData();
   bool PrepareEvent(const long &evtID); //only read fInTreeSet["Event"]
-  void FillEvent(); // invoke in DmpCore::Run(), if fAlgMgr->ProcessThisEvent() return true
+  void FillData(const std::string &floderName);
+ /*
+  *  invoke FillData("Event") in DmpCore::Run(), if fAlgMgr->ProcessThisEvent() return true
+  *
+  *  invoke FillData("Calibration") in the begin of DmpRootIOSvc::Finalize()
+  *
+  */
 
 public:
   std::string GetInputFileName()const{return fInFileName.filename().string();}

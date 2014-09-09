@@ -72,7 +72,7 @@ bool DmpCore::Run(){
     }
     if(gRootIOSvc->PrepareEvent(fCurrentEventID)){
       if(fAlgMgr->ProcessOneEvent()){
-        gRootIOSvc->FillEvent();
+        gRootIOSvc->FillData("Event");
       }
       ++fCurrentEventID;
     }else{
@@ -91,7 +91,6 @@ bool DmpCore::ExecuteEventID(const long &evtID){
   }
   fCurrentEventID = evtID;
   std::cout<<"\n  [DmpCore::ExecuteEvent] execute event: ID = "<<fCurrentEventID<<std::endl;
-  gRootIOSvc->PrepareMetaData();
   if(gRootIOSvc->PrepareEvent(fCurrentEventID)){
     fAlgMgr->ProcessOneEvent();
   }

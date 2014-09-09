@@ -91,7 +91,7 @@ bool DmpRootIOSvc::Initialize(){
       DmpLogError<<"input data is not a root file... "<<fInFileName.string()<<DmpLogEndl;
       return false;
     }
-    DmpLogInfo<<"input data: "<<fInFileName.string()<<DmpLogEndl;
+    std::cout<<"\tinput data:\t"<<fInFileName.string()<<DmpLogEndl;
     if(fInFileName.string() == fOutFileName.string()){
       fInRootFile = new TFile(fInFileName.string().c_str(),"update");
     }else{
@@ -124,6 +124,9 @@ bool DmpRootIOSvc::Finalize(){
   if(fOutRootFile){
     DmpLogInfo<<"[DmpRootIOSvc::Finalize] +--Writing "<<fOutFileName<<DmpLogEndl;
     for(DmpRootIOFolderMap::iterator aFolderMap=fOutTreeSet.begin();aFolderMap != fOutTreeSet.end();++aFolderMap){
+      if(aFolderMap->first != "Event"){
+        FillData(aFolderMap->first);
+      }
       DmpRootIOTreeMap aTreeMap = aFolderMap->second;
       DmpLogInfo<<"[DmpRootIOSvc::Finalize] |  +--folder: "<<aFolderMap->first<<DmpLogEndl;
       fOutRootFile->mkdir((aFolderMap->first).c_str());
@@ -213,11 +216,10 @@ TTree* DmpRootIOSvc::GetInputTree(const std::string &folderName,const std::strin
 //-------------------------------------------------------------------
 void DmpRootIOSvc::PrepareMetaData(){
   for(DmpRootIOFolderMap::iterator aFolder=fInTreeSet.begin();aFolder!=fInTreeSet.end();++aFolder){
-    if("Event" == aFolder->first){
-      continue;
-    }
-    for(DmpRootIOTreeMap::iterator it=fInTreeSet[aFolder->first].begin();it!=fInTreeSet[aFolder->first].end();++it){
-      it->second->GetEntry();
+    if("Event" != aFolder->first){
+      for(DmpRootIOTreeMap::iterator it=fInTreeSet[aFolder->first].begin();it!=fInTreeSet[aFolder->first].end();++it){
+        it->second->GetEntry();
+      }
     }
   }
 }
@@ -228,7 +230,7 @@ bool DmpRootIOSvc::PrepareEvent(const long &evtID){
     // some algorithm not use input root file, like Sim and Rdc
     return true;
   }
-  DmpLogInfo<<"[DmpRootIOSvc::PrepareEvent] reading event ID = "<<evtID<<DmpLogEndl;
+  DmpLogDebug<<"[DmpRootIOSvc::PrepareEvent] reading event ID = "<<evtID<<DmpLogEndl;
   bool atLeastONeTree = false;
   for(DmpRootIOTreeMap::iterator it=fInTreeSet["Event"].begin();it!=fInTreeSet["Event"].end();++it){
     if(evtID < fEntriesOfTree["Event/"+it->first]){
@@ -240,9 +242,9 @@ bool DmpRootIOSvc::PrepareEvent(const long &evtID){
 }
 
 //-------------------------------------------------------------------
-void DmpRootIOSvc::FillEvent(){
-  for(DmpRootIOTreeMap::iterator it=fOutTreeSet["Event"].begin();it!=fOutTreeSet["Event"].end();++it){
-    DmpLogDebug<<it->first<<"\tFill event "<<it->second->GetEntries()<<DmpLogEndl;
+void DmpRootIOSvc::FillData(const std::string &floder){
+  for(DmpRootIOTreeMap::iterator it=fOutTreeSet[floder].begin();it!=fOutTreeSet[floder].end();++it){
+    DmpLogDebug<<it->first<<"\tFill "<<floder<<" data "<<it->second->GetEntries()<<DmpLogEndl;
     it->second->Fill();
   }
 }
