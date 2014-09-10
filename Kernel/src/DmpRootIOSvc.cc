@@ -32,10 +32,6 @@ DmpRootIOSvc::~DmpRootIOSvc(){
 
 //-------------------------------------------------------------------
 void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
-  if(OptMap.find(option) == OptMap.end()){
-    DmpLogError<<"No argument type: "<<option<<DmpLogEndl;
-    throw;
-  }
   switch (OptMap[option]){
     case 0: // InData/Read
     {
@@ -77,17 +73,21 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
       }
       break;
     }
+    default:
+    {
+      DmpLogError<<"No argument type: "<<argv<<DmpLogEndl;
+    }
   }
 }
 
 //-------------------------------------------------------------------
 bool DmpRootIOSvc::Initialize(){
-  DmpLogDebug<<"[DmpRootIOSvc::Initialize] initialization... "<<DmpLogEndl;  
+  DmpLogDebug<<"initialization... "<<DmpLogEndl;
   if(not fSetOptionSucc){
     return false;
   }
   if("NOIN" != fInFileName.string()){
-    if(".root" != fInFileName.extension()){
+    if(".root" != fInFileName.extension().string()){
       DmpLogError<<"input data is not a root file... "<<fInFileName.string()<<DmpLogEndl;
       return false;
     }
@@ -98,8 +98,18 @@ bool DmpRootIOSvc::Initialize(){
       fInRootFile = new TFile(fInFileName.string().c_str(),"read");
     }
   }
+  DmpLogDebug<<"... initialization done "<<DmpLogEndl;
+  return true;
+}
+
+//-------------------------------------------------------------------
+bool DmpRootIOSvc::Finalize(){
+  if(not gCore->InitializeDone()){
+    return true;
+  }
+  // create output file
   if("NOOUT" != fOutFileName.string()){
-    if(".root" != fOutFileName.extension()){
+    if(".root" != fOutFileName.extension().string()){
       fOutFileName += ".root";
     }
     if(fInFileName.string() == fOutFileName.string()){
@@ -111,33 +121,24 @@ bool DmpRootIOSvc::Initialize(){
       fOutRootFile = new TFile(fOutFileName.string().c_str(),"RECREATE");
     }
   }
-  DmpLogDebug<<"[DmpRootIOSvc::Initialize] ... initialization done "<<DmpLogEndl;  
-  return true;
-}
-
-//-------------------------------------------------------------------
-bool DmpRootIOSvc::Finalize(){
-  if(not gCore->InitializeDone()){
-    return true;
-  }
   // save trees
   if(fOutRootFile){
-    DmpLogInfo<<"[DmpRootIOSvc::Finalize] +--Writing "<<fOutFileName<<DmpLogEndl;
+    DmpLogInfo<<"+--Writing "<<fOutFileName<<DmpLogEndl;
     for(DmpRootIOFolderMap::iterator aFolderMap=fOutTreeSet.begin();aFolderMap != fOutTreeSet.end();++aFolderMap){
       if(aFolderMap->first != "Event"){
         FillData(aFolderMap->first);
       }
       DmpRootIOTreeMap aTreeMap = aFolderMap->second;
-      DmpLogInfo<<"[DmpRootIOSvc::Finalize] |  +--folder: "<<aFolderMap->first<<DmpLogEndl;
+      DmpLogInfo<<"|  +--folder: "<<aFolderMap->first<<DmpLogEndl;
       fOutRootFile->mkdir((aFolderMap->first).c_str());
       fOutRootFile->cd((aFolderMap->first).c_str());
       for(DmpRootIOTreeMap::iterator it= aTreeMap.begin();it!=aTreeMap.end();++it){
-        DmpLogInfo<<"[DmpRootIOSvc::Finalize] |  |  +--tree: "<<it->first<<", entries = "<<it->second->GetEntries()<<DmpLogEndl;
+        DmpLogInfo<<"|  |  +--tree: "<<it->first<<", entries = "<<it->second->GetEntries()<<DmpLogEndl;
         it->second->Write();
         delete it->second;
       }
     }
-    DmpLogInfo<<"[DmpRootIOSvc::Finalize] +--Done"<<DmpLogEndl;
+    DmpLogInfo<<"+--Done"<<DmpLogEndl;
   }
   // delete root files
   if(fInRootFile){
@@ -167,7 +168,7 @@ bool DmpRootIOSvc::WriteValid(const std::string &folderName,const std::string &t
   if(0 == theTree->GetListOfBranches()->FindObject(branchName.c_str())){
     noBranch = true;
   }else{
-    DmpLogError<<"[DmpRootIOSvc::WriteValid] the "<<path<<" existing..."<<DmpLogEndl;
+    DmpLogError<<"path existed... "<<path<<DmpLogEndl;
   }
   return (inWriteList && noBranch);
 }
@@ -230,7 +231,7 @@ bool DmpRootIOSvc::PrepareEvent(const long &evtID){
     // some algorithm not use input root file, like Sim and Rdc
     return true;
   }
-  DmpLogDebug<<"[DmpRootIOSvc::PrepareEvent] reading event ID = "<<evtID<<DmpLogEndl;
+  DmpLogDebug<<"reading event ID = "<<evtID<<DmpLogEndl;
   bool atLeastONeTree = false;
   for(DmpRootIOTreeMap::iterator it=fInTreeSet["Event"].begin();it!=fInTreeSet["Event"].end();++it){
     if(evtID < fEntriesOfTree["Event/"+it->first]){

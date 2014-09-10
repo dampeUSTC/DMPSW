@@ -29,9 +29,10 @@ DmpCore::DmpCore()
   fSvcMgr = DmpServiceManager::GetInstance();
   fSvcMgr->Append(gRootIOSvc);
   OptMap.insert(std::make_pair("LogLevel",  0));    // value: None, Error, Warning, Info, Debug
-  OptMap.insert(std::make_pair("EventNumber",1));   // value: any number
-  OptMap.insert(std::make_pair("StartTime", 2));    // value: format 20131231-1430
-  OptMap.insert(std::make_pair("StopTime",  3));    // value: format 20131231-1430
+  OptMap.insert(std::make_pair("LogHeader", 1));    // value: None, Error, Warning, Info, Debug
+  OptMap.insert(std::make_pair("EventNumber",2));   // value: any number
+  OptMap.insert(std::make_pair("StartTime", 3));    // value: format 20131231-1430
+  OptMap.insert(std::make_pair("StopTime",  4));    // value: format 20131231-1430
 }
 
 //-------------------------------------------------------------------
@@ -132,17 +133,22 @@ void DmpCore::Set(const std::string &type,const std::string &value){
       DmpLog::SetLogLevel(value);
       break;
     }
-    case 1: // EventNumber
+    case 1: // LogHeader
+    {
+      DmpLog::SetLogHeader(value);
+      break;
+    }
+    case 2: // EventNumber
     {
       fMaxEventNo = boost::lexical_cast<long>(value);
       break;
     }
-    case 2: // StartTime
+    case 3: // StartTime
     {
       fStartTime = DeltaTime(value);
       break;
     }
-    case 3: // StopTime
+    case 4: // StopTime
     {
       fStopTime = DeltaTime(value);
       break;
