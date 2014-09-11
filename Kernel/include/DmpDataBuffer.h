@@ -113,7 +113,9 @@ template<typename T> bool DmpDataBuffer::ReadObject(const std::string &path,T *&
     fInputDataBufPool[folderName][treeName].insert(std::make_pair(branchName,dataPtr));
     return true;
   }
-  DmpLogError<<"[DmpDataBuffer::ReadObject] didn't find data: "<<path<<DmpLogEndl;
+  DmpLogError<<"[DmpDataBuffer::ReadObject] not find data: "<<path<<DmpLogEndl;
+  delete dataPtr;
+  dataPtr = 0;
   return false;
 }
 

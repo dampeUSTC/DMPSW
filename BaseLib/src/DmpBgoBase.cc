@@ -42,4 +42,9 @@ short DmpBgoBase::GetSideID(const short &gid){
   return ((gid>>4) &0x0001);
 }
 
+//-------------------------------------------------------------------
+short DmpBgoBase::GetDynodeID(const short &gid){
+  return (gid&0x000f);
+}
+
 

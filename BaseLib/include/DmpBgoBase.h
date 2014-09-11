@@ -24,6 +24,6 @@ namespace DmpBgoBase{
   short GetLayerID(const short &gid);
   short GetBarID(const short &gid);
   short GetSideID(const short &gid);
-
+  short GetDynodeID(const short &gid);
 }
 

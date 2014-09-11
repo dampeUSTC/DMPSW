@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpCore.cc, 2014-09-06 11:04:24 DAMPE $
+ *  $Id: DmpCore.cc, 2014-09-11 15:02:17 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 22/04/2014
 */
@@ -17,7 +17,7 @@ DmpCore::DmpCore()
   fMaxEventNo(-1),
   fStartTime(0),
   fStopTime(0),
-  fInitializeDone(true),
+  fInitializeDone(false),
   fTerminateRun(false),
   fCurrentEventID(0)    // must == 0
 {
@@ -47,11 +47,13 @@ bool DmpCore::Initialize(){
   std::cout<<"\n  [DmpCore::Initialize] Initialize..."<<std::endl;
   if(not fSvcMgr->Initialize()) return false;
   if(not fAlgMgr->Initialize()) return false;
+  gRootIOSvc->CreateOutRootFile();
   gRootIOSvc->PrepareMetaData();
   if(0 == fStopTime){
     fStopTime = DeltaTime("21130101-0000");
   }
   std::cout<<"  [DmpCore::Initialize] ... initialized successfully"<<std::endl;
+  fInitializeDone = true;
   return true;
 }
 
@@ -156,7 +158,6 @@ void DmpCore::Set(const std::string &type,const std::string &value){
     default:
     {
       DmpLogError<<"No argument type: "<<type<<DmpLogEndl;
-      fInitializeDone = false;
     }
   }
 }

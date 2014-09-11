@@ -9,21 +9,18 @@
 #include "TFile.h"
 
 #include "DmpRootIOSvc.h"
-#include "DmpCore.h"
 
 //-------------------------------------------------------------------
 DmpRootIOSvc::DmpRootIOSvc()
  :DmpVSvc("DmpRootIOSvc"),
   fInRootFile(0),
-  fOutRootFile(0),
-  fSetOptionSucc(true)
+  fOutRootFile(0)
 {
   fInFileName = "NOIN";
   fOutFileName = "NOOUT";
   OptMap.insert(std::make_pair("InData/Read",   0));
-  OptMap.insert(std::make_pair("InData/Update", 1));
-  OptMap.insert(std::make_pair("OutData/FileName",  2));
-  OptMap.insert(std::make_pair("OutData/WriteList", 3));
+  OptMap.insert(std::make_pair("OutData/FileName",  1));
+  OptMap.insert(std::make_pair("OutData/WriteList", 2));
 }
 
 //-------------------------------------------------------------------
@@ -38,28 +35,16 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
       fInFileName = argv;
       break;
     }
-    case 1: // InData/Update
+    case 1: // OutData/FileName
     {
-      if("NOOUT" != fOutFileName.string()){
-        DmpLogError<<"Can not set \'InData/Update\' after \'OutData/FileName\'"<<DmpLogEndl;
-        fSetOptionSucc = false;
-        return;
+      if("NOOUT" == fOutFileName.string()){
+        fOutFileName = argv;
+      }else{
+        DmpLogWarning<<"already setted out file name: "<<fOutFileName.string()<<", will not use "<<argv<<DmpLogEndl;
       }
-      fInFileName = argv;
-      fOutFileName = argv;
       break;
     }
-    case 2: // OutData/FileName 
-    {
-      if(fInFileName.string() == fOutFileName.string()){
-        DmpLogError<<"Can not set \'OutData/FileName\' after \'InData/Update\'"<<DmpLogEndl;
-        fSetOptionSucc = false;
-        return;
-      }
-      fOutFileName = argv;
-      break;
-    }
-    case 3: // OutData/WriteList
+    case 2: // OutData/WriteList
     {
       boost::split(fWriteList,argv,boost::is_any_of(";"));
       for(short i=0;i<fWriteList.size();++i){
@@ -67,8 +52,6 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
         boost::split(temp,fWriteList[i],boost::is_any_of("/"));
         if(3 != temp.size()){
           DmpLogError<<"Wrong path of writing data: "<<fWriteList[i]<<DmpLogEndl;
-          fSetOptionSucc = false;
-          return;
         }
       }
       break;
@@ -83,44 +66,35 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
 //-------------------------------------------------------------------
 bool DmpRootIOSvc::Initialize(){
   DmpLogDebug<<"initialization... "<<DmpLogEndl;
-  if(not fSetOptionSucc){
-    return false;
-  }
   if("NOIN" != fInFileName.string()){
     if(".root" != fInFileName.extension().string()){
       DmpLogError<<"input data is not a root file... "<<fInFileName.string()<<DmpLogEndl;
       return false;
     }
     std::cout<<"\tinput data:\t"<<fInFileName.string()<<DmpLogEndl;
-    if(fInFileName.string() == fOutFileName.string()){
-      fInRootFile = new TFile(fInFileName.string().c_str(),"update");
-    }else{
-      fInRootFile = new TFile(fInFileName.string().c_str(),"read");
-    }
+    fInRootFile = new TFile(fInFileName.string().c_str(),"read");
   }
   DmpLogDebug<<"... initialization done "<<DmpLogEndl;
   return true;
 }
 
 //-------------------------------------------------------------------
-bool DmpRootIOSvc::Finalize(){
-  if(not gCore->InitializeDone()){
-    return true;
-  }
-  // create output file
+void DmpRootIOSvc::CreateOutRootFile(){
   if("NOOUT" != fOutFileName.string()){
     if(".root" != fOutFileName.extension().string()){
       fOutFileName += ".root";
     }
-    if(fInFileName.string() == fOutFileName.string()){
-      fOutRootFile = fInRootFile;
-    }else if(0 != fWriteList.size()){
+    if(0 != fWriteList.size()){
       if(not boost::filesystem::exists(fOutFileName.parent_path())){
         boost::filesystem::create_directories(fOutFileName.parent_path());
       }
       fOutRootFile = new TFile(fOutFileName.string().c_str(),"RECREATE");
     }
   }
+}
+
+//-------------------------------------------------------------------
+bool DmpRootIOSvc::Finalize(){
   // save trees
   if(fOutRootFile){
     DmpLogInfo<<"+--Writing "<<fOutFileName<<DmpLogEndl;
@@ -145,7 +119,7 @@ bool DmpRootIOSvc::Finalize(){
     fInRootFile->Close();
     delete fInRootFile;
   }
-  if(fInFileName.string() != fOutFileName.string() && "NOOUT" != fOutFileName.string()  && 0 != fOutRootFile){
+  if(fOutRootFile){
     fOutRootFile->Close();
     delete fOutRootFile;
   }
@@ -249,18 +223,6 @@ void DmpRootIOSvc::FillData(const std::string &floder){
     it->second->Fill();
   }
 }
-
-//-------------------------------------------------------------------
-/*
-bool DmpRootIOSvc::NewBranchInInputTree(const std::string &treeName)const{
-  if(fOutFileName.string()  == fInFileName.string()){
-    if(fInRootFile->Get(treeName.c_str())){
-      return true;
-    }
-  }
-  return false;
-}
-*/
 
 //-------------------------------------------------------------------
 DmpRootIOSvc *gRootIOSvc = DmpRootIOSvc::GetInstance();

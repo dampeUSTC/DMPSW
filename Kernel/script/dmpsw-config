@@ -18,12 +18,12 @@ cat<<EOF
 
 Usage: dmpsw-config [OPTION...]
 
-  --prefix                output installation prefix of DAMPE Software
-  --version               output version for DAMPE Software
-  --libs                  output all linker flags
-  --cflags                output all preprocessor and compiler flags
-  --include               output include flags
-  --help                  output help information
+  --prefix                Print installation prefix of DAMPE Software
+  --version               Print version for DAMPE Software
+  --libs                  Print basic libraries
+  --cflags                Print header path and compiler flags
+  --include               Print header path
+  --help                  Print help information
 
 EOF
   exit 1
@@ -33,7 +33,7 @@ EOF
 prefix=$DMPSWSYS
 
 #   list all libraries of DMPSW
-libs="-lDmpKernel -lDmpEvent"
+libs="-lDmpKernel -lDmpEvent -lDmpBase"
 :<<EOF
 for file in `ls ${prefix}/lib`;do
   if [[ ${file} = *libDmp* && ${file} = *.so* ]];then
@@ -68,7 +68,7 @@ while test $# -gt 0; do
       out="$out -L$DMPSWWORK/lib -L$prefix/lib $libs"
       ;;
    --cflags)
-      out="$out -I$prefix/include"
+      out="$out -I$DMPSWWORK/include -I$prefix/include -fPIC -O3"   # add ?
       ;;
    --include)
       out="$out -I$DMPSWWORK/include -I$prefix/include"

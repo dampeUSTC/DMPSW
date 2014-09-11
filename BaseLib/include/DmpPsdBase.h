@@ -24,6 +24,7 @@ namespace DmpPsdBase{
   short GetLayerID(const short &gid);
   short GetStripID(const short &gid);
   short GetSideID(const short &gid);
+  short GetDynodeID(const short &gid);
 
 }
 
