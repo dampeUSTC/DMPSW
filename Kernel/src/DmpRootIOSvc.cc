@@ -16,11 +16,13 @@ DmpRootIOSvc::DmpRootIOSvc()
   fInRootFile(0),
   fOutRootFile(0)
 {
-  fInFileName = "NOIN";
-  fOutFileName = "NOOUT";
-  OptMap.insert(std::make_pair("InData/Read",   0));
-  OptMap.insert(std::make_pair("OutData/FileName",  1));
-  OptMap.insert(std::make_pair("OutData/WriteList", 2));
+  fInFileName = "./";
+  fOutFileName = "./"
+  OptMap.insert(std::make_pair("InData/Path",   0));
+  OptMap.insert(std::make_pair("InData/FileName", 1));
+  OptMap.insert(std::make_pair("OutData/Path",  2));
+  OptMap.insert(std::make_pair("OutData/FileName",  3));
+  OptMap.insert(std::make_pair("OutData/WriteList", 4));
 }
 
 //-------------------------------------------------------------------
@@ -30,12 +32,33 @@ DmpRootIOSvc::~DmpRootIOSvc(){
 //-------------------------------------------------------------------
 void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
   switch (OptMap[option]){
-    case 0: // InData/Read
+    case 0: // InData/Path
+    {
+// *
+// *  TODO: 
+// *
+      boost::filesystem::path temp(argv);
+      if(temp.extension().string() != ""){
+        DmpLogError<<"indata path should not include file name "<<argv<<". Will use \"./\" as input path"<<DmpLogEndl;
+      }
+      if("." != GetInputPath()){    // set path at InData/FileName
+      }
+      if(".root" == GetInputExtension()){
+      }
+      fInFileName = argv;
+      break;
+    }
+    case 1: // InData/FileName
     {
       fInFileName = argv;
       break;
     }
-    case 1: // OutData/FileName
+    case 2: // OutData/Path
+    {
+      fInFileName = argv;
+      break;
+    }
+    case 3: // OutData/FileName
     {
       if("NOOUT" == fOutFileName.string()){
         fOutFileName = argv;
@@ -44,7 +67,7 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
       }
       break;
     }
-    case 2: // OutData/WriteList
+    case 4: // OutData/WriteList
     {
       boost::split(fWriteList,argv,boost::is_any_of(";"));
       for(short i=0;i<fWriteList.size();++i){
@@ -76,6 +99,14 @@ bool DmpRootIOSvc::Initialize(){
   }
   DmpLogDebug<<"... initialization done "<<DmpLogEndl;
   return true;
+}
+
+//-------------------------------------------------------------------
+void DmpRootIOSvc::SetOutputKeyWord(const std::string &key){
+// *
+// *  TODO:  add key in output  stem
+// *
+
 }
 
 //-------------------------------------------------------------------

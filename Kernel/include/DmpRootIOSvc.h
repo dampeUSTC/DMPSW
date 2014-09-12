@@ -37,6 +37,7 @@ public:
   bool WriteValid(const std::string &folderName,const std::string &treeName,const std::string &branchName); // in write list, no branch
   TTree* GetOutputTree(const std::string &folderName,const std::string &treeName);
   TTree* GetInputTree(const std::string &folderName,const std::string &treeName);
+  void SetOutputKeyWord(const std::string &key);    // call me in algorithm
   void CreateOutRootFile();
   void PrepareMetaData();
   bool PrepareEvent(const long &evtID); //only read fInTreeSet["Event"]
@@ -49,10 +50,14 @@ public:
   */
 
 public:
+  std::string GetInputPath()const{return fInFileName.parent_path().string();}
+  std::string GetOutputPath()const{return fOutFileName.parent_path().string();}
   std::string GetInputFileName()const{return fInFileName.filename().string();}
   std::string GetOutputFileName()const{return fOutFileName.filename().string();}
-  std::string GetInputPath()const{return fInFileName.stem().string();}
-  std::string GetOutputPath()const{return fOutFileName.stem().string();}
+  std::string GetInputStem()const{return fInFileName.stem().string();}
+  std::string GetOutputStem()const{return fOutFileName.stem().string();}
+  std::string GetInputExtension()const{return fInFileName.extension().string();}
+  std::string GetOutputExtension()const{return fOutFileName.extension().string();}
 
 private:
   DmpRootIOSvc();
