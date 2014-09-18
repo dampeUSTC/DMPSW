@@ -37,7 +37,6 @@ public:
   bool WriteValid(const std::string &folderName,const std::string &treeName,const std::string &branchName); // in write list, no branch
   TTree* GetOutputTree(const std::string &folderName,const std::string &treeName);
   TTree* GetInputTree(const std::string &folderName,const std::string &treeName);
-  void SetOutputKeyWord(const std::string &key);    // call me in algorithm
   void CreateOutRootFile();
   void PrepareMetaData();
   bool PrepareEvent(const long &evtID); //only read fInTreeSet["Event"]
@@ -67,6 +66,7 @@ typedef std::map<std::string, TTree*>  DmpRootIOTreeMap;                // key i
 typedef std::map<std::string, DmpRootIOTreeMap>  DmpRootIOFolderMap;    // key is "Folder"
   boost::filesystem::path   fInFileName;        // include path
   boost::filesystem::path   fOutFileName;       // include path. If is input file, set "INPUT"
+  std::string               fOutFileKey;        // key word for the name of output root file
   std::vector<std::string>  fWriteList;         // to fOutTreeSet
   TFile         *fInRootFile;
   TFile         *fOutRootFile;
