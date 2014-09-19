@@ -23,13 +23,13 @@ DmpCore::DmpCore()
 {
   std::cout<<"**************************************************"<<std::endl;
   std::cout<<"      Offline software of DAMPE (DMPSW)"<<std::endl;
-  std::cout<<"      version:  1.0.2"<<std::endl;
+  std::cout<<"      version:  1.0.3"<<std::endl;
   std::cout<<"**************************************************"<<std::endl;
   fAlgMgr = DmpAlgorithmManager::GetInstance();
   fSvcMgr = DmpServiceManager::GetInstance();
   fSvcMgr->Append(gRootIOSvc);
   OptMap.insert(std::make_pair("LogLevel",  0));    // value: None, Error, Warning, Info, Debug
-  OptMap.insert(std::make_pair("LogHeader", 1));    // value: None, Error, Warning, Info, Debug
+  OptMap.insert(std::make_pair("LogHeader", 1));    // value: On, Off 
   OptMap.insert(std::make_pair("EventNumber",2));   // value: any number
   OptMap.insert(std::make_pair("StartTime", 3));    // value: format 20131231-1430
   OptMap.insert(std::make_pair("StopTime",  4));    // value: format 20131231-1430
@@ -82,33 +82,6 @@ bool DmpCore::Run(){
     }
   }
   std::cout<<"  [DmpCore::Run] Done"<<std::endl;
-  return true;
-}
-
-//-------------------------------------------------------------------
-bool DmpCore::ExecuteEventID(const long &evtID){
-  if(not fInitializeDone){
-    return false;
-  }
-  fCurrentEventID = evtID;
-  std::cout<<"\n  [DmpCore::ExecuteEvent] execute event: ID = "<<fCurrentEventID<<std::endl;
-  if(gRootIOSvc->PrepareEvent(fCurrentEventID)){
-    fAlgMgr->ProcessOneEvent();
-  }
-  std::cout<<"  [DmpCore::ExecuteEvent] Done\n"<<std::endl;
-  return true;
-}
-
-//-------------------------------------------------------------------
-bool DmpCore::ExecuteEventTime(const std::string &time){
-  if(not fInitializeDone){
-    return false;
-  }
-  std::cout<<"\n  [DmpCore::ExecuteEvent] event time = "<<time<<std::endl;
-// *
-// *  TODO:  finish me
-// *
-  std::cout<<"  [DmpCore::ExecuteEvent] Done\n"<<std::endl;
   return true;
 }
 

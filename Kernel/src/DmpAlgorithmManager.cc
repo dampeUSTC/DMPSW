@@ -22,7 +22,7 @@ DmpAlgorithmManager::~DmpAlgorithmManager(){
 bool DmpAlgorithmManager::ProcessOneEvent(){
   for(std::list<DmpVAlg*>::iterator it = fElements.begin();it != fElements.end();++it){
     if(not (*it)->ProcessThisEvent()){
-      DmpLogError<<"Event ID = "<<gCore->GetCurrentEventID()<<",\talgorithm failed: "<<(*it)->Name()<<DmpLogEndl;
+      DmpLogWarning<<"Event ID = "<<gCore->GetCurrentEventID()<<",\talgorithm failed: "<<(*it)->Name()<<DmpLogEndl;
       return false;
     }
   }

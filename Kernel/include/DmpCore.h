@@ -27,8 +27,6 @@ public:
 public:     // binding functions
   bool Initialize();            // execute all elements' Initialize() in all *Mgr
   bool Run();                   // run one job
-  bool ExecuteEventID(const long &evtID);         // just execute event ID = evtID
-  bool ExecuteEventTime(const std::string &time);   // execute one event, Event time = time
   bool Finalize();              // execute all elements' Finalize() in all *Mgr
 
 public:

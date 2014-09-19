@@ -48,9 +48,9 @@ short DmpPsdBase::GetDynodeID(const short &gid){
 }
 
 //-------------------------------------------------------------------
-void DmpPsdBase::LoadLBSDID(const short &gid,const short &l,const short &b,const short &s,const short &d){
+void DmpPsdBase::LoadLBSDID(const short &gid,short &l,short &b,short &s,short &d){
   l = DmpPsdBase::GetLayerID(gid);
-  b = DmpPsdBase::GetBarID(gid);
+  b = DmpPsdBase::GetStripID(gid);
   s = DmpPsdBase::GetSideID(gid);
   d = DmpPsdBase::GetDynodeID(gid);
 }
