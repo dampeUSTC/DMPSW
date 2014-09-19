@@ -47,4 +47,11 @@ short DmpBgoBase::GetDynodeID(const short &gid){
   return (gid&0x000f);
 }
 
+//-------------------------------------------------------------------
+void DmpBgoBase::LoadLBSDID(const short &gid,const short &l,const short &b,const short &s,const short &d){
+  l = DmpBgoBase::GetLayerID(gid);
+  b = DmpBgoBase::GetBarID(gid);
+  s = DmpBgoBase::GetSideID(gid);
+  d = DmpBgoBase::GetDynodeID(gid);
+}
 

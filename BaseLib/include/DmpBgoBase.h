@@ -25,5 +25,6 @@ namespace DmpBgoBase{
   short GetBarID(const short &gid);
   short GetSideID(const short &gid);
   short GetDynodeID(const short &gid);
+  void  LoadLBSDID(const short &gid,const short &l,const short &b,const short &s,const short &d);
 }
 
