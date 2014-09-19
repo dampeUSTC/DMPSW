@@ -116,6 +116,9 @@ bool DmpRootIOSvc::Initialize(){
     // since DmpVAlg::Initialize() need this directory is existing
     boost::filesystem::create_directories(fOutPath);
   }
+  if(fOutFileName.string() == ""){
+    Set("OutData/FileName",this->GetInputFileName());
+  }
   //-------------------------------------------------------------------
   DmpLogDebug<<"... initialization done "<<DmpLogEndl;
   return true;
