@@ -95,8 +95,6 @@ BOOST_PYTHON_MODULE(libDmpKernel){
     .staticmethod("GetInstance")
     .def("Initialize",  &DmpCore::Initialize)
     .def("Run",         &DmpCore::Run)
-    .def("ExecuteEventID",&DmpCore::ExecuteEventID)
-    .def("ExecuteEventTime",&DmpCore::ExecuteEventTime)
     .def("Finalize",    &DmpCore::Finalize)
     .def("Set", &DmpCore::Set)
     .def("AlgorithmManager",    &DmpCore::AlgorithmManager,return_value_policy<reference_existing_object>())
