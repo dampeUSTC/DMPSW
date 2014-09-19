@@ -15,6 +15,5 @@ DmpServiceManager::DmpServiceManager()
 
 //-------------------------------------------------------------------
 DmpServiceManager::~DmpServiceManager(){
-  std::cout<<"===>  "<<Name()<<" deleted"<<std::endl;
 }
 

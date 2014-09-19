@@ -5,6 +5,7 @@
 */
 
 #include "DmpAlgorithmManager.h"
+#include "DmpCore.h"
 
 //-------------------------------------------------------------------
 DmpAlgorithmManager::DmpAlgorithmManager()
@@ -15,14 +16,13 @@ DmpAlgorithmManager::DmpAlgorithmManager()
 
 //-------------------------------------------------------------------
 DmpAlgorithmManager::~DmpAlgorithmManager(){
-  std::cout<<"===>  "<<Name()<<" deleted"<<std::endl;
 }
 
 //-------------------------------------------------------------------
 bool DmpAlgorithmManager::ProcessOneEvent(){
   for(std::list<DmpVAlg*>::iterator it = fElements.begin();it != fElements.end();++it){
     if(not (*it)->ProcessThisEvent()){
-      DmpLogError<<"  [DmpAlgorithmManager::ProcessOneEvent] "<<(*it)->Name()<<" failed...\n"<<DmpLogEndl;
+      DmpLogError<<"Event ID = "<<gCore->GetCurrentEventID()<<",\talgorithm failed: "<<(*it)->Name()<<DmpLogEndl;
       return false;
     }
   }

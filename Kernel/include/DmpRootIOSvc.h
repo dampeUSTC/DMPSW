@@ -49,8 +49,8 @@ public:
   */
 
 public:
-  std::string GetInputPath()const{return fInFileName.parent_path().string();}
-  std::string GetOutputPath()const{return fOutFileName.parent_path().string();}
+  std::string GetInputPath()const{return fInPath;}
+  std::string GetOutputPath()const{return fOutPath;}
   std::string GetInputFileName()const{return fInFileName.filename().string();}
   std::string GetOutputFileName()const{return fOutFileName.filename().string();}
   std::string GetInputStem()const{return fInFileName.stem().string();}
@@ -65,8 +65,10 @@ private:
 typedef std::map<std::string, TTree*>  DmpRootIOTreeMap;                // key is "Tree"
 typedef std::map<std::string, DmpRootIOTreeMap>  DmpRootIOFolderMap;    // key is "Folder"
   boost::filesystem::path   fInFileName;        // include path
-  boost::filesystem::path   fOutFileName;       // include path. If is input file, set "INPUT"
+  boost::filesystem::path   fOutFileName;       // include path
   std::string               fOutFileKey;        // key word for the name of output root file
+  std::string               fInPath;            // input file path
+  std::string               fOutPath;           // output file path
   std::vector<std::string>  fWriteList;         // to fOutTreeSet
   TFile         *fInRootFile;
   TFile         *fOutRootFile;

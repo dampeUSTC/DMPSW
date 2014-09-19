@@ -15,10 +15,12 @@ DmpRootIOSvc::DmpRootIOSvc()
  :DmpVSvc("DmpRootIOSvc"),
   fInRootFile(0),
   fOutRootFile(0),
-  fOutFileKey("")
+  fOutFileKey(""),
+  fInPath("./"),
+  fOutPath("./")
 {
-  fInFileName = "./";
-  fOutFileName = "./";
+  fInFileName = "";
+  fOutFileName = "";
   OptMap.insert(std::make_pair("InData/Path",   0));
   OptMap.insert(std::make_pair("InData/FileName", 1));
   OptMap.insert(std::make_pair("OutData/Path",  2));
@@ -36,41 +38,37 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
   switch (OptMap[option]){
     case 0: // InData/Path
     {
-      if("." == GetInputPath()){    // not set path by InData/FileName
-        boost::filesystem::path temp(argv);
-        fInFileName = temp.parent_path().string()+"/"+GetInputFileName();
+      if('/' == argv[argv.length()-1]){
+        fInPath = argv;
       }else{
-        DmpLogWarning<<"setted path by InData/FileName"<<DmpLogEndl;
+        fInPath = argv+"/";
       }
       break;
     }
     case 1: // InData/FileName
     {
       boost::filesystem::path temp(argv);
-      if(temp.parent_path().string() != ""){
-        fInFileName = argv;
-      }else{
-        fInFileName = GetInputPath()+"/"+argv;
+      fInFileName = temp.filename().string();
+      if((temp.parent_path().string()!="") && (fInPath=="./")){
+        fInPath = temp.parent_path().string()+"/";
       }
       break;
     }
     case 2: // OutData/Path
     {
-      if("." == GetOutputPath()){    // not set path by OutData/FileName
-        boost::filesystem::path temp(argv);
-        fOutFileName = temp.parent_path().string()+"/"+GetOutputFileName();
+      if('/' == argv[argv.length()-1]){
+        fOutPath = argv;
       }else{
-        DmpLogWarning<<"setted path by OutData/FileName"<<DmpLogEndl;
+        fOutPath = argv+"/";
       }
       break;
     }
     case 3: // OutData/FileName
     {
       boost::filesystem::path temp(argv);
-      if(temp.parent_path().string() != ""){
-        fOutFileName = argv;
-      }else{
-        fOutFileName = GetOutputPath()+"/"+argv;
+      fOutFileName = temp.filename().string();
+      if((temp.parent_path().string()!="") && (fOutPath=="./")){
+        fOutPath = temp.parent_path().string()+"/";
       }
       break;
     }
@@ -89,6 +87,7 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
     case 5: // OutData/Key
     {
       fOutFileKey = argv;
+      break;
     }
     default:
     {
@@ -100,14 +99,24 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
 //-------------------------------------------------------------------
 bool DmpRootIOSvc::Initialize(){
   DmpLogDebug<<"initialization... "<<DmpLogEndl;
-  if("./" != fInFileName.string()){
-    if(".root" != fInFileName.extension().string()){
+  //-------------------------------------------------------------------
+  if(fInFileName.string() != ""){   // has input file
+    if(fInFileName.extension().string() == ".root"){
+      fInFileName = fInPath+fInFileName.string();
+      fInRootFile = new TFile(fInFileName.string().c_str(),"read");
+      std::cout<<"\tInput data:\t"<<fInFileName.string()<<DmpLogEndl;
+    }else{
       DmpLogError<<"input data is not a root file... "<<fInFileName.string()<<DmpLogEndl;
       return false;
     }
-    std::cout<<"\tinput data:\t"<<fInFileName.string()<<DmpLogEndl;
-    fInRootFile = new TFile(fInFileName.string().c_str(),"read");
   }
+  //-------------------------------------------------------------------
+  if(not boost::filesystem::exists(fOutPath)){
+    // create output directory at here, not in CreateOutRootFile()
+    // since DmpVAlg::Initialize() need this directory is existing
+    boost::filesystem::create_directories(fOutPath);
+  }
+  //-------------------------------------------------------------------
   DmpLogDebug<<"... initialization done "<<DmpLogEndl;
   return true;
 }
@@ -115,23 +124,18 @@ bool DmpRootIOSvc::Initialize(){
 //-------------------------------------------------------------------
 void DmpRootIOSvc::CreateOutRootFile(){
   if(0 != fWriteList.size()){
-    if("./" == fOutFileName.string()){
-      fOutFileName = "./"+GetInputFileName();
-std::cout<<"DEBUG: "<<__FILE__<<"("<<__LINE__<<")"<<fOutFileName<<std::endl;
-    }
+    // create root file at here, not in Initialize().
+    // Becuase fOutFileKey may be setted in DmpVAlg::Initialize()
     std::string splitMark = "-";
-    std::string output = GetOutputPath()+"/"+GetOutputStem();
-std::cout<<"DEBUG: "<<__FILE__<<"("<<__LINE__<<")"<<output<<std::endl;
+    std::string output = fOutPath+fOutFileName.stem().string();
     unsigned found = output.find_last_of(splitMark);
     if(-1 == found){    // not found
       fOutFileName = output+splitMark+fOutFileKey+".root";
     }else{
       fOutFileName = output.substr(0,found)+splitMark+fOutFileKey+".root";
     }
-    if(not boost::filesystem::exists(fOutFileName.parent_path())){
-      boost::filesystem::create_directories(fOutFileName.parent_path());
-    }
     fOutRootFile = new TFile(fOutFileName.string().c_str(),"RECREATE");
+    std::cout<<"\tOut file:\t"<<fOutFileName.string()<<DmpLogEndl;
   }
 }
 
