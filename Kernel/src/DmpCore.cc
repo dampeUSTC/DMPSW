@@ -23,7 +23,7 @@ DmpCore::DmpCore()
 {
   std::cout<<"**************************************************"<<std::endl;
   std::cout<<"      Offline software of DAMPE (DMPSW)"<<std::endl;
-  std::cout<<"      version:  1.0.3"<<std::endl;
+  std::cout<<"      version:  1.1.0(dampeustc)"<<std::endl;
   std::cout<<"**************************************************"<<std::endl;
   fAlgMgr = DmpAlgorithmManager::GetInstance();
   fSvcMgr = DmpServiceManager::GetInstance();
