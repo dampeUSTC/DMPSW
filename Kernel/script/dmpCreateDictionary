@@ -58,6 +58,7 @@ for file in `ls $incDir`;do
 done
 if [[ $nLinkDef -ne 1 ]];then
   echo "Error:    there're $nLinkDef *LinkDef.h files in $incDir"
+  Usage
   exit 1
 fi
 

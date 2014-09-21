@@ -30,12 +30,11 @@ EOF
 }
 
 #-------------------------------------------------------------------
-prefix=$DMPSWSYS
 
 #   list all libraries of DMPSW
 libs="-lDmpKernel -lDmpEvent -lDmpBase"
 :<<EOF
-for file in `ls ${prefix}/lib`;do
+for file in `ls ${DMPSWSYS}/lib`;do
   if [[ ${file} = *libDmp* && ${file} = *.so* ]];then
     file=${file/lib/-l}
     file=${file/\.so/}
@@ -62,16 +61,16 @@ while test $# -gt 0; do
 
   case $1 in
     --prefix)
-      out="$out $prefix"
+      out="$out $DMPSWSYS"
       ;;
    --libs)
-      out="$out -L$DMPSWWORK/lib -L$prefix/lib $libs"
+      out="$out -L$DMPSWWORK/lib -L$DMPSWSYS/lib $libs"
       ;;
    --cflags)
-      out="$out -I$DMPSWWORK/include -I$prefix/include -fPIC -O3"   # add ?
+      out="$out -I$DMPSWWORK/include -I$DMPSWSYS/include -fPIC -O3"   # add ?
       ;;
    --include)
-      out="$out -I$DMPSWWORK/include -I$prefix/include"
+      out="$out -I$DMPSWWORK/include -I$DMPSWSYS/include"
       ;;
    -?)
       Help
