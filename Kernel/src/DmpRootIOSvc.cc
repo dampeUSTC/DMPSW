@@ -128,10 +128,13 @@ void DmpRootIOSvc::CreateOutRootFile(){
     std::string splitMark = "-";
     std::string output = fOutPath+fOutFileName.stem().string();
     unsigned found = output.find_last_of(splitMark);
+    if("" != fOutFileKey){
+      fOutFileKey = splitMark+fOutFileKey;
+    }
     if(-1 == found){    // not found
-      fOutFileName = output+splitMark+fOutFileKey+".root";
+      fOutFileName = output+fOutFileKey+".root";
     }else{
-      fOutFileName = output.substr(0,found)+splitMark+fOutFileKey+".root";
+      fOutFileName = output.substr(0,found)+fOutFileKey+".root";
     }
     fOutRootFile = new TFile(fOutFileName.string().c_str(),"RECREATE");
     std::cout<<"\tOutput file:\t"<<fOutFileName.string()<<DmpLogEndl;
