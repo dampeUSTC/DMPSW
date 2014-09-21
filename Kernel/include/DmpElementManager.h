@@ -75,7 +75,7 @@ void DmpElementManager<DmpElement>::Delete(const std::string &name){
 //-------------------------------------------------------------------
 template<typename DmpElement>
 void DmpElementManager<DmpElement>::Append(DmpElement *aEle){
-  std::cout<<"  ["<<fName<<"] Adding element: "<<aEle->Name()<<std::endl;
+  std::cout<<"  ["<<fName<<"]\tAdding element: "<<aEle->Name()<<std::endl;
   fElements.push_back(aEle);
 }
 

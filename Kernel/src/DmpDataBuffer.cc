@@ -8,11 +8,22 @@
 #include "DmpDataBuffer.h"
 
 //-------------------------------------------------------------------
-DmpDataBuffer::DmpDataBuffer(){
+DmpDataBuffer::DmpDataBuffer()
+ :DmpVSvc("DmpDataBuffer")
+{
 }
 
 //-------------------------------------------------------------------
 DmpDataBuffer::~DmpDataBuffer(){
+}
+
+//-------------------------------------------------------------------
+bool DmpDataBuffer::Initialize(){
+  return true;
+}
+
+//-------------------------------------------------------------------
+bool DmpDataBuffer::Finalize(){
   DmpLogInfo<<"+-Deleting input data..."<<DmpLogEndl;
   for(DmpDataBufFolderMap::iterator aFolder=fInputDataBufPool.begin();aFolder!=fInputDataBufPool.end();++aFolder){
     DmpDataBufTreeMap aTreeMap = aFolder->second;
@@ -42,6 +53,7 @@ DmpDataBuffer::~DmpDataBuffer(){
     }
   }
   DmpLogInfo<<"`-Done"<<DmpLogEndl;
+  return true;
 }
 
 //-------------------------------------------------------------------

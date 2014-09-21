@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpCore.cc, 2014-09-11 15:02:17 DAMPE $
+ *  $Id: DmpCore.cc, 2014-09-21 14:58:08 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 22/04/2014
 */
@@ -8,6 +8,7 @@
 
 #include "DmpCore.h"
 #include "DmpRootIOSvc.h"
+#include "DmpDataBuffer.h"
 
 //-------------------------------------------------------------------
 DmpCore::DmpCore()
@@ -28,6 +29,7 @@ DmpCore::DmpCore()
   fAlgMgr = DmpAlgorithmManager::GetInstance();
   fSvcMgr = DmpServiceManager::GetInstance();
   fSvcMgr->Append(gRootIOSvc);
+  fSvcMgr->Append(gDataBuffer);
   OptMap.insert(std::make_pair("LogLevel",  0));    // value: None, Error, Warning, Info, Debug
   OptMap.insert(std::make_pair("LogHeader", 1));    // value: On, Off 
   OptMap.insert(std::make_pair("EventNumber",2));   // value: any number

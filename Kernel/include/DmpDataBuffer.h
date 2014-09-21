@@ -12,7 +12,7 @@
 
 class TObject;
 
-class DmpDataBuffer{
+class DmpDataBuffer : public DmpVSvc{
 /*
  *  DmpDataBuffer
  *
@@ -25,6 +25,8 @@ public:
     return &instance;
   }
   ~DmpDataBuffer();
+  bool Initialize();
+  bool Finalize();
   template<typename T> bool RegisterObject(const std::string &path,T *&dataPtr,const std::string &className="TClonesArray");   // path = Folder/Tree/Branch
   template<typename T> bool ReadObject(const std::string &path,T *&dataPtr);  // if path/dataPtr not in any data buffer, use dataPtr to read a branch from input rootfile;
 
