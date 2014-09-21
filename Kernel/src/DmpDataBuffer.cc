@@ -13,35 +13,35 @@ DmpDataBuffer::DmpDataBuffer(){
 
 //-------------------------------------------------------------------
 DmpDataBuffer::~DmpDataBuffer(){
-  DmpLogInfo<<"+--Deleting input data..."<<DmpLogEndl;
+  DmpLogInfo<<"+-Deleting input data..."<<DmpLogEndl;
   for(DmpDataBufFolderMap::iterator aFolder=fInputDataBufPool.begin();aFolder!=fInputDataBufPool.end();++aFolder){
     DmpDataBufTreeMap aTreeMap = aFolder->second;
-    DmpLogInfo<<"|  +--"<<aFolder->first<<std::endl;
+    DmpLogInfo<<"| |-"<<aFolder->first<<std::endl;
     for(DmpDataBufTreeMap::iterator aTree=aTreeMap.begin();aTree!=aTreeMap.end();++aTree){
       DmpDataBufBranchMap aBranchMap = aTree->second;
-    DmpLogInfo<<"|  |  +--"<<aTree->first<<std::endl;
+    DmpLogInfo<<"| | |-"<<aTree->first<<std::endl;
       for(DmpDataBufBranchMap::iterator it=aBranchMap.begin();it!=aBranchMap.end();++it){
-    DmpLogInfo<<"|  |  |  +--"<<it->first<<std::endl;
+    DmpLogInfo<<"| | | |-"<<it->first<<std::endl;
         delete it->second;
       }
     }
   }
-  DmpLogInfo<<"+--Done"<<DmpLogEndl;
+  DmpLogInfo<<"`-Done"<<DmpLogEndl;
     //-------------------------------------------------------------------
-  DmpLogInfo<<"+--Deleting output data..."<<DmpLogEndl;
+  DmpLogInfo<<"+-Deleting output data..."<<DmpLogEndl;
   for(DmpDataBufFolderMap::iterator aFolder=fDataBufPool.begin();aFolder!=fDataBufPool.end();++aFolder){
     DmpDataBufTreeMap aTreeMap = aFolder->second;
-    DmpLogInfo<<"|  +--"<<aFolder->first<<std::endl;
+    DmpLogInfo<<"| |-"<<aFolder->first<<std::endl;
     for(DmpDataBufTreeMap::iterator aTree=aTreeMap.begin();aTree!=aTreeMap.end();++aTree){
       DmpDataBufBranchMap aBranchMap = aTree->second;
-    DmpLogInfo<<"|  |  +--"<<aTree->first<<std::endl;
+    DmpLogInfo<<"| | |-"<<aTree->first<<std::endl;
       for(DmpDataBufBranchMap::iterator it=aBranchMap.begin();it!=aBranchMap.end();++it){
-    DmpLogInfo<<"|  |  |  +--"<<it->first<<std::endl;
+    DmpLogInfo<<"| | | |-"<<it->first<<std::endl;
         delete it->second;
       }
     }
   }
-  DmpLogInfo<<"+--Done"<<DmpLogEndl;
+  DmpLogInfo<<"`-Done"<<DmpLogEndl;
 }
 
 //-------------------------------------------------------------------

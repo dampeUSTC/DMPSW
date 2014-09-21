@@ -29,7 +29,17 @@ public:
     return &instance;
   }
   ~DmpRootIOSvc();
-  void Set(const std::string&,const std::string&);
+  void Set(const std::string &option,const std::string &v);
+  /*  Options:
+   *    +--Input
+   *    |  |--Path
+   *    |  `--FileName
+   *    +--Output
+   *    |  |--Path
+   *    |  |--FileName
+   *    |  |--WriteList
+   *    |  `--Key
+   */
   bool Initialize();
   bool Finalize();
 

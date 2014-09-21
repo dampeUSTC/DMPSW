@@ -21,12 +21,12 @@ DmpRootIOSvc::DmpRootIOSvc()
 {
   fInFileName = "";
   fOutFileName = "";
-  OptMap.insert(std::make_pair("InData/Path",   0));
-  OptMap.insert(std::make_pair("InData/FileName", 1));
-  OptMap.insert(std::make_pair("OutData/Path",  2));
-  OptMap.insert(std::make_pair("OutData/FileName",  3));
-  OptMap.insert(std::make_pair("OutData/WriteList", 4));
-  OptMap.insert(std::make_pair("OutData/Key", 5));  // in the constructor of algorithm
+  OptMap.insert(std::make_pair("Input/Path",   0));
+  OptMap.insert(std::make_pair("Input/FileName", 1));
+  OptMap.insert(std::make_pair("Output/Path",  2));
+  OptMap.insert(std::make_pair("Output/FileName",  3));
+  OptMap.insert(std::make_pair("Output/WriteList", 4));
+  OptMap.insert(std::make_pair("Output/Key", 5));  // in the constructor of algorithm
 }
 
 //-------------------------------------------------------------------
@@ -36,7 +36,7 @@ DmpRootIOSvc::~DmpRootIOSvc(){
 //-------------------------------------------------------------------
 void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
   switch (OptMap[option]){
-    case 0: // InData/Path
+    case 0: // Input/Path
     {
       if('/' == argv[argv.length()-1]){
         fInPath = argv;
@@ -45,7 +45,7 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
       }
       break;
     }
-    case 1: // InData/FileName
+    case 1: // Input/FileName
     {
       boost::filesystem::path temp(argv);
       fInFileName = temp.filename().string();
@@ -54,7 +54,7 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
       }
       break;
     }
-    case 2: // OutData/Path
+    case 2: // Output/Path
     {
       if('/' == argv[argv.length()-1]){
         fOutPath = argv;
@@ -63,7 +63,7 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
       }
       break;
     }
-    case 3: // OutData/FileName
+    case 3: // Output/FileName
     {
       boost::filesystem::path temp(argv);
       fOutFileName = temp.filename().string();
@@ -72,7 +72,7 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
       }
       break;
     }
-    case 4: // OutData/WriteList
+    case 4: // Output/WriteList
     {
       boost::split(fWriteList,argv,boost::is_any_of(";"));
       for(short i=0;i<fWriteList.size();++i){
@@ -84,7 +84,7 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
       }
       break;
     }
-    case 5: // OutData/Key
+    case 5: // Output/Key
     {
       fOutFileKey = argv;
       break;
@@ -123,7 +123,7 @@ void DmpRootIOSvc::CreateOutRootFile(){
       boost::filesystem::create_directories(fOutPath);
     }
     if(fOutFileName.string() == ""){
-      Set("OutData/FileName",this->GetInputStem());
+      Set("Output/FileName",this->GetInputStem());
     }
     std::string splitMark = "-";
     std::string output = fOutPath+fOutFileName.stem().string();
@@ -142,22 +142,22 @@ void DmpRootIOSvc::CreateOutRootFile(){
 bool DmpRootIOSvc::Finalize(){
   // save trees
   if(fOutRootFile){
-    DmpLogInfo<<"+--Writing "<<fOutFileName<<DmpLogEndl;
+    DmpLogInfo<<"+-Writing "<<fOutFileName<<DmpLogEndl;
     for(DmpRootIOFolderMap::iterator aFolderMap=fOutTreeSet.begin();aFolderMap != fOutTreeSet.end();++aFolderMap){
       if(aFolderMap->first != "Event"){
         FillData(aFolderMap->first);
       }
       DmpRootIOTreeMap aTreeMap = aFolderMap->second;
-      DmpLogInfo<<"|  +--folder: "<<aFolderMap->first<<DmpLogEndl;
+      DmpLogInfo<<"| |-"<<aFolderMap->first<<DmpLogEndl;
       fOutRootFile->mkdir((aFolderMap->first).c_str());
       fOutRootFile->cd((aFolderMap->first).c_str());
       for(DmpRootIOTreeMap::iterator it= aTreeMap.begin();it!=aTreeMap.end();++it){
-        DmpLogInfo<<"|  |  +--tree: "<<it->first<<", entries = "<<it->second->GetEntries()<<DmpLogEndl;
+        DmpLogInfo<<"| | |-"<<it->first<<", entries = "<<it->second->GetEntries()<<DmpLogEndl;
         it->second->Write();
         delete it->second;
       }
     }
-    DmpLogInfo<<"+--Done"<<DmpLogEndl;
+    DmpLogInfo<<"`-Done"<<DmpLogEndl;
   }
   // delete root files
   if(fInRootFile){
