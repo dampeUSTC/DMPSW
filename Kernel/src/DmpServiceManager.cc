@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpServiceManager.cc, 2014-06-27 10:52:28 DAMPE $
+ *  $Id: DmpServiceManager.cc, 2014-09-21 13:00:04 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 15/03/2014
 */
@@ -10,7 +10,6 @@
 DmpServiceManager::DmpServiceManager()
  :DmpElementManager<DmpVSvc>("Service manager")
 {
-  std::cout<<"===>  "<<Name()<<" created"<<std::endl;
 }
 
 //-------------------------------------------------------------------

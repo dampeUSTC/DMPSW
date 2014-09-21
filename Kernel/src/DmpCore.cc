@@ -68,9 +68,6 @@ bool DmpCore::Run(){
 // *  TODO: use cut of time range??
 // *
   while(not (fTerminateRun||(fCurrentEventID==fMaxEventNo))){
-    if(fCurrentEventID%5000 == 0){
-      std::cout<<"\t [DmpCore::Run] event ID = "<<std::dec<<fCurrentEventID<<std::endl;
-    }
     if(gRootIOSvc->PrepareEvent(fCurrentEventID)){
       if(fAlgMgr->ProcessOneEvent()){
         gRootIOSvc->FillData("Event");

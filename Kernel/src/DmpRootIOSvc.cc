@@ -100,14 +100,14 @@ void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
 bool DmpRootIOSvc::Initialize(){
   DmpLogDebug<<"initialization... "<<DmpLogEndl;
   //-------------------------------------------------------------------
-  if(fInFileName.string() != ""){   // has input file
+  fInFileName = fInPath+GetInputStem()+GetInputExtension();
+  if(fInFileName.string() != "./"){   // has input file
+    std::cout<<"\tInput file:\t"<<fInFileName.string()<<DmpLogEndl;
     if(fInFileName.extension().string() == ".root"){
       fInFileName = fInPath+fInFileName.string();
       fInRootFile = new TFile(fInFileName.string().c_str(),"read");
-      std::cout<<"\tInput data:\t"<<fInFileName.string()<<DmpLogEndl;
-    }else{
-      DmpLogError<<"input data is not a root file... "<<fInFileName.string()<<DmpLogEndl;
-      return false;
+    }else if(fInFileName.extension().string() == ".txt"){
+    }else if(fInFileName.extension().string() == ".frd"){
     }
   }
   //-------------------------------------------------------------------
@@ -117,7 +117,7 @@ bool DmpRootIOSvc::Initialize(){
     boost::filesystem::create_directories(fOutPath);
   }
   if(fOutFileName.string() == ""){
-    Set("OutData/FileName",this->GetInputFileName());
+    Set("OutData/FileName",this->GetInputStem());
   }
   //-------------------------------------------------------------------
   DmpLogDebug<<"... initialization done "<<DmpLogEndl;
@@ -138,7 +138,7 @@ void DmpRootIOSvc::CreateOutRootFile(){
       fOutFileName = output.substr(0,found)+splitMark+fOutFileKey+".root";
     }
     fOutRootFile = new TFile(fOutFileName.string().c_str(),"RECREATE");
-    std::cout<<"\tOut file:\t"<<fOutFileName.string()<<DmpLogEndl;
+    std::cout<<"\tOutput file:\t"<<fOutFileName.string()<<DmpLogEndl;
   }
 }
 
