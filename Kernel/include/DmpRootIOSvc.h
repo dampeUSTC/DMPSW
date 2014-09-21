@@ -30,7 +30,8 @@ public:
   }
   ~DmpRootIOSvc();
   void Set(const std::string &option,const std::string &v);
-  /*  Options:
+  /*
+   * Options:
    *    +--Input
    *    |  |--Path
    *    |  `--FileName

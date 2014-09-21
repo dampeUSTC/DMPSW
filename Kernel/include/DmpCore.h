@@ -37,6 +37,15 @@ public:
 
 public:
   void Set(const std::string &type,const std::string &value);
+  /*
+   * Options:
+   *    +--LogLevel
+   *    |--LogHeader
+   *    |--EventNumber
+   *    |--StartTime
+   *    |--StopTime
+   *    `--FromeEvent
+   */
   DmpAlgorithmManager*  AlgorithmManager() const {return fAlgMgr;}
   DmpServiceManager*    ServiceManager() const {return fSvcMgr;}
 
