@@ -10,7 +10,6 @@
 DmpAlgorithmManager::DmpAlgorithmManager()
  :DmpElementManager<DmpVAlg>("Algorithm manager")
 {
-  std::cout<<"===>  "<<Name()<<" created"<<std::endl;
 }
 
 //-------------------------------------------------------------------
