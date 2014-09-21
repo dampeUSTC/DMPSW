@@ -57,6 +57,7 @@ public:
   std::string GetOutputStem()const{return fOutFileName.stem().string();}
   std::string GetInputExtension()const{return fInFileName.extension().string();}
   std::string GetOutputExtension()const{return fOutFileName.extension().string();}
+  std::string GetOutFileKey()const{return fOutFileKey;}
 
 private:
   DmpRootIOSvc();
