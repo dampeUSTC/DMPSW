@@ -48,7 +48,6 @@ bool DmpCore::Initialize(){
   std::cout<<"\n  [DmpCore::Initialize] Initialize..."<<std::endl;
   if(not fSvcMgr->Initialize()) return false;
   if(not fAlgMgr->Initialize()) return false;
-  gRootIOSvc->CreateOutRootFile();
   gRootIOSvc->PrepareMetaData();
   if(0 == fStopTime){
     fStopTime = DeltaTime("21130101-0000");

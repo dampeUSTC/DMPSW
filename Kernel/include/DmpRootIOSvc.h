@@ -37,7 +37,6 @@ public:
   bool WriteValid(const std::string &folderName,const std::string &treeName,const std::string &branchName); // in write list, no branch
   TTree* GetOutputTree(const std::string &folderName,const std::string &treeName);
   TTree* GetInputTree(const std::string &folderName,const std::string &treeName);
-  void CreateOutRootFile();
   void PrepareMetaData();
   bool PrepareEvent(const long &evtID); //only read fInTreeSet["Event"]
   void FillData(const std::string &floderName);
@@ -61,6 +60,7 @@ public:
 
 private:
   DmpRootIOSvc();
+  void CreateOutRootFile();
 
 private:
 typedef std::map<std::string, TTree*>  DmpRootIOTreeMap;                // key is "Tree"

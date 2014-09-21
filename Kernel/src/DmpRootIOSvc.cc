@@ -26,7 +26,7 @@ DmpRootIOSvc::DmpRootIOSvc()
   OptMap.insert(std::make_pair("OutData/Path",  2));
   OptMap.insert(std::make_pair("OutData/FileName",  3));
   OptMap.insert(std::make_pair("OutData/WriteList", 4));
-  OptMap.insert(std::make_pair("OutData/Key", 5));
+  OptMap.insert(std::make_pair("OutData/Key", 5));  // in the constructor of algorithm
 }
 
 //-------------------------------------------------------------------
@@ -111,15 +111,7 @@ bool DmpRootIOSvc::Initialize(){
     }
   }
   //-------------------------------------------------------------------
-  if(not boost::filesystem::exists(fOutPath)){
-    // create output directory at here, not in CreateOutRootFile()
-    // since DmpVAlg::Initialize() need this directory is existing
-    boost::filesystem::create_directories(fOutPath);
-  }
-  if(fOutFileName.string() == ""){
-    Set("OutData/FileName",this->GetInputStem());
-  }
-  //-------------------------------------------------------------------
+  CreateOutRootFile();
   DmpLogDebug<<"... initialization done "<<DmpLogEndl;
   return true;
 }
@@ -127,8 +119,12 @@ bool DmpRootIOSvc::Initialize(){
 //-------------------------------------------------------------------
 void DmpRootIOSvc::CreateOutRootFile(){
   if(0 != fWriteList.size()){
-    // create root file at here, not in Initialize().
-    // Becuase fOutFileKey may be setted in DmpVAlg::Initialize()
+    if(not boost::filesystem::exists(fOutPath)){
+      boost::filesystem::create_directories(fOutPath);
+    }
+    if(fOutFileName.string() == ""){
+      Set("OutData/FileName",this->GetInputStem());
+    }
     std::string splitMark = "-";
     std::string output = fOutPath+fOutFileName.stem().string();
     unsigned found = output.find_last_of(splitMark);
