@@ -104,7 +104,6 @@ bool DmpRootIOSvc::Initialize(){
   if(fInFileName.string() != "./"){   // has input file
     std::cout<<"\tInput file:\t"<<fInFileName.string()<<DmpLogEndl;
     if(fInFileName.extension().string() == ".root"){
-      fInFileName = fInPath+fInFileName.string();
       fInRootFile = new TFile(fInFileName.string().c_str(),"read");
     }else if(fInFileName.extension().string() == ".txt"){
     }else if(fInFileName.extension().string() == ".frd"){
