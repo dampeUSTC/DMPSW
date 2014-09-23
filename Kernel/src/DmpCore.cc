@@ -28,8 +28,8 @@ DmpCore::DmpCore()
   std::cout<<"**************************************************"<<std::endl;
   fAlgMgr = DmpAlgorithmManager::GetInstance();
   fSvcMgr = DmpServiceManager::GetInstance();
-  fSvcMgr->Append(gRootIOSvc);
-  fSvcMgr->Append(gDataBuffer);
+  fSvcMgr->Append(DmpRootIOSvc::GetInstance());     // must use GetInstance instead of global variable, since, Mac create global variable later than DmpCore::DmpCore()
+  fSvcMgr->Append(DmpDataBuffer::GetInstance());
   OptMap.insert(std::make_pair("LogLevel",  0));    // value: None, Error, Warning, Info, Debug
   OptMap.insert(std::make_pair("LogHeader", 1));    // value: On, Off 
   OptMap.insert(std::make_pair("EventNumber",2));   // value: any number
