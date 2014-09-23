@@ -84,7 +84,7 @@ DMPSW
         * typedef of a vector
             begin with "V_"
 
-        * Prefix of any command (dmpNewAlg)
+        * Prefix of any command (dmp-config)
             begin with "dmp"
 
         * a shared library of DMPSW (libDmpKernel)
