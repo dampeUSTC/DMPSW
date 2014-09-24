@@ -10,6 +10,7 @@
 
 #-------------------------------------------------------------------
 # Load basic environment of DAMPE software
+import os
 import sys
 sys.setdlopenflags(0x100|0x2)
 import libDmpKernel as DmpKernel

@@ -35,6 +35,14 @@ DmpRootIOSvc::~DmpRootIOSvc(){
 
 //-------------------------------------------------------------------
 void DmpRootIOSvc::Set(const std::string &option,const std::string &argv){
+  if(OptMap.find(option) == OptMap.end()){
+    DmpLogError<<"No argument type: "<<option<<DmpLogEndl;
+    DmpLogInfo<<"Possible option are "<<DmpLogEndl;
+    for (std::map<std::string,short>::iterator anOpt= OptMap.begin();anOpt!=OptMap.end();anOpt++){
+      DmpLogInfo<<anOpt->first<<DmpLogEndl;
+    }
+    throw;
+  }
   switch (OptMap[option]){
     case 0: // Input/Path
     {
