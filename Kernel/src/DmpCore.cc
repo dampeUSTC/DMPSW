@@ -98,6 +98,14 @@ bool DmpCore::Finalize(){
 //-------------------------------------------------------------------
 #include <boost/lexical_cast.hpp>
 void DmpCore::Set(const std::string &type,const std::string &value){
+  if(OptMap.find(type) == OptMap.end()){
+    DmpLogError<<"[DmpCore::Set] No argument type: "<<option<<DmpLogEndl;
+    std::cout<<"\tPossible options are:"<<DmpLogEndl;
+    for(std::map<std::string,short>::iterator anOpt= OptMap.begin();anOpt!=OptMap.end();anOpt++){
+      std::cout<<"\t\t"<<anOpt->first<<DmpLogEndl;
+    }
+    throw;
+  }
   switch(OptMap[type]){
     case 0: // LogLevel
     {
@@ -128,10 +136,6 @@ void DmpCore::Set(const std::string &type,const std::string &value){
     {
       fCurrentEventID = boost::lexical_cast<long>(value);
       break;
-    }
-    default:
-    {
-      DmpLogError<<"No argument type: "<<type<<DmpLogEndl;
     }
   }
 }
