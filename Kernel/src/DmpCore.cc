@@ -99,7 +99,7 @@ bool DmpCore::Finalize(){
 #include <boost/lexical_cast.hpp>
 void DmpCore::Set(const std::string &type,const std::string &value){
   if(OptMap.find(type) == OptMap.end()){
-    DmpLogError<<"[DmpCore::Set] No argument type: "<<option<<DmpLogEndl;
+    DmpLogError<<"[DmpCore::Set] No argument type: "<<type<<DmpLogEndl;
     std::cout<<"\tPossible options are:"<<DmpLogEndl;
     for(std::map<std::string,short>::iterator anOpt= OptMap.begin();anOpt!=OptMap.end();anOpt++){
       std::cout<<"\t\t"<<anOpt->first<<DmpLogEndl;
