@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpLog.h, 2014-09-10 09:41:16 DAMPE $
+ *  $Id: DmpLog.h, 2014-09-27 11:15:18 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 19/05/2014
  *    Andrii Tykhonov (Andrii.Tykhonov@cern.ch) 22/05/2014
@@ -28,6 +28,8 @@ namespace DmpLog{
   extern short  logLevel;
   extern bool   logHeader;
 }
+
+#define DmpLogCout std::cout<<"  "
 
 #define DmpLogDebug   if(DmpLog::logLevel >= DmpLog::DEBUG) \
   std::cout<<"  DEBUG:   ["<<__PRETTY_FUNCTION__<<"("<<__LINE__<<")"<<"]  "
