@@ -74,6 +74,9 @@ for tmp in os.listdir('./include'):
 # main build
 goal=env.SharedLibrary(target,Glob('./src/*.cc'))
 Default(env.InstallAs(os.environ['DMPSWWORK']+'/lib/lib'+target+".so",goal))
+if env['PLATFORM'] == 'darwin':    #MacOS
+    Default(env.InstallAs(os.environ['DMPSWWORK']+'/lib/lib'+target+".dylib",goal))
+
 EOF
 
 #-------------------------------------------------------------------
@@ -198,6 +201,8 @@ env.Prepend(CPPPATH=['./include'])
 # main build
 goal=env.SharedLibrary(target,Glob('./src/*.cc'))
 Default(env.InstallAs(os.environ['DMPSWWORK']+'/lib/lib'+target+".so",goal))
+if env['PLATFORM'] == 'darwin':    #MacOS
+    Default(env.InstallAs(os.environ['DMPSWWORK']+'/lib/lib'+target+".dylib",goal))
 EOF
 #-------------------------------------------------------------------
 cat > $1$2/src/Dmp${1}${2}Binding.cc <<EOF
