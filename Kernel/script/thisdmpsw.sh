@@ -16,7 +16,6 @@ if [ ! $DMPSWSYS ];then
     export DMPSWSYS=$(cd `dirname $0`/..;pwd)
   fi
   export DMPSWWORK=$HOME/dmpwork
-  export DMPSWGEOMETRY=$DMPSWSYS/share/Geometry/EQM
   export PATH=$DMPSWSYS/bin:$PATH
   export PYTHONPATH=$DMPSWWORK/lib:$DMPSWSYS/lib:$PYTHONPATH
   if [ $LD_LIBRARY_PATH ];then

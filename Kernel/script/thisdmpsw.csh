@@ -15,7 +15,6 @@ if ( ! ($?DMPSWSYS) ) then
   setenv DMPSWSYS "`cd ${thisDmpSW};pwd`"
   unset thisDmpSW
   setenv DMPSWWORK "$HOME/dmpwork"
-  setenv DMPSWGEOMETRY "$DMPSWSYS/share/Geometry/EQM"
   setenv PATH ${DMPSWSYS}/bin:${PATH}
   setenv PYTHONPATH ${DMPSWWORK}/lib:${DMPSWSYS}/lib:${PYTHONPATH}
   if ( ($?LD_LIBRARY_PATH) ) then
