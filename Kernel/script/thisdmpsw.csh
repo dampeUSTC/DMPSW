@@ -1,6 +1,6 @@
 #! /bin/tcsh
 #+
-#+  $Id: thisdmpsw.csh, 2014-05-09 15:19:20 DAMPE $
+#+  $Id: thisdmpsw.csh, 2014-09-30 11:49:52 DAMPE $
 #+  Author(s):
 #+    Chi WANG (chiwang@mail.ustc.edu.cn) 01/10/2013
 #+-----------------------------------------------------------------------
@@ -15,6 +15,7 @@ if ( ! ($?DMPSWSYS) ) then
   setenv DMPSWSYS "`cd ${thisDmpSW};pwd`"
   unset thisDmpSW
   setenv DMPSWWORK "$HOME/dmpwork"
+  setenv DMPSWGEOMETRY "$DMPSWSYS/share/Geometry/EQM"
   setenv PATH ${DMPSWSYS}/bin:${PATH}
   setenv PYTHONPATH ${DMPSWWORK}/lib:${DMPSWSYS}/lib:${PYTHONPATH}
   if ( ($?LD_LIBRARY_PATH) ) then
