@@ -4,6 +4,7 @@
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 01/10/2014
 */
 
+#include <iostream>
 #include <time.h>   // time_t
 #include "DmpMetadata.h"
 
@@ -21,7 +22,7 @@ DmpMetadata::~DmpMetadata(){
 }
 
 //-------------------------------------------------------------------
-void PrintJobTime(const short &level)const{
+void DmpMetadata::PrintJobTime(const short &level)const{
 // *
 // *  TODO: 
 // *
@@ -31,7 +32,7 @@ void PrintJobTime(const short &level)const{
 //-------------------------------------------------------------------
 void DmpMetadata::SetOption(const std::string &p,const std::string &v){
   std::string tmp = (p[0]!='/')?p:p.substr(1);
-  GPS[tmp] = v;
+  Option[tmp] = v;
 }
 
 
