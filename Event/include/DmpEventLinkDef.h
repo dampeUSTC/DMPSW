@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpEventLinkDef.h, 2014-08-08 11:08:28 DAMPE $
+ *  $Id: DmpEventLinkDef.h, 2014-10-03 20:10:12 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 13/12/2013
 */
@@ -10,6 +10,8 @@
 #pragma link off all classes;
 #pragma link off all functions;
 #pragma link off all namespaces;
+
+#pragma link C++ class DmpMetadata+;
 // common
 /*
 #pragma link C++ class DmpEvtHeader+;
