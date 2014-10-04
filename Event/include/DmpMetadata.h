@@ -16,13 +16,12 @@ class DmpMetadata : public TObject{
  *
  */
 public:
-  DmpMetadata(std::string whichAlgorithm);
+  DmpMetadata();
   ~DmpMetadata();
   void PrintJobTime(const short &l=0)const;     // dd-mm-yy
   void SetOption(const std::string &path,const std::string &v);
 
 public:
-  std::string   AlgName;    // which algorithm created me
   long          JobTime;    // Time of this job
   std::map<std::string,std::string> Option;         // option map
 

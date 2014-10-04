@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpVAlg.h, 2014-07-08 14:42:53 DAMPE $
+ *  $Id: DmpVAlg.h, 2014-10-04 14:11:55 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 22/03/2014
 */
@@ -7,7 +7,6 @@
 #ifndef DmpVAlg_H
 #define DmpVAlg_H
 
-#include <map>
 #include <string>
 #include "DmpLog.h"
 
@@ -29,9 +28,6 @@ public:
 
 public:
   const std::string& Name() const {return fName;}
-
-protected:
-  std::map<std::string,short>   OptMap; // a map of set options
 
 private:
   std::string   fName;

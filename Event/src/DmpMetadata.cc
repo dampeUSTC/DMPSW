@@ -11,9 +11,8 @@
 ClassImp(DmpMetadata)
 
 //-------------------------------------------------------------------
-DmpMetadata::DmpMetadata(std::string n)
- :AlgName(n),
-  JobTime(time((time_t*)NULL))
+DmpMetadata::DmpMetadata()
+ :JobTime(time((time_t*)NULL))
 {
 }
 

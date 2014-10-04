@@ -130,7 +130,11 @@ void DmpRootIOSvc::CreateOutRootFile(){
       boost::filesystem::create_directories(fOutPath);
     }
     if(fOutFileName.string() == ""){
-      Set("Output/FileName",this->GetInputStem());
+      if(this->GetInputExtension() == ""){
+        Set("Output/FileName","DmpData.root");
+      }else{
+        Set("Output/FileName",this->GetInputStem());
+      }
     }
     std::string splitMark = "-";
     std::string output = fOutPath+fOutFileName.stem().string();
