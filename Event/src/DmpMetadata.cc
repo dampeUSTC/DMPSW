@@ -34,4 +34,11 @@ void DmpMetadata::SetOption(const std::string &p,const std::string &v){
   Option[tmp] = v;
 }
 
+//-------------------------------------------------------------------
+void DmpMetadata::ListOptions()const{
+  for(std::map<std::string,std::string>::const_iterator it=Option.begin();it!=Option.end();it++){
+    std::cout<<it->first<<":\t"<<it->second<<std::endl;
+  }
+}
+
 
