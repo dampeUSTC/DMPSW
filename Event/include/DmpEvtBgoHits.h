@@ -27,8 +27,8 @@ public:
 public:
   std::vector <short>     fGlobalBarID;     // unique sensitive detector bar ID, using DmpBgoBase to construct it
   std::vector <double>    fEnergy;          // unit MeV
-  std::vector <double>    fE0;              // unit MeV, from side 0
-  std::vector <double>    fE1;              // unit MeV, from side 1
+  std::vector <double>    fES0;             // unit MeV, from side 0
+  std::vector <double>    fES1;             // unit MeV, from side 1
   std::vector <TVector3>  fPosition;        // unit mm, position x,y,z
 
   ClassDef(DmpEvtBgoHits,1)

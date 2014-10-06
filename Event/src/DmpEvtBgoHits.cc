@@ -21,8 +21,8 @@ DmpEvtBgoHits::~DmpEvtBgoHits(){
 void DmpEvtBgoHits::Reset(){
   fGlobalBarID.clear();
   fEnergy.clear();
-  fE0.clear();
-  fE1.clear();
+  fES0.clear();
+  fES1.clear();
   fPosition.clear();
 }
 
@@ -30,8 +30,8 @@ void DmpEvtBgoHits::Reset(){
 void DmpEvtBgoHits::LoadFrom(const DmpEvtBgoHits &r){
   fGlobalBarID = r.fGlobalBarID;
   fEnergy = r.fEnergy;
-  fE0 = r.fE0;
-  fE1 = r.fE1;
+  fES0 = r.fES0;
+  fES1 = r.fES1;
   fPosition = r.fPosition;
 }
 
@@ -39,8 +39,8 @@ void DmpEvtBgoHits::LoadFrom(const DmpEvtBgoHits &r){
 void DmpEvtBgoHits::LoadFrom(const DmpEvtBgoHits *r){
   fGlobalBarID = r->fGlobalBarID;
   fEnergy = r->fEnergy;
-  fE0 = r->fE0;
-  fE1 = r->fE1;
+  fES0 = r->fES0;
+  fES1 = r->fES1;
   fPosition = r->fPosition;
 }
 
