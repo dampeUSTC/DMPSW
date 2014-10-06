@@ -12,6 +12,7 @@
 #pragma link off all namespaces;
 
 #pragma link C++ class DmpMetadata+;
+#pragma link C++ class DmpEvtBgoHits+;
 // common
 /*
 #pragma link C++ class DmpEvtHeader+;
@@ -24,7 +25,6 @@
 #pragma link C++ class DmpEvtMCStkStrip+;
 // Bgo
 #pragma link C++ struct _DmpBgoSignal+;
-#pragma link C++ class DmpEvtRdcBgoBar+;
 #pragma link C++ class DmpEvtMCBgoBar+;
 #pragma link C++ class DmpEvtBgoShower+;
 #pragma link C++ class DmpDataBgoBarPed+;
