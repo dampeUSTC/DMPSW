@@ -158,8 +158,8 @@ bool DmpRootIOSvc::Finalize(){
   if(fOutRootFile){
     DmpLogInfo<<"+-Writing "<<fOutFileName<<DmpLogEndl;
     for(DmpRootIOFolderMap::iterator aFolderMap=fOutTreeSet.begin();aFolderMap != fOutTreeSet.end();++aFolderMap){
-      if(aFolderMap->first == "Metadata"){
-        FillData("Metadata");
+      if(aFolderMap->first != "Event"){
+        FillData(aFolderMap->first);
       }
       DmpRootIOTreeMap aTreeMap = aFolderMap->second;
       DmpLogInfo<<"| |-"<<aFolderMap->first<<DmpLogEndl;
@@ -250,11 +250,10 @@ TTree* DmpRootIOSvc::GetInputTree(const std::string &folderName,const std::strin
 //-------------------------------------------------------------------
 void DmpRootIOSvc::PrepareMetaData(){
   for(DmpRootIOFolderMap::iterator aFolder=fInTreeSet.begin();aFolder!=fInTreeSet.end();++aFolder){
-    if("Metadata" == aFolder->first){
+    if("Event" != aFolder->first){
       for(DmpRootIOTreeMap::iterator it=fInTreeSet[aFolder->first].begin();it!=fInTreeSet[aFolder->first].end();++it){
         it->second->GetEntry();
       }
-      return;
     }
   }
 }
