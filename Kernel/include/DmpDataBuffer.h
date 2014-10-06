@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpDataBuffer.h, 2014-08-08 20:05:53 DAMPE $
+ *  $Id: DmpDataBuffer.h, 2014-10-06 14:55:59 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 20/07/2014
 */
@@ -66,12 +66,17 @@ template<typename T> void DmpDataBuffer::RegisterObject(const std::string &path,
     throw;
   }
   // input arguments into root IOSvc, to create a branch (IOSvc check whether need to create branch)
-  if(gRootIOSvc->WriteValid(folderName,treeName,branchName)){
+  if(gRootIOSvc->WriteValid(folderName+"/"+treeName)){
     TTree *tree = gRootIOSvc->GetOutputTree(folderName,treeName);
-    if("TClonesArray" == className){
-      tree->Branch(branchName.c_str(),dataPtr,32000,2);
+    if(0 == tree->GetListOfBranches()->FindObject(branchName.c_str())){
+      if("TClonesArray" == className){
+        tree->Branch(branchName.c_str(),dataPtr,32000,2);
+      }else{
+        tree->Branch(branchName.c_str(),className.c_str(),&dataPtr,32000,2);
+      }
     }else{
-      tree->Branch(branchName.c_str(),className.c_str(),&dataPtr,32000,2);
+      DmpLogError<<branchName<<" is existing in the tree: "<<folderName<<"/"<<treeName<<DmpLogEndl;
+      throw;
     }
   }
 }
@@ -87,6 +92,7 @@ template<typename T> void DmpDataBuffer::LinkRootFile(const std::string &path,T 
     fInputDataBufPool[folderName][treeName].insert(std::make_pair(branchName,dataPtr));
   }else{
     DmpLogError<<"[DmpDataBuffer::LinkRootFile] not find the branch "<<branchName<<" in tree "<<folderName<<"/"<<treeName<<DmpLogEndl;
+    throw;
   }
 }
 
