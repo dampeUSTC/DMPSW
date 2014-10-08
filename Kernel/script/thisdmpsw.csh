@@ -1,6 +1,6 @@
 #! /bin/tcsh
 #+
-#+  $Id: thisdmpsw.csh, 2014-05-09 15:19:20 DAMPE $
+#+  $Id: thisdmpsw.csh, 2014-09-30 11:49:52 DAMPE $
 #+  Author(s):
 #+    Chi WANG (chiwang@mail.ustc.edu.cn) 01/10/2013
 #+-----------------------------------------------------------------------

@@ -57,18 +57,51 @@ bool DmpDataBuffer::Finalize(){
 }
 
 //-------------------------------------------------------------------
-bool DmpDataBuffer::PathCheck(const std::string &checkMe,std::string &folderName,std::string &treeName,std::string &branchName){
+TObject* DmpDataBuffer::ReadObject(const std::string &path){
+  // check path
+  std::string folderName, treeName, branchName;
+  PathCheck(path,folderName,treeName,branchName);
+  // find it in fDataBufPool
+  if(fDataBufPool.find(folderName) != fDataBufPool.end()){
+    if(fDataBufPool[folderName].find(treeName) != fDataBufPool[folderName].end()){
+      if(fDataBufPool[folderName][treeName].find(branchName) != fDataBufPool[folderName][treeName].end()){
+        TObject *dataPtr = fDataBufPool[folderName][treeName][branchName];
+        return dataPtr;
+      }
+    }
+  }// create buffer map in input data buffer pool, not here
+  // find it in fInputDataBufPool
+  if(fInputDataBufPool.find(folderName) != fInputDataBufPool.end()){
+    if(fInputDataBufPool[folderName].find(treeName) != fInputDataBufPool[folderName].end()){
+      if(fInputDataBufPool[folderName][treeName].find(branchName) != fInputDataBufPool[folderName][treeName].end()){
+        TObject *dataPtr = fInputDataBufPool[folderName][treeName][branchName];
+        return dataPtr;
+      }
+    }else{
+      DmpDataBufBranchMap aNewBranchMap;
+      fInputDataBufPool[folderName].insert(std::make_pair(treeName,aNewBranchMap));
+    }
+  }else{
+    DmpDataBufTreeMap aNewTreeMap;
+    fInputDataBufPool.insert(std::make_pair(folderName,aNewTreeMap));
+    DmpDataBufBranchMap aNewBranchMap;
+    fInputDataBufPool[folderName].insert(std::make_pair(treeName,aNewBranchMap));
+  }
+  return 0;
+}
+
+//-------------------------------------------------------------------
+void DmpDataBuffer::PathCheck(const std::string &checkMe,std::string &folderName,std::string &treeName,std::string &branchName){
   std::vector<std::string> temp;
   boost::split(temp,checkMe,boost::is_any_of("/"));
   if(3 != temp.size()){
-    DmpLogError<<"wrong path: "<<checkMe<<DmpLogEndl;
-    return false;
+    DmpLogError<<"Wrong path: "<<checkMe<<DmpLogEndl;
+    throw;
   }else{
     folderName = temp[0];
     treeName = temp[1];
     branchName = temp[2];
   }
-  return true;
 }
 
 //-------------------------------------------------------------------

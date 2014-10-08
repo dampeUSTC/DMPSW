@@ -1,6 +1,6 @@
 #!  /bin/bash
 :<<EOF
- *  $Id: thisdmpsw.sh, 2014-08-08 12:36:55 DAMPE $
+ *  $Id: thisdmpsw.sh, 2014-09-30 11:49:55 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 01/10/2013
  *---------------------------------------------------------------------

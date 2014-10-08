@@ -45,7 +45,7 @@ public:
   bool Finalize();
 
 public:
-  bool WriteValid(const std::string &folderName,const std::string &treeName,const std::string &branchName); // in write list, no branch
+  bool WriteValid(const std::string &treeName); // in write list, no branch
   TTree* GetOutputTree(const std::string &folderName,const std::string &treeName);
   TTree* GetInputTree(const std::string &folderName,const std::string &treeName);
   void PrepareMetaData();
@@ -81,7 +81,7 @@ typedef std::map<std::string, DmpRootIOTreeMap>  DmpRootIOFolderMap;    // key i
   std::string               fOutFileKey;        // key word for the name of output root file
   std::string               fInPath;            // input file path
   std::string               fOutPath;           // output file path
-  std::vector<std::string>  fWriteList;         // to fOutTreeSet
+  std::vector<std::string>  fWriteList;         // folderName/treeName
   TFile         *fInRootFile;
   TFile         *fOutRootFile;
   std::map<std::string,long>    fEntriesOfTree; // entries of each input event tree. key is "Folder/Tree"
