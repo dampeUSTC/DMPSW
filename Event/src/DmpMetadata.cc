@@ -29,9 +29,14 @@ void DmpMetadata::PrintJobTime(const short &level)const{
 }
 
 //-------------------------------------------------------------------
-void DmpMetadata::SetOption(const std::string &p,const std::string &v){
-  std::string tmp = (p[0]!='/')?p:p.substr(1);
-  Option[tmp] = v;
+void DmpMetadata::SetOption(std::string tmp,const std::string &v){
+  tmp = (tmp[0]!='/')?tmp:tmp.substr(1);
+  if(Option.find(tmp) != Option.end()){
+    std::cout<<"Resetting "<<tmp<<":\t\""<<Option[tmp]<<"\" ---> \""<<v<<"\""<<std::endl;
+    Option[tmp] = v;
+  }else{
+    Option.insert(std::make_pair(tmp,v));
+  }
 }
 
 //-------------------------------------------------------------------

@@ -19,7 +19,7 @@ public:
   DmpMetadata();
   ~DmpMetadata();
   void PrintJobTime(const short &l=0)const;     // dd-mm-yy
-  void SetOption(const std::string &path,const std::string &v);
+  void SetOption(std::string path,const std::string &v);
   void ListOptions()const;
 
 public:
