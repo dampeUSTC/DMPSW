@@ -36,6 +36,7 @@ void DmpMetadata::SetOption(std::string tmp,const std::string &v){
     Option[tmp] = v;
   }else{
     Option.insert(std::make_pair(tmp,v));
+    CmdList.push_back(tmp);
   }
 }
 

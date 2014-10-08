@@ -25,6 +25,7 @@ public:
 public:
   long          JobTime;    // Time of this job
   std::map<std::string,std::string> Option;         // option map
+  std::vector<std::string>          CmdList;        // order of command
 
   ClassDef(DmpMetadata,1)
 };
