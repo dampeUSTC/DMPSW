@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpEventLinkDef.h, 2014-08-08 11:08:28 DAMPE $
+ *  $Id: DmpEventLinkDef.h, 2014-10-05 15:25:16 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 13/12/2013
 */
@@ -10,6 +10,9 @@
 #pragma link off all classes;
 #pragma link off all functions;
 #pragma link off all namespaces;
+
+#pragma link C++ class DmpMetadata+;
+#pragma link C++ class DmpEvtBgoHits+;
 // common
 /*
 #pragma link C++ class DmpEvtHeader+;
@@ -22,7 +25,6 @@
 #pragma link C++ class DmpEvtMCStkStrip+;
 // Bgo
 #pragma link C++ struct _DmpBgoSignal+;
-#pragma link C++ class DmpEvtRdcBgoBar+;
 #pragma link C++ class DmpEvtMCBgoBar+;
 #pragma link C++ class DmpEvtBgoShower+;
 #pragma link C++ class DmpDataBgoBarPed+;
