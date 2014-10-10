@@ -62,6 +62,7 @@ public:
   std::string GetInputPath()const{return fInPath;}
   std::string GetOutputPath()const{return fOutPath;}
   std::string GetInputFileName()const{return fInFileName.string();}
+  std::string GetInputFileNameWithoutSuffix()const;
   std::string GetOutputFileName()const{return fOutFileName.string();}
   std::string GetInputStem()const{return fInFileName.stem().string();}
   std::string GetOutputStem()const{return fOutFileName.stem().string();}
