@@ -18,6 +18,16 @@ DmpEvtBgoHits::~DmpEvtBgoHits(){
 }
 
 //-------------------------------------------------------------------
+DmpEvtBgoHits& DmpEvtBgoHits::operator=(const DmpEvtBgoHits &r){
+  Reset();
+  fGlobalBarID = r.fGlobalBarID;
+  fEnergy = r.fEnergy;
+  fES0 = r.fES0;
+  fES1 = r.fES1;
+  fPosition = r.fPosition;
+}
+
+//-------------------------------------------------------------------
 void DmpEvtBgoHits::Reset(){
   fGlobalBarID.clear();
   fEnergy.clear();
