@@ -15,6 +15,7 @@ print "\n==>Installing %s into:\t%s\n" %(target,prefix)
 #-------------------------------------------------------------------
 env = Environment(ENV = os.environ)
 env.ParseConfig("root-config --cflags --libs")
+env.Append(LIBS=['XMLIO'])
 includeDir="./include"
 env.Prepend(CPPPATH=[includeDir])
 
