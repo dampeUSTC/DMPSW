@@ -12,7 +12,7 @@ ClassImp(DmpMetadata)
 
 //-------------------------------------------------------------------
 DmpMetadata::DmpMetadata()
- :JobTime(time((time_t*)NULL))
+ :Time(time((time_t*)NULL))
 {
 }
 
@@ -25,13 +25,13 @@ void DmpMetadata::PrintJobTime(const short &level)const{
 // *
 // *  TODO: 
 // *
-  std::cout<<"Time: "<<JobTime<<std::endl;
+  std::cout<<"Time: "<<Time<<std::endl;
 }
 
 //-------------------------------------------------------------------
 void DmpMetadata::SetOption(std::string tmp,const std::string &v){
   tmp = (tmp[0]!='/')?tmp:tmp.substr(1);
-  if(Option.find(tmp) != Option.end()){
+  if(HasCommand(tmp)){
     std::cout<<"Resetting "<<tmp<<":\t\""<<Option[tmp]<<"\" ---> \""<<v<<"\""<<std::endl;
     Option[tmp] = v;
   }else{
@@ -45,6 +45,33 @@ void DmpMetadata::ListOptions()const{
   for(std::map<std::string,std::string>::const_iterator it=Option.begin();it!=Option.end();it++){
     std::cout<<it->first<<":\t"<<it->second<<std::endl;
   }
+}
+
+//-------------------------------------------------------------------
+bool DmpMetadata::HasCommand(std::string o)const{
+  o = (o[0]!='/') ? o : o.substr(1);
+  bool status = (Option.find(o) != Option.end()) ? true : false;
+  if(not status){
+    for(size_t i=0;i<CmdList.size();++i){
+      if(CmdList[i].find(o) != std::string::npos){
+        return true;
+      }
+    }
+  }
+  return status;
+}
+
+//-------------------------------------------------------------------
+std::string DmpMetadata::GetValue(const std::string &tmp)const{
+  if(HasCommand(tmp)){
+    return Option.at(tmp);
+  }
+  return "";
+}
+
+//-------------------------------------------------------------------
+std::string DmpMetadata::GetValue(const short &i)const{
+  return Option.at(CmdList.at(i));
 }
 
 

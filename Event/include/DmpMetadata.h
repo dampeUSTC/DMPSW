@@ -19,11 +19,17 @@ public:
   DmpMetadata();
   ~DmpMetadata();
   void PrintJobTime(const short &l=0)const;     // dd-mm-yy
-  void SetOption(std::string path,const std::string &v);
+  long JobTime()const{return Time;}
+  short OptionSize()const{return CmdList.size();}
   void ListOptions()const;
+  void SetOption(std::string path,const std::string &v);
+  std::string GetCommand(const short &i)const{return CmdList.at(i);}
+  bool HasCommand(std::string)const;      // whole command, or just a part of command
+  std::string GetValue(const std::string&)const;
+  std::string GetValue(const short &i)const;
 
-public:
-  long          JobTime;    // Time of this job
+private:
+  long          Time;    // Time of this job
   std::map<std::string,std::string> Option;         // option map
   std::vector<std::string>          CmdList;        // order of command
 
