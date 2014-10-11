@@ -14,7 +14,7 @@ print "\n==>Installing %s into:\t%s\n" %(target,prefix)
 
 #-------------------------------------------------------------------
 env = Environment(ENV = os.environ)
-#env.ParseConfig("root-config --cflags --libs")
+env.ParseConfig("root-config --cflags --libs")
 includeDir="./include"
 env.Prepend(CPPPATH=[includeDir])
 
