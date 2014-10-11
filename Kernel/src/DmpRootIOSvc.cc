@@ -269,16 +269,5 @@ void DmpRootIOSvc::FillData(const std::string &floder){
 }
 
 //-------------------------------------------------------------------
-std::string DmpRootIOSvc::GetInputFileNameWithoutSuffix()const{
-  std::vector<std::string> name;
-	boost::split(name,fInFileName.string(),boost::is_any_of("."));
-	std::string pureName;
-	for(int i=0;i<name.size()-1;i++){
-	  pureName+=name.at(i);
-	}
-	return pureName;
-}
-
-//-------------------------------------------------------------------
 DmpRootIOSvc *gRootIOSvc = DmpRootIOSvc::GetInstance();
 
