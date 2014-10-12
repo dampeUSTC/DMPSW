@@ -21,7 +21,7 @@ public:
   DmpEvtBgoHits &operator=(const DmpEvtBgoHits &r);
   void Reset();
   void LoadFrom(const DmpEvtBgoHits &r);
-  void LoadFrom(const DmpEvtBgoHits *r);
+  void LoadFrom(DmpEvtBgoHits *r);
   short GetHittedBarNumber()const{return fGlobalBarID.size();}
 
 public:

@@ -46,7 +46,7 @@ void DmpEvtBgoHits::LoadFrom(const DmpEvtBgoHits &r){
 }
 
 //-------------------------------------------------------------------
-void DmpEvtBgoHits::LoadFrom(const DmpEvtBgoHits *r){
+void DmpEvtBgoHits::LoadFrom(DmpEvtBgoHits *r){
   fGlobalBarID = r->fGlobalBarID;
   fEnergy = r->fEnergy;
   fES0 = r->fES0;
