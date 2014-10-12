@@ -18,6 +18,11 @@ class DmpMetadata : public TObject{
 public:
   DmpMetadata();
   ~DmpMetadata();
+  DmpMetadata& operator=(const DmpMetadata &r);
+  void Reset();
+  void LoadFrom(DmpMetadata *r);
+
+public:
   void PrintJobTime(const short &l=0)const;     // dd-mm-yy
   long JobTime()const{return Time;}
   short OptionSize()const{return CmdList.size();}

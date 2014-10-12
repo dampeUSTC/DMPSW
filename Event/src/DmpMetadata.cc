@@ -21,6 +21,22 @@ DmpMetadata::~DmpMetadata(){
 }
 
 //-------------------------------------------------------------------
+DmpMetadata& DmpMetadata::operator=(const DmpMetadata &r){
+  Reset();
+  Time = r.Time;
+  Option =r.Option;
+  CmdList = r.CmdList;
+}
+
+//-------------------------------------------------------------------
+void DmpMetadata::LoadFrom(DmpMetadata *r){
+  Reset();
+  Time = r->Time;
+  Option = r->Option;
+  CmdList = r->CmdList;
+}
+
+//-------------------------------------------------------------------
 void DmpMetadata::PrintJobTime(const short &level)const{
 // *
 // *  TODO: 
@@ -74,4 +90,9 @@ std::string DmpMetadata::GetValue(const short &i)const{
   return Option.at(CmdList.at(i));
 }
 
+//-------------------------------------------------------------------
+void DmpMetadata::Reset(){
+  Option.clear();
+  CmdList.clear();
+}
 
