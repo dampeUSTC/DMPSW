@@ -36,7 +36,7 @@ print "\n==>Installing DMPSW Framework into:\t%s\n" %prefix
 
 # invoke *.scons file of top-1 packages
 #--------------------------------------------------------------------
-pkgList='BaseLib,Kernel,Event'
+pkgList='BaseLib,Kernel,Event,Geometry'
 #pkgList='Kernel,Event,Geometry,Simulation,RawDataConversion'
 #,Analysis,Calibration,Generation,Reconstruction,Visualization'
 pkgList=ARGUMENTS.get('package',pkgList)
