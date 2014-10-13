@@ -5,6 +5,7 @@
 */
 
 #include "DmpBgoBase.h"
+#include "TXMLEngine.h"
 
 //-------------------------------------------------------------------
 short DmpBgoBase::ConstructGlobalBarID(const short &l,const short &b){
@@ -53,5 +54,10 @@ void DmpBgoBase::LoadLBSDID(const short &gid,short &l,short &b,short &s,short &d
   b = DmpBgoBase::GetBarID(gid);
   s = DmpBgoBase::GetSideID(gid);
   d = DmpBgoBase::GetDynodeID(gid);
+}
+
+//-------------------------------------------------------------------
+DmpParameterBgo_c* DmpBgoBase::Parameter(){
+  return DmpParameterBgo_c::GetInstance();
 }
 

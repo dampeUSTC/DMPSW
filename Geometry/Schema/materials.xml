@@ -34,6 +34,22 @@
       <fraction n="0.801" ref="B11"/>
     </element>
 
+    <element name="oxygen" formula="O" Z="8">
+      <atom value="15.999"/>
+    </element>
+
+    <element name="carbon" formula="C" Z="6">
+      <atom value="12.0107"/>
+    </element>
+
+    <element name="argon" Z="18.">
+      <atom value="39.948"/>
+    </element>
+
+    <element name="hydrogen" formula="H" Z="1">
+      <atom value="1.0079"/>
+    </element>
+
     <isotope Z="6" N="6" name="C12">
       <atom unit="g/mole" value="12.00000000000"/>
     </isotope>
@@ -134,6 +150,36 @@
      <D value="4.23" unit="g/cm3"/>
      <composite n="1" ref="Ti"/>
      <composite n="2" ref="O"/>
+    </material>
+
+    <material name="CO2" formula="CO2" state="gas">
+      <T unit="K" value="300."/>
+      <P unit="pascal" value="1e5"/>
+      <D unit="g/cm3" value="0.0005293030292282103"/>
+      <composite n="1" ref="carbon"/>
+      <composite n="2" ref="oxygen"/>
+    </material>
+
+    <material name="Ar" formula="Ar" state="gas">
+      <T unit="K" value="300."/>
+      <P unit="pascal" value="1e5"/>
+      <D unit="g/cm3" value="0.0004804640312394718"/>
+      <composite n="1" ref="argon"/>
+    </material>
+
+    <material name="ArCO2" state="gas">
+      <T unit="K" value="300."/>
+      <P unit="pascal" value="1e5"/>
+      <D unit="g/cm3" value="0.0004894972519017381"/>
+      <fraction n="0.8" ref="Ar"/>
+      <fraction n="0.2" ref="CO2"/>
+    </material>
+
+    <material name="Plexiglass" state="solid">
+      <D unit="g/cm3" value="1.19"/>
+      <fraction n="0.08" ref="hydrogen"/>
+      <fraction n="0.60" ref="carbon"/>
+      <fraction n="0.32" ref="oxygen"/>      
     </material>
 
     <!--define material-->

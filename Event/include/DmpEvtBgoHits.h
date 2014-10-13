@@ -18,10 +18,9 @@ class DmpEvtBgoHits : public TObject{
 public:
   DmpEvtBgoHits();
   ~DmpEvtBgoHits();
-  //void  AddG4Hit(const short &id,const double &e,const double &x,const double &y,const double &z);     // this is for simulation
+  DmpEvtBgoHits &operator=(const DmpEvtBgoHits &r);
   void Reset();
-  void LoadFrom(const DmpEvtBgoHits &r);
-  void LoadFrom(const DmpEvtBgoHits *r);
+  void LoadFrom(DmpEvtBgoHits *r);
   short GetHittedBarNumber()const{return fGlobalBarID.size();}
 
 public:

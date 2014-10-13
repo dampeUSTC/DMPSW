@@ -4,8 +4,12 @@
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 20/08/2014
 */
 
+#ifndef DmpBgoBase_H
+#define DmpBgoBase_H
+
+#include "DmpParameterBgo.h"
+
 namespace DmpBgoBase{
-//-------------------------------------------------------------------
   /*
    *    gid for bgo signal: short: bit 15~0
    *
@@ -26,5 +30,8 @@ namespace DmpBgoBase{
   short GetSideID(const short &gid);
   short GetDynodeID(const short &gid);
   void  LoadLBSDID(const short &gid,short &l,short &b,short &s,short &d);
+  DmpParameterBgo_c*  Parameter();
 }
+
+#endif
 
