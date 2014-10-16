@@ -1,6 +1,17 @@
 <!--Prototype parameters-->
 
 <define>
+  
+   <!-- World   -->
+   <constant name="world_size"      value="2000"         />    <!-- mm -->
+ 
+   <!-- offests -->   
+   
+   <constant name="psd_z_offset"    value="-314"     />        <!-- mm -->
+   <constant name="stk_z_offset"    value="-115.75"  />        <!-- mm -->
+   <constant name="bgo_z_offset"    value="254.75"   />        <!-- mm -->
+   <constant name="nud_z_offset"    value="595.5"    />        <!-- mm -->
+ 
    <!-- offests -->   
    <constant name="sat_adjust_x_position" value="300"/>  <!-- mm -->   
    <constant name="sat_adjust_y_position" value="0"/>    <!-- mm -->

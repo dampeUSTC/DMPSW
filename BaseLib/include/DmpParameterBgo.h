@@ -8,7 +8,7 @@
 #define DmpParameterBgo_H
 
 #include "TVector3.h"
-class TXMLEngine;
+#include "TXMLEngine.h"
 
 class DmpParameterBgo_c{
 public:
@@ -18,7 +18,8 @@ public:
   }
   ~DmpParameterBgo_c();
   short PlaneNumber()const{return fPlaneNo;}
-  short BarNumber()const{return fBarNo;}
+  short LayerNumber()const{return fLayerNo;}
+  short LayerBarNumber()const{return fLayerBarNo;}
   short ReferenceBarNumber()const{return fRefBarNo;}
   short SideNumber()const{return fSideNo;}
   short DynodeNumber()const{return fDyNo;}
@@ -28,12 +29,34 @@ public:
 
 private:
   DmpParameterBgo_c();
-  void LoadXMLFile();     // link to XML, update vectors
+  void LoadBgoParameter(); //update vectors
+  void LoadXMLFile();     // link to XML
+  double GetXMLParameter(const char *parameter,XMLNodePointer_t node,TXMLEngine *xml);
 
 private:
   TXMLEngine   *fXMLEngine;
+  XMLNodePointer_t nodeDAMPEparameter;
+  XMLNodePointer_t nodeBGOparameter;
+
+  //geometry viriable
+  int m_BgoLayerNb;
+  int m_BgoLayerBarNb;
+  double m_BgoDetSizeXY;
+  double m_BgoDetSizeZ;
+  double m_BgoDetOffsetZ;
+  std::vector<double> m_BgoDetLayerBar_Z;  //z pos of every layer
+  std::vector<double> m_BgoDetLayerBar_XY;  //X,Y pos of every layer
+  double m_BgoDetLayerSeparation;
+  double m_BgoDetBarSeparation;
+  double m_BgoBarX;
+  double m_BgoBarY;
+  double m_BgoBarZ;
+  double m_BgoDetTopLayerZ;
+
+
   short         fPlaneNo;
-  short         fBarNo;
+  short         fLayerNo;
+  short         fLayerBarNo;
   short         fRefBarNo;
   short         fSideNo;
   short         fDyNo;
