@@ -91,18 +91,18 @@ void DmpParameterBgo_c::LoadXMLFile(){
   // * reading xml geometry parameter files
   DmpLogInfo<< "[DmpBgoBase::LoadGeometryXML]  Reading XML parameter files ... " <<DmpLogEndl;
   std::string DMPSWSYSPath = std::string(DMPSWSYS);
-  /**/
-  std::string GeometryPath = DMPSWSYSPath.erase((DMPSWSYSPath.size()-7),DMPSWSYSPath.size());//7 is size of "Install"
-  std::string DAMPEParamterPath = GeometryPath+"Geometry/EQM/dampe_parameter.xml";
-  //blow path will be changed to be DMPSWSYS + "/share/Geometry/XXX/bgo_parameter.xml"
-  std::string BgoParamterPath = GeometryPath+"Geometry/EQM/bgo_parameter.xml";
+
+  //std::string GeometryPath = DMPSWSYSPath.erase((DMPSWSYSPath.size()-7),DMPSWSYSPath.size());//7 is size of "Install"
+  std::string GeometryPath = DMPSWSYSPath + "/share/Geometry/";
+  std::string DAMPEParamterPath = GeometryPath+"EQM/dampe_parameter.xml";
+  std::string BgoParamterPath = GeometryPath+"EQM/bgo_parameter.xml";
   DmpLogDebug << "DAMPEParamterPath = " << DAMPEParamterPath << DmpLogEndl; 
-  DmpLogDebug << "BgoParamterPath   = " << BgoParamterPath << DmpLogEndl; 
+  DmpLogDebug << " BgoParamterPath = " << BgoParamterPath << DmpLogEndl; 
   XMLDocPointer_t xmldocDAMPEparameter = fXMLEngine->ParseFile(DAMPEParamterPath.c_str());
   XMLDocPointer_t xmldocBGOparameter = fXMLEngine->ParseFile(BgoParamterPath.c_str()); 
   nodeDAMPEparameter = fXMLEngine->DocGetRootElement(xmldocDAMPEparameter);
   nodeBGOparameter = fXMLEngine->DocGetRootElement(xmldocBGOparameter);
-   /**/
+
   DmpLogInfo << "[DmpBgoBase::LoadGeometryXML]  ... Reading XML parameter files done " << DmpLogEndl;
 
 
