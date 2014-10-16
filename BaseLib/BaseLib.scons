@@ -18,6 +18,7 @@ env.ParseConfig("root-config --cflags --libs")
 env.Append(LIBS=['XMLIO'])
 includeDir="./include"
 env.Prepend(CPPPATH=[includeDir])
+env.Prepend(CPPPATH=['../Kernel/include'])
 
 # install share
 #--------------------------------------------------------------------
