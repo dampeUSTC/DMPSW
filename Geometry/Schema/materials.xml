@@ -4,9 +4,11 @@
      <atom value="1."/>
     </element>
 
+    <!--
     <element Z="1" formula="H" name="H" >
      <atom value="1.0079" />
     </element>
+    -->
 
     <isotope Z="1" N="1" name="H1">
       <atom unit="g/mole" value="1.00782503081372"/>
@@ -15,7 +17,10 @@
     <isotope Z="1" N="2" name="H2">
       <atom unit="g/mole" value="2.01410199966617"/>
     </isotope>
-
+    
+    <element name="H">  <fraction n="0.999885" ref="H1"/> <fraction n="0.000115" ref="H2"/> </element>
+    <element name="Hydrogen_material_beamtest">  <fraction n="0.999885" ref="H1"/> <fraction n="0.000115" ref="H2"/> </element>
+ 
     <element name="H1H2Mix">
       <fraction n="0.999885" ref="H1"/>
       <fraction n="0.000115" ref="H2"/>
@@ -63,6 +68,7 @@
       <fraction n="0.0107" ref="C13"/>
     </element>
 
+    <element name="Carbon_material_beam_test">   <fraction n="0.9893" ref="C12"/>  <fraction n="0.0107" ref="C13"/>  </element>
     <element Z="8" formula="O" name="O" >
      <atom value="15.999" />
     </element>
@@ -190,7 +196,12 @@
       <fraction n="0.60" ref="carbon"/>
       <fraction n="0.32" ref="oxygen"/>      
     </material>
-
+        
+    <material name="CarbonFibre" state="solid">      
+      <D unit="g/cm3" value="0.145"/>
+      <fraction n="1.0" ref="carbon"/>      
+    </material>     
+ 
     <material name="Iron" state="solid">
      <D value="7.87" unit="g/cm3"/>
      <fraction n="1." ref="Fe"/>
@@ -201,7 +212,24 @@
       <fraction n="0.5316" ref="Pb"/>
       <fraction n="0.4684" ref="SiO2"/>
     </material>
-
+  
+    <material name="Concrete" state="solid">  
+      <D unit="g/cm3" value="2.3"/>
+      <fraction n="0.227915"  ref="Si"/>
+      <fraction n="0.60541"   ref="O"/>
+      <fraction n="0.09972"   ref="H"/>
+      <fraction n="0.04986"   ref="Ca"/>
+      <fraction n="0.014245"  ref="Al"/>
+      <fraction n="0.00285"   ref="Fe"/>      
+    </material>
+     
+    <material name="PLasticScintillatorMaterialBeamTest" state="solid">
+      <MEE unit="eV" value="64.7"/>
+      <D unit="g/cm3" value="1.032"/>
+      <fraction n="0.085" ref="Hydrogen_material_beamtest"/>
+      <fraction n="0.915" ref="Carbon_material_beam_test"/>      
+    </material>
+ 
     <!--define material-->
     <!--Vacuum-->
     <material formula=" " name="Vacuum">
