@@ -196,7 +196,12 @@
       <fraction n="0.60" ref="carbon"/>
       <fraction n="0.32" ref="oxygen"/>      
     </material>
-
+        
+    <material name="CarbonFibre" state="solid">      
+      <D unit="g/cm3" value="0.145"/>
+      <fraction n="1.0" ref="carbon"/>      
+    </material>     
+ 
     <material name="Iron" state="solid">
      <D value="7.87" unit="g/cm3"/>
      <fraction n="1." ref="Fe"/>
