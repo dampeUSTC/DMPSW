@@ -32,7 +32,7 @@ namespace DmpLog{
 #define DmpLogCout std::cout<<"  "
 
 #define DmpLogDebug   if(DmpLog::logLevel >= DmpLog::DEBUG) \
-  std::cout<<"  DEBUG:   ["<<__PRETTY_FUNCTION__<<"("<<__LINE__<<")"<<"]  "
+  std::cout<<"\033[37m  DEBUG:   ["<<__PRETTY_FUNCTION__<<"("<<__LINE__<<")"<<"]  "
 
 #define DmpLogInfo    if(DmpLog::logLevel >= DmpLog::INFO)\
   std::cout<<"  INFO:    ["<<(DmpLog::logHeader? __PRETTY_FUNCTION__:"")<<"]  "
@@ -41,9 +41,9 @@ namespace DmpLog{
   std::cout<<"  WARNING: ["<<(DmpLog::logHeader? __PRETTY_FUNCTION__:"")<<"]  "
 
 #define DmpLogError if(DmpLog::logLevel >= DmpLog::ERROR)\
-  std::cout<<"  ERROR:   ["<<(DmpLog::logHeader? __PRETTY_FUNCTION__:"")<<"]  "
+  std::cout<<"\033[31m  ERROR:   ["<<(DmpLog::logHeader? __PRETTY_FUNCTION__:"")<<"]  "
 
-#define DmpLogEndl std::endl
+#define DmpLogEndl "\033[0m"<<std::endl
 
 #endif
 
