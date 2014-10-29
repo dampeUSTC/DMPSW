@@ -7,7 +7,9 @@
 #ifndef DmpRootIOSvc_H
 #define DmpRootIOSvc_H
 
+#ifndef __CINT__
 #include <boost/filesystem.hpp>     // path
+#endif
 #include <vector>
 #include "DmpVSvc.h"
 
@@ -76,8 +78,10 @@ private:
 private:
 typedef std::map<std::string, TTree*>  DmpRootIOTreeMap;                // key is "Tree"
 typedef std::map<std::string, DmpRootIOTreeMap>  DmpRootIOFolderMap;    // key is "Folder"
+#ifndef __CINT__
   boost::filesystem::path   fInFileName;        // include path
   boost::filesystem::path   fOutFileName;       // include path
+#endif
   std::string               fOutFileKey;        // key word for the name of output root file
   std::string               fInPath;            // input file path
   std::string               fOutPath;           // output file path
