@@ -85,7 +85,6 @@ void DmpParameterBgo_c::LoadXMLFile(){
     throw;
   }
   // * reading xml geometry parameter files
-  //DmpLogInfo<< "[DmpBgoBase::LoadGeometryXML]  Reading XML parameter files ... " <<DmpLogEndl;
   std::string DMPSWSYSPath = std::string(DMPSWSYS);
 
   //std::string GeometryPath = DMPSWSYSPath.erase((DMPSWSYSPath.size()-7),DMPSWSYSPath.size());//7 is size of "Install"
@@ -96,11 +95,8 @@ void DmpParameterBgo_c::LoadXMLFile(){
   XMLDocPointer_t xmldocBGOparameter = fXMLEngine->ParseFile(BgoParamterPath.c_str()); 
   nodeDAMPEparameter = fXMLEngine->DocGetRootElement(xmldocDAMPEparameter);
   nodeBGOparameter = fXMLEngine->DocGetRootElement(xmldocBGOparameter);
-
-  //DmpLogInfo << "[DmpBgoBase::LoadGeometryXML]  ... Reading XML parameter files done " << DmpLogEndl;
-
-
 }
+
 //-------------------------------------------------------------------
 double DmpParameterBgo_c::GetXMLParameter(const char* parameter, XMLNodePointer_t node, TXMLEngine* xml){
 
@@ -157,20 +153,11 @@ void DmpParameterBgo_c::LoadBgoParameter(){
   //x,y direction
   double FirstBarCenterXY = 0.;
   FirstBarCenterXY = 0.-10.5*(m_BgoBarX+m_BgoDetBarSeparation);
-  //DmpLogDebug << "First bar center is " << FirstBarCenterXY << DmpLogEndl;
   for (int i=0;i<m_BgoLayerBarNb;i++){
     double BarCenterXY = 0.;
     BarCenterXY = FirstBarCenterXY+i*(m_BgoBarX+m_BgoDetBarSeparation);
     m_BgoDetLayerBar_XY.push_back(BarCenterXY);
   }
-
-  //debug
-  //DmpLogDebug<< "m_BgoDetLayerBar_Z  = {"<<DmpLogEndl;
-  //for(int i=0; i<m_BgoDetLayerBar_Z.size();i++) DmpLogDebug<< "  "<<m_BgoDetLayerBar_Z.at(i)<<DmpLogEndl;
-  //DmpLogDebug<<"}"<<DmpLogEndl;
-  //DmpLogDebug<< "m_BgoDetLayerBar_XY  = {"<<DmpLogEndl;
-  //for(int i=0; i<m_BgoDetLayerBar_XY.size();i++) DmpLogDebug<< "  "<<m_BgoDetLayerBar_XY.at(i)<<DmpLogEndl;
-  //DmpLogDebug<<"}"<<DmpLogEndl;
 
   //update parameters
   fLayerNo = m_BgoLayerNb;
