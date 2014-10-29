@@ -1,6 +1,6 @@
 #! /bin/bash
 :<<EOF
- *  $Id: pre-install.sh, 2014-08-08 11:11:13 DAMPE $
+ *  $Id: pre-install.sh, 2014-10-29 23:46:58 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 26/12/2013
  *---------------------------------------------------
@@ -25,13 +25,15 @@ CheckEnv(){
 echo "---->   Checking Environment..."
 CheckEnv ROOTSYS G4INSTALL G4LIB_USE_GDML
 
-#+  Event
 #----------------------------------------------------
-echo "---->   Creating Dictionary..."
 
-pushd Event 1>/dev/null
-/bin/rm -f ./*/Dictionary* >&/dev/null
-./createDictionary
-popd  1>/dev/null
+for dir in {"Kernel","BaseLib","Event"}
+do
+  pushd $dir 1>/dev/null
+  /bin/rm -f ./*/Dictionary* >&/dev/null
+  #echo "---->   Creating Dictionary of $dir ..."
+  ./createDictionary
+  popd  1>/dev/null
+done
 
 
