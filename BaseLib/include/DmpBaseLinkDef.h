@@ -1,5 +1,5 @@
 /*
- *  $Id: DmpBaseLinkDef.h, 2014-10-29 11:56:58 DAMPE $
+ *  $Id: DmpBaseLinkDef.h, 2014-11-01 00:13:36 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 13/12/2013
 */
@@ -18,7 +18,6 @@
 #pragma link C++ namespace DmpParameterPsd;
 #pragma link C++ namespace DmpParameterStk;
 #pragma link C++ namespace DmpEDetectorID;
-#pragma link C++ namespace DmpTimeConvertor;
 //#pragma link C++ class DmpEvtBgoHits+;
 
 #endif

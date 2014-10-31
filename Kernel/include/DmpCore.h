@@ -32,7 +32,7 @@ public:     // binding functions
 public:
   const long& GetMaxEventNumber() const {return fMaxEventNo;}
   const long& GetCurrentEventID() const {return fCurrentEventID;}
-  bool EventInTimeWindow(const long &second) const;
+  bool EventInTimeWindow(const int &t) const{return ((fStartTime<t)&&(t<fStopTime))?true:false;} // use second of event header
   const bool& InitializeDone() const {return fInitializeDone;}
 
 public:
@@ -54,15 +54,14 @@ public:
 
 private:
   DmpCore();
-  long DeltaTime(const std::string&)const;
 
 private:
   DmpAlgorithmManager   *fAlgMgr;       // algorithm manager, singleton
   DmpServiceManager     *fSvcMgr;       // service manager, singleton
   std::string           fLaunchTime;    // lauch time, 20130101-0000
   long                  fMaxEventNo;    // run how many event
-  long                  fStartTime;     // unit: second. start time of time window
-  long                  fStopTime;      // unit: second. stop time of time window
+  int                   fStartTime;     // unit: second. start time of time window
+  int                   fStopTime;      // unit: second. stop time of time window
 
 private:
   bool      fInitializeDone;        // default is false
