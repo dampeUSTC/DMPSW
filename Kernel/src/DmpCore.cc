@@ -9,6 +9,7 @@
 #include "DmpCore.h"
 #include "DmpRootIOSvc.h"
 #include "DmpDataBuffer.h"
+#include "DmpTimeConvertor.h"
 
 //-------------------------------------------------------------------
 DmpCore::DmpCore()
@@ -16,8 +17,8 @@ DmpCore::DmpCore()
   fSvcMgr(0),
   fLaunchTime("20130101-0000"),
   fMaxEventNo(-1),
-  fStartTime(0),
-  fStopTime(0),
+  fStartTime(DmpTimeConvertor::Date2Second("2013-01-01 00:00:00")),
+  fStopTime(DmpTimeConvertor::Date2Second("2113-01-01 00:00:00")),
   fInitializeDone(false),
   fTerminateRun(false),
   fCurrentEventID(0)    // must == 0
@@ -51,9 +52,6 @@ bool DmpCore::Initialize(){
   if(not fSvcMgr->Initialize()) return false;
   if(not fAlgMgr->Initialize()) return false;
   gRootIOSvc->PrepareMetaData();
-  if(0 == fStopTime){
-    fStopTime = DeltaTime("21130101-0000");
-  }
   std::cout<<"  [DmpCore::Initialize] ... initialized successfully"<<std::endl;
   fInitializeDone = true;
   return true;
@@ -124,12 +122,12 @@ void DmpCore::Set(const std::string &type,const std::string &value){
     }
     case 3: // StartTime
     {
-      fStartTime = DeltaTime(value);
+      fStartTime = DmpTimeConvertor::Date2Second(value);
       break;
     }
     case 4: // StopTime
     {
-      fStopTime = DeltaTime(value);
+      fStopTime = DmpTimeConvertor::Date2Second(value);
       break;
     }
     case 5: // FromEvent
@@ -138,34 +136,6 @@ void DmpCore::Set(const std::string &type,const std::string &value){
       break;
     }
   }
-}
-
-//-------------------------------------------------------------------
-long DmpCore::DeltaTime(const std::string &endT)const{
-  std::string tmp;
-  struct tm startT;    // 20130101-0000
-  tmp.assign(fLaunchTime.begin(),  fLaunchTime.begin()+4);    startT.tm_year = boost::lexical_cast<int>(tmp) - 1900;  // since 1900
-  tmp.assign(fLaunchTime.begin()+4,fLaunchTime.begin()+6);    startT.tm_mon  = boost::lexical_cast<int>(tmp) - 1;     // 0 ~ 11
-  tmp.assign(fLaunchTime.begin()+6,fLaunchTime.begin()+8);    startT.tm_mday = boost::lexical_cast<int>(tmp);         // 1 ~ 31
-  tmp.assign(fLaunchTime.end()-4,  fLaunchTime.end()-2);      startT.tm_hour = boost::lexical_cast<int>(tmp);         // 0 ~ 23
-  tmp.assign(fLaunchTime.end()-2,  fLaunchTime.end());        startT.tm_min  = boost::lexical_cast<int>(tmp);         // 0 ~ 59
-  startT.tm_sec = 0;       // 0 ~ 60
-  struct tm stopT;
-  tmp.assign(endT.begin(),  endT.begin()+4);    stopT.tm_year = boost::lexical_cast<int>(tmp) - 1900;  // since 1900
-  tmp.assign(endT.begin()+4,endT.begin()+6);    stopT.tm_mon  = boost::lexical_cast<int>(tmp) - 1;     // 0 ~ 11
-  tmp.assign(endT.begin()+6,endT.begin()+8);    stopT.tm_mday = boost::lexical_cast<int>(tmp);         // 1 ~ 31
-  tmp.assign(endT.end()-4,  endT.end()-2);      stopT.tm_hour = boost::lexical_cast<int>(tmp);         // 0 ~ 23
-  tmp.assign(endT.end()-2,  endT.end());        stopT.tm_min  = boost::lexical_cast<int>(tmp);         // 0 ~ 59
-  stopT.tm_sec = 0;       // 0 ~ 60
-  return difftime(mktime(&stopT),mktime(&startT));
-}
-
-//-------------------------------------------------------------------
-bool DmpCore::EventInTimeWindow(const long &t) const{
-  if(fStartTime < t && t < fStopTime){
-    return true;
-  }
-  return false;
 }
 
 //-------------------------------------------------------------------
