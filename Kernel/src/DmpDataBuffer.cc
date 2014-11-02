@@ -35,8 +35,11 @@ bool DmpDataBuffer::Finalize(){
     DmpLogInfo<<"| | | |-"<<it->first<<std::endl;
         delete it->second;
       }
+      aBranchMap.clear();
     }
+    aTreeMap.clear();
   }
+  fInputDataBufPool.clear();
   DmpLogInfo<<"`-Done"<<DmpLogEndl;
     //-------------------------------------------------------------------
   DmpLogInfo<<"+-Deleting output data..."<<DmpLogEndl;
@@ -50,8 +53,11 @@ bool DmpDataBuffer::Finalize(){
     DmpLogInfo<<"| | | |-"<<it->first<<std::endl;
         delete it->second;
       }
+      aBranchMap.clear();
     }
+    aTreeMap.clear();
   }
+  fDataBufPool.clear();
   DmpLogInfo<<"`-Done"<<DmpLogEndl;
   return true;
 }
