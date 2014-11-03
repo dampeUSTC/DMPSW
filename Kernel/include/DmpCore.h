@@ -34,6 +34,8 @@ public:
   const long& GetCurrentEventID() const {return fCurrentEventID;}
   bool EventInTimeWindow(const int &t) const{return ((fStartTime<=t)&&(t<=fStopTime))?true:false;} // use second of event header
   const bool& InitializeDone() const {return fInitializeDone;}
+  const int&  StartTimeCut() const {return fStartTime;}
+  const int&  StopTimeCut() const {return fStopTime;}
 
 public:
   void Set(const std::string &type,const std::string &value);
