@@ -55,3 +55,7 @@ void DmpPsdBase::LoadLBSDID(const short &gid,short &l,short &b,short &s,short &d
   d = DmpPsdBase::GetDynodeID(gid);
 }
 
+//-------------------------------------------------------------------
+DmpParameterPsd_c* DmpPsdBase::Parameter(){
+  return DmpParameterPsd_c::GetInstance();
+}

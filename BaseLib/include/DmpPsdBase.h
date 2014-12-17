@@ -3,6 +3,7 @@
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 20/08/2014
 */
+#include "DmpParameterPsd.h"
 
 namespace DmpPsdBase{
 //-------------------------------------------------------------------
@@ -26,5 +27,6 @@ namespace DmpPsdBase{
   short GetSideID(const short &gid);
   short GetDynodeID(const short &gid);
   void  LoadLBSDID(const short &gid,short &l,short &b,short &s,short &d);
+  DmpParameterPsd_c* Parameter();
 }
 
