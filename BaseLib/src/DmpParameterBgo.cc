@@ -81,7 +81,7 @@ void DmpParameterBgo_c::LoadXMLFile(){
   char *DMPSWSYS = NULL;
   DMPSWSYS = getenv ("DMPSWSYS");
   if (DMPSWSYS==NULL){
-    std::cout<< "[DmpBgoBase::LoadGeometryXML] ERROR:DMPSWSYSPath cannot be found!" << std::endl;
+    std::cout<< "[DmpParameterBgo::LoadGeometryXML] ERROR:DMPSWSYSPath cannot be found!" << std::endl;
     throw;
   }
   // * reading xml geometry parameter files
@@ -119,7 +119,7 @@ double DmpParameterBgo_c::GetXMLParameter(const char* parameter, XMLNodePointer_
     child = xml->GetNext(child);
   }
   if (result==-1){
-    std::cout<< "[DmpBgoBase::GetXMLParameter] ERROR: parameter "<< parameter << " is not found" <<std::endl;
+    std::cout<< "[DmpParameterBgo::GetXMLParameter] ERROR: parameter "<< parameter << " is not found" <<std::endl;
     throw;
   }
 }

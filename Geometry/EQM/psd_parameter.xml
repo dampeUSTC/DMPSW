@@ -1,0 +1,25 @@
+<!-- Psd parameters -->
+
+<define>
+  <constant name="PSDdetectorX" value="1200"/>
+  <constant name="PSDdetectorY" value="1200"/>
+  <constant name="PSDdetectorZ" value="164"/>
+  <constant name="PSDStripAX" value="824"/>
+  <constant name="PSDStripAY" value="28"/>
+  <constant name="PSDStripAZ" value="10"/>
+  <constant name="PSDStripBX" value="284"/>
+  <constant name="PSDStripBY" value="25"/>
+  <constant name="PSDStripBZ" value="10"/>
+
+  <constant name="PSD_NbofLayerBars" value="41"/>
+  <constant name="PSD_NbofLayer" value="2"/>
+  <constant name="PSD_BarGap" value="20"/>
+  <constant name="fisrtXofYLayer" value="-400"/>
+  <constant name="fisrtYofXLayer" value="-400"/>
+  <constant name="upZofYLayer" value="36"/>
+  <constant name="bottomZofYLayer" value="50"/>
+  <constant name="upZofXLayer" value="9.8"/>
+  <constant name="bottomZofXLayer" value="23.8"/>
+
+  <constant name="psd_z_offset"    value="-314"     />        <!-- mm -->
+</define>
