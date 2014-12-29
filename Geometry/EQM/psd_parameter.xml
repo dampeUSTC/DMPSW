@@ -14,8 +14,8 @@
   <constant name="PSD_NbofLayerBars" value="41"/>
   <constant name="PSD_NbofLayer" value="2"/>
   <constant name="PSD_BarGap" value="20"/>
-  <constant name="fisrtXofYLayer" value="-400"/>
-  <constant name="fisrtYofXLayer" value="-400"/>
+  <constant name="firstXofYLayer" value="-400"/>
+  <constant name="firstYofXLayer" value="-400"/>
   <constant name="upZofYLayer" value="36"/>
   <constant name="bottomZofYLayer" value="50"/>
   <constant name="upZofXLayer" value="9.8"/>
