@@ -10,12 +10,13 @@ EOF
 
 #+  Set installation environment of DAMPE offline software 
 if [ ! $DMPSWSYS ];then
-  if [[ $0 == *bash ]];then
+#  if [[ $0 == *bash ]];then
     export DMPSWSYS=$(cd `dirname $BASH_SOURCE`/..;pwd)
-  else
-    export DMPSWSYS=$(cd `dirname $0`/..;pwd)
-  fi
+ # else
+ #   export DMPSWSYS=$(cd `dirname $0`/..;pwd)
+ # fi
   export DMPSWWORK=$HOME/dmpwork
+  #export DMPSWWORK=$DMPSWSYS
   export PATH=$DMPSWSYS/bin:$PATH
   export PYTHONPATH=$DMPSWWORK/lib:$DMPSWSYS/lib:$PYTHONPATH
   if [ $LD_LIBRARY_PATH ];then
