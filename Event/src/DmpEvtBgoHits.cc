@@ -46,4 +46,26 @@ void DmpEvtBgoHits::LoadFrom(DmpEvtBgoHits *r){
   fPosition = r->fPosition;
 }
 
+double DmpEvtBgoHits::GetTotalE(double noise)const
+{
+  double et = 0;
+  for(size_t i=0;i<fEnergy.size();++i){
+    if(fEnergy.at(i) > noise) {
+      et += fEnergy.at(i);
+    }
+  }
+  return et;
+}
+
+int DmpEvtBgoHits::GetFiredBarNumber(double eL,double eH)const
+{
+  int n =0;
+  for(size_t i=0;i<fEnergy.size();++i){
+    if(fEnergy[i] > eL && fEnergy[i] < eH){
+      ++n;
+    }
+  }
+  return n;
+}
+
 
