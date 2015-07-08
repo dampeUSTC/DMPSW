@@ -24,6 +24,10 @@ public:
   short GetHittedBarNumber()const{return fGlobalBarID.size();}
 
 public:
+  double GetTotalE(double noise=2.5)const;
+  int GetFiredBarNumber(double eLow,double eHigh)const;
+
+public:
   std::vector <short>     fGlobalBarID;     // unique sensitive detector bar ID, using DmpBgoBase to construct it
   std::vector <double>    fEnergy;          // unit MeV
   std::vector <double>    fES0;             // unit MeV, from side 0

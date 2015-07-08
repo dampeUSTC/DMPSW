@@ -17,7 +17,7 @@ env = Environment(ENV = os.environ)
 env.ParseConfig("root-config --cflags --libs")
 #env.Append(LIBS=['RooFitCore','RooFit'])
 env.ParseConfig("python-config --include --libs")
-#env.Append(LIBPATH=['/opt/boost/lib'])
+env.Append(LIBPATH=['/opt/boost/lib'])
 env.Append(LIBS=['boost_python','boost_system','boost_filesystem'])
 includeDir='./include'
 env.Prepend(CPPPATH=[includeDir])
