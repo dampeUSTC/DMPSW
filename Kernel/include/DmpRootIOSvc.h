@@ -70,6 +70,7 @@ public:
   std::string GetInputExtension()const{return fInFileName.extension().string();}
   std::string GetOutputExtension()const{return fOutFileName.extension().string();}
   std::string GetOutFileKey()const{return fOutFileKey;}
+  long  GetEntries(std::string TreePath)const;
 
 private:
   DmpRootIOSvc();

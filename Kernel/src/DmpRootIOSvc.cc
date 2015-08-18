@@ -260,6 +260,11 @@ bool DmpRootIOSvc::PrepareEvent(const long &evtID){
   return atLeastONeTree;
 }
 
+long DmpRootIOSvc::GetEntries(std::string path)const
+{
+  return fEntriesOfTree.at(path);
+}
+
 //-------------------------------------------------------------------
 void DmpRootIOSvc::FillData(const std::string &floder){
   for(DmpRootIOTreeMap::iterator it=fOutTreeSet[floder].begin();it!=fOutTreeSet[floder].end();++it){

@@ -46,7 +46,7 @@ public:
    *    |--EventNumber
    *    |--StartTime
    *    |--StopTime
-   *    `--FromeEvent
+   *    `--FromEvent
    */
   DmpAlgorithmManager*  AlgorithmManager() const {return fAlgMgr;}
   DmpServiceManager*    ServiceManager() const {return fSvcMgr;}
