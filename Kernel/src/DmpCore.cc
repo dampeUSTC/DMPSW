@@ -5,6 +5,7 @@
 */
 
 #include <time.h>
+#include <stdlib.h>
 
 #include "DmpCore.h"
 #include "DmpRootIOSvc.h"
@@ -136,6 +137,34 @@ void DmpCore::Set(const std::string &type,const std::string &value){
       break;
     }
   }
+}
+
+std::string DmpCore::GetSystemDir(std::string subDir)const
+{
+  static std::string path = (std::string)getenv("DMPSWSYS");
+  std::string back = path;
+  if(subDir != ""){
+    if(subDir[0] != '/'){
+      back += "/" + subDir;
+    }else{
+      back += subDir;
+    }
+  }
+  return back;
+}
+
+std::string DmpCore::GetWorkDir(std::string subDir)const
+{
+  static std::string path = (std::string)getenv("DMPSWWORK");
+  std::string back = path;
+  if(subDir != ""){
+    if(subDir[0] != '/'){
+      back += "/" + subDir;
+    }else{
+      back += subDir;
+    }
+  }
+  return back;
 }
 
 //-------------------------------------------------------------------

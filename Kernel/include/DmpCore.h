@@ -53,6 +53,8 @@ public:
 
 public:
   void TerminateRun()   {fTerminateRun = true;} // call me in algorithms
+  std::string GetSystemDir(std::string subDir="")const;
+  std::string GetWorkDir(std::string subDit="")const;
 
 private:
   DmpCore();
