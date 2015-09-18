@@ -28,7 +28,8 @@ public:
   bool Initialize();
   bool Finalize();
   TObject* ReadObject(const std::string &path);  // if path/dataPtr not in any data buffer, return 0
-  template<typename T> void RegisterObject(const std::string &path,T *&dataPtr,const std::string &className="TClonesArray");   // path = Folder/Tree/Branch
+  template<typename T> void RegisterObject(const std::string &path,T *&dataPtr,const std::string className);   // path = Folder/Tree/Branch
+  template<typename T> void RegisterObject(const std::string &path,T *&dataPtr);   // path = Folder/Tree/Branch
   template<typename T> void LinkRootFile(const std::string &path,T *&dataPtr);  // use dataPtr to read a branch from input rootfile, if not find branch, break job;
 
 private:
@@ -46,7 +47,7 @@ typedef std::map<std::string, DmpDataBufTreeMap>        DmpDataBufFolderMap;    
 };
 
 //-------------------------------------------------------------------
-template<typename T> void DmpDataBuffer::RegisterObject(const std::string &path,T *&dataPtr,const std::string &className){
+template<typename T> void DmpDataBuffer::RegisterObject(const std::string &path,T *&dataPtr,const std::string className){
   // path check
   std::string folderName, treeName, branchName;
   PathCheck(path,folderName,treeName,branchName);
@@ -73,6 +74,41 @@ template<typename T> void DmpDataBuffer::RegisterObject(const std::string &path,
         tree->Branch(branchName.c_str(),dataPtr,32000,2);
       }else{
         tree->Branch(branchName.c_str(),className.c_str(),&dataPtr,32000,2);
+      }
+    }else{
+      DmpLogError<<branchName<<" is existing in the tree: "<<folderName<<"/"<<treeName<<DmpLogEndl;
+      throw;
+    }
+  }
+}
+
+template<typename T> void DmpDataBuffer::RegisterObject(const std::string &path,T *&dataPtr){
+  // path check
+  std::string folderName, treeName, branchName;
+  PathCheck(path,folderName,treeName,branchName);
+  // insert data buffer
+  if(fDataBufPool.find(folderName) == fDataBufPool.end()){
+    DmpDataBufTreeMap aNewTreeMap;
+    fDataBufPool.insert(std::make_pair(folderName,aNewTreeMap));
+  }
+  if(fDataBufPool[folderName].find(treeName) == fDataBufPool[folderName].end()){
+    DmpDataBufBranchMap aNewBranchMap;
+    fDataBufPool[folderName].insert(std::make_pair(treeName,aNewBranchMap));
+  }
+  if(fDataBufPool[folderName][treeName].find(branchName) == fDataBufPool[folderName][treeName].end()){
+    fDataBufPool[folderName][treeName].insert(std::make_pair(branchName,dataPtr));
+  }else{
+    DmpLogError<<path<<" is existing in data buffer"<<DmpLogEndl;
+    throw;
+  }
+  // input arguments into root IOSvc, to create a branch (IOSvc check whether need to create branch)
+  if(gRootIOSvc->WriteValid(folderName+"/"+treeName)){
+    TTree *tree = gRootIOSvc->GetOutputTree(folderName,treeName);
+    if(0 == tree->GetListOfBranches()->FindObject(branchName.c_str())){
+      if("TClonesArray" == dataPtr->GetName()){
+        tree->Branch(branchName.c_str(),dataPtr,32000,2);
+      }else{
+        tree->Branch(branchName.c_str(),dataPtr->GetName(),&dataPtr,32000,2);
       }
     }else{
       DmpLogError<<branchName<<" is existing in the tree: "<<folderName<<"/"<<treeName<<DmpLogEndl;
