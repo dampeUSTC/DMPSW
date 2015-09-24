@@ -22,6 +22,7 @@ public:
   void Reset();
   void LoadFrom(DmpEvtBgoHits *r);
   short GetHittedBarNumber()const{return fGlobalBarID.size();}
+  double GetMaxE()const;
 
 public:
   double GetTotalE(double noise=2.5)const;

@@ -5,6 +5,7 @@
 */
 
 #include "DmpEvtBgoHits.h"
+#include "TMath.h"
 
 ClassImp(DmpEvtBgoHits)
 
@@ -66,6 +67,13 @@ int DmpEvtBgoHits::GetFiredBarNumber(double eL,double eH)const
     }
   }
   return n;
+}
+
+
+double DmpEvtBgoHits::GetMaxE()const
+{
+  int x = fEnergy.size();
+  return x ? TMath::MaxElement(x,&fEnergy[0]) : 0;
 }
 
 
