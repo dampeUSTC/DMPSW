@@ -21,12 +21,13 @@ public:
   DmpEvtBgoHits &operator=(const DmpEvtBgoHits &r);
   void Reset();
   void LoadFrom(DmpEvtBgoHits *r);
-  short GetHittedBarNumber()const{return fGlobalBarID.size();}
-  double GetMaxE()const;
 
 public:
-  double GetTotalE(double noise=2.5)const;
+  int GetFiredBarNumber()const;
   int GetFiredBarNumber(double eLow,double eHigh)const;
+  double GetTotalE(double noise=2.5)const;
+  double GetMaxE()const;
+  double GetERMS()const;
 
 public:
   std::vector <short>     fGlobalBarID;     // unique sensitive detector bar ID, using DmpBgoBase to construct it
@@ -39,4 +40,5 @@ public:
 };
 
 #endif
+
 

@@ -76,4 +76,14 @@ double DmpEvtBgoHits::GetMaxE()const
   return x ? TMath::MaxElement(x,&fEnergy[0]) : 0;
 }
 
+int DmpEvtBgoHits::GetFiredBarNumber()const
+{
+  return fGlobalBarID.size();
+}
+
+
+double DmpEvtBgoHits::GetERMS()const
+{
+  return TMath::RMS(fEnergy.size(),&fEnergy[0]);
+}
 
