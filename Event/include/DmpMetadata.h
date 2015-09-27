@@ -32,6 +32,7 @@ public:
   bool HasCommand(std::string)const;      // whole command, or just a part of command
   std::string GetValue(const std::string&)const;
   std::string GetValue(const short &i)const;
+  void ClearOptions(std::string mark);
 
 private:
   long          Time;    // Time of this job

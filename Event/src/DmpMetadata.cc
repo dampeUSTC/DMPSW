@@ -7,6 +7,7 @@
 #include <iostream>
 #include <time.h>   // time_t
 #include "DmpMetadata.h"
+#include "TString.h"
 
 ClassImp(DmpMetadata)
 
@@ -65,7 +66,7 @@ void DmpMetadata::ListOptions()const{
 
 //-------------------------------------------------------------------
 bool DmpMetadata::HasCommand(std::string o)const{
-  o = (o[0]!='/') ? o : o.substr(1);
+  o = (o[0] == '/') ? o.substr(1) : o;
   bool status = (Option.find(o) != Option.end()) ? true : false;
   if(not status){
     for(size_t i=0;i<CmdList.size();++i){
@@ -94,5 +95,16 @@ std::string DmpMetadata::GetValue(const short &i)const{
 void DmpMetadata::Reset(){
   Option.clear();
   CmdList.clear();
+}
+
+void DmpMetadata::ClearOptions(std::string mark){
+  for(std::map<std::string, std::string>::iterator it = Option.begin(); it != Option.end();){
+    TString  key = it->first;
+    if(key.Contains(mark)){
+      Option.erase(it++);
+    }else{
+      ++it;
+    }
+  }
 }
 
