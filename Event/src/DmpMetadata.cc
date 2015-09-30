@@ -47,7 +47,7 @@ void DmpMetadata::PrintJobTime(const short &level)const{
 
 //-------------------------------------------------------------------
 void DmpMetadata::SetOption(std::string tmp,const std::string &v){
-  tmp = (tmp[0]!='/')?tmp:tmp.substr(1);
+  tmp = (tmp[0] == '/') ? tmp.substr(1) : tmp;
   if(HasCommand(tmp)){
     std::cout<<"Resetting "<<tmp<<":\t\""<<Option[tmp]<<"\" ---> \""<<v<<"\""<<std::endl;
     Option[tmp] = v;
@@ -102,6 +102,14 @@ void DmpMetadata::ClearOptions(std::string mark){
     TString  key = it->first;
     if(key.Contains(mark)){
       Option.erase(it++);
+    }else{
+      ++it;
+    }
+  }
+  for(std::vector<std::string>::iterator it = CmdList.begin();it != CmdList.end();){
+    TString key =  *it;
+    if(key.Contains(mark)){
+      it = CmdList.erase(it);
     }else{
       ++it;
     }
